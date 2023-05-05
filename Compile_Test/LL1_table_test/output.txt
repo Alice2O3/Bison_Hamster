@@ -1,0 +1,7 @@
+E -> TZ
+Z -> +TZ | -TZ | @
+T -> PY
+Y -> *PY | /PY | @
+P -> FX
+X -> ^FX | @
+F -> -F | +F | a | (E)
