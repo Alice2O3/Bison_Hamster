@@ -1,7 +1,7 @@
-package cflex.dfa.callback;
+package cflex.callback;
 
-import cflex.dfa.DFA;
-import cflex.dfa.DFA_event;
+import cflex.DFA;
+import cflex.DFA_event;
 
 public class DFA_callback_demo {
     public static class Default implements ICallback {
@@ -19,7 +19,7 @@ public class DFA_callback_demo {
             Util.debugInfo(e);
 
             System.out.printf("[Accepted] Word detected, return to initial state%n");
-            Util.acceptFinished(dfa, e.getChar(), "Word");
+            Util.acceptFinished(dfa, e.getChar(), 0);
         }
     }
 }

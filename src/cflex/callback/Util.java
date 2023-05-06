@@ -1,8 +1,8 @@
-package cflex.dfa.callback;
+package cflex.callback;
 
-import cflex.dfa.DFA;
-import cflex.dfa.DFA_event;
-import cflex.dfa.DFA_lexing;
+import cflex.DFA;
+import cflex.DFA_event;
+import cflex.DFA_lexing;
 
 public class Util {
     public static void debugInfo(DFA_event e){
@@ -11,6 +11,18 @@ public class Util {
 
     public static void processEscape(DFA dfa){
         dfa.clearLexeme();
+        dfa.gotoInitialState();
+        dfa.keep = false;
+        dfa.l_index = 0;
+        dfa.r_index = 0;
+        dfa.r_index_global++;
+        dfa.l_index_global = dfa.r_index_global;
+        dfa.line_index++;
+    }
+
+    public static void processEscapeKeep(DFA dfa, Integer token_type){
+        dfa.clearLexeme();
+        addTokenInfo(dfa, token_type);
         dfa.gotoInitialState();
         dfa.keep = false;
         dfa.l_index = 0;
@@ -35,7 +47,7 @@ public class Util {
         dfa.r_index_global++;
     }
 
-    public static void acceptFinished(DFA dfa, Character c, String token_type){
+    public static void acceptFinished(DFA dfa, Character c, Integer token_type){
         acceptForward(dfa, c);
         addTokenInfo(dfa, token_type);
         dfa.clearLexeme();
@@ -45,7 +57,7 @@ public class Util {
         dfa.l_index_global = dfa.r_index_global;
     }
 
-    public static void acceptFinishedKeep(DFA dfa, String token_type){
+    public static void acceptFinishedKeep(DFA dfa, Integer token_type){
         addTokenInfo(dfa, token_type);
         dfa.clearLexeme();
         dfa.gotoInitialState();
@@ -54,7 +66,7 @@ public class Util {
         dfa.l_index_global = dfa.r_index_global;
     }
 
-    public static void discardKeep(DFA dfa, String token_type){
+    public static void discardKeep(DFA dfa){
         dfa.clearLexeme();
         dfa.gotoInitialState();
         dfa.keep = true;
@@ -62,7 +74,7 @@ public class Util {
         dfa.l_index_global = dfa.r_index_global;
     }
 
-    public static void addTokenInfo(DFA dfa, String token_type){
+    public static void addTokenInfo(DFA dfa, Integer token_type){
         dfa.tokens_list.add(new DFA_lexing(dfa.l_index_global, dfa.r_index_global - 1, dfa.line_index, dfa.l_index, dfa.getLexeme(), token_type));
     }
 }

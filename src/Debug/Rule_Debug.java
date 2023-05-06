@@ -1,6 +1,6 @@
 package Debug;
 
-import LL1.IO;
+import LL1.Simple_Read.IO;
 import LL1.Types.*;
 
 public class Rule_Debug {

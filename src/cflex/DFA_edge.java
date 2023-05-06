@@ -1,6 +1,6 @@
-package cflex.dfa;
+package cflex;
 
-import cflex.dfa.callback.ICallback;
+import cflex.callback.ICallback;
 
 public class DFA_edge {
     public final Integer u;

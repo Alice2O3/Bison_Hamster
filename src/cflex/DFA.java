@@ -1,4 +1,4 @@
-package cflex.dfa;
+package cflex;
 
 import java.util.ArrayList;
 import java.util.List;

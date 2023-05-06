@@ -5,7 +5,7 @@ import java.util.ArrayList;
 
 public class Types {
     public static class LL1_pair{
-        public Boolean first;
+        public Boolean first; //0: Non_Terminal 1: Terminal
         public Integer second;
         public LL1_pair(Boolean first_, Integer second_){
             first = first_;

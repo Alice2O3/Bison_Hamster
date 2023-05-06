@@ -1,7 +1,7 @@
 package Debug;
 
-import LL1.FileIO;
-import LL1.IO;
+import LL1.Simple_Read.FileIO;
+import LL1.Simple_Read.IO;
 import LL1.Process;
 import LL1.Process.Types.*;
 import LL1.Types.*;
@@ -9,20 +9,20 @@ import java.io.File;
 import java.util.Map;
 
 public class LL1_Debug {
-    public static String input_file = "Compile_Test/get_LL1_table_test.txt";
-    public static String empty_tag = "@";
-    public static String end_tag = "#";
-    public static Integer table_space = 12;
+    private static String input_file = "Compile_Test/LL1_read_test/LL1_read_test.txt";
+    private static String empty_tag = "@";
+    private static String end_tag = "#";
+    private static Integer table_space = 12;
 
-    public static String str_repeat(Character ch, Integer n){
+    private static String str_repeat(Character ch, Integer n){
         StringBuilder ret = new StringBuilder();
-        for(int i=0;i<n;i++){
+        for(int i = 0; i < n; i++){
             ret.append(ch);
         }
         return ret.toString();
     }
 
-    public static String str_align(String S){
+    private static String str_align(String S){
         int len = table_space - S.length();
         if(len <= 0){
             return S;

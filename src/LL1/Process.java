@@ -80,32 +80,32 @@ public class Process {
             NOT_LL1
         }
     }
+    private final static Integer Error_Tag = -1;
+    private final static Integer End_Tag = -1;
 
-    Integer Start_Symbol = 0;
-    static Integer Error_Tag = -1;
-    static Integer End_Tag = -1;
-    LL1_symbol_set Terminal_Set = new LL1_symbol_set();
-    LL1_symbol_set Non_Terminal_Set = new LL1_symbol_set();
-    LL1_expr_map Non_Terminal_Map = new LL1_expr_map();
-    LL1_expr_map Non_Terminal_Map_Filtered = new LL1_expr_map();
-    LL1_flag_map Reach_Empty_Map = new LL1_flag_map();
+    private Integer Start_Symbol = 0;
+    private final LL1_symbol_set Terminal_Set = new LL1_symbol_set();
+    private final LL1_symbol_set Non_Terminal_Set = new LL1_symbol_set();
+    private final LL1_expr_map Non_Terminal_Map = new LL1_expr_map();
+    private final LL1_expr_map Non_Terminal_Map_Filtered = new LL1_expr_map();
+    private final LL1_flag_map Reach_Empty_Map = new LL1_flag_map();
 
     //First, Follow and Select
-    LL1_symbol_map First_Pending = new LL1_symbol_map();
-    LL1_symbol_map First_Map = new LL1_symbol_map();
-    LL1_symbol_map Follow_Pending = new LL1_symbol_map();
-    LL1_symbol_map Follow_Map = new LL1_symbol_map();
-    LL1_expr_select_list_map Select_Map = new LL1_expr_select_list_map();
+    private final LL1_symbol_map First_Pending = new LL1_symbol_map();
+    private final LL1_symbol_map First_Map = new LL1_symbol_map();
+    private final LL1_symbol_map Follow_Pending = new LL1_symbol_map();
+    private final LL1_symbol_map Follow_Map = new LL1_symbol_map();
+    private final LL1_expr_select_list_map Select_Map = new LL1_expr_select_list_map();
 
     //LL1 Table
-    LL1_expr_pair_list Expr_Pair_Index = new LL1_expr_pair_list();
-    LL1_table LL1_Table = new LL1_table();
+    private final LL1_expr_pair_list Expr_Pair_Index = new LL1_expr_pair_list();
+    private final LL1_table LL1_Table = new LL1_table();
 
-    void append_rule(LL1_expr_list dest, LL1_expr_list src){
+    private void append_rule(LL1_expr_list dest, LL1_expr_list src){
         dest.val.addAll(src.val);
     }
 
-    void collect_symbols_expr(LL1_expr expr){
+    private void collect_symbols_expr(LL1_expr expr){
         for(LL1_pair p : expr.val){
             if(p.first){
                 Terminal_Set.val.add(p.second);
@@ -115,20 +115,20 @@ public class Process {
         }
     }
 
-    void collect_symbols_rule(Integer s, LL1_expr_list e_list){
+    private void collect_symbols_rule(Integer s, LL1_expr_list e_list){
         Non_Terminal_Set.val.add(s);
         for(LL1_expr e : e_list.val){
             collect_symbols_expr(e);
         }
     }
 
-    void collect_symbols(){
+    private void collect_symbols(){
         for(Map.Entry<Integer, LL1_expr_list> e : Non_Terminal_Map.val.entrySet()){
             collect_symbols_rule(e.getKey(), e.getValue());
         }
     }
 
-    Boolean has_terminals(LL1_expr expr){
+    private Boolean has_terminals(LL1_expr expr){
         for(LL1_pair p : expr.val){
             if(p.first){
                 return true;
@@ -137,7 +137,7 @@ public class Process {
         return false;
     }
 
-    LL1_rule filter_terminal_rule(Integer rule_first, LL1_expr_list rule_second){
+    private LL1_rule filter_terminal_rule(Integer rule_first, LL1_expr_list rule_second){
         LL1_rule ret = new LL1_rule();
         ret.first = rule_first;
         for(LL1_expr expr : rule_second.val){
@@ -148,7 +148,7 @@ public class Process {
         return ret;
     }
 
-    void resolve_reach_empty_expr(Integer left, LL1_expr expr, LL1_flag iter_flag){
+    private void resolve_reach_empty_expr(Integer left, LL1_expr expr, LL1_flag iter_flag){
         for(LL1_pair p : expr.val){
             if(!Reach_Empty_Map.val.get(p.second).val){
                 return;
@@ -158,7 +158,7 @@ public class Process {
         iter_flag.val = true;
     }
 
-    void resolve_reach_empty_rule(Integer left, LL1_expr_list expr_list, LL1_flag iter_flag){
+    private void resolve_reach_empty_rule(Integer left, LL1_expr_list expr_list, LL1_flag iter_flag){
         if(Reach_Empty_Map.val.get(left).val){
             return;
         }
@@ -167,7 +167,7 @@ public class Process {
         }
     }
 
-    void resolve_first_pending_expr(LL1_symbol_set S, Integer left, LL1_expr expr){
+    private void resolve_first_pending_expr(LL1_symbol_set S, Integer left, LL1_expr expr){
         for(LL1_pair p : expr.val){
             Integer s = p.second;
             if(p.first){
@@ -181,7 +181,7 @@ public class Process {
         }
     }
 
-    void resolve_first_pending(Integer left, LL1_expr_list expr_list){
+    private void resolve_first_pending(Integer left, LL1_expr_list expr_list){
         LL1_symbol_set pending_set = new LL1_symbol_set();
         First_Map.val.put(left, new LL1_symbol_set());
         for(LL1_expr expr : expr_list.val){
@@ -190,17 +190,17 @@ public class Process {
         First_Pending.val.put(left, pending_set);
     }
 
-    void merge_set(LL1_symbol_set dest, LL1_symbol_set src){
+    private void merge_set(LL1_symbol_set dest, LL1_symbol_set src){
         dest.val.addAll(src.val);
     }
 
-    Boolean merge_set_update(LL1_symbol_set dest, LL1_symbol_set src){
+    private Boolean merge_set_update(LL1_symbol_set dest, LL1_symbol_set src){
         int prev_cnt = dest.val.size();
         dest.val.addAll(src.val);
         return dest.val.size() > prev_cnt;
     }
 
-    void update_first_sub(Integer left, LL1_symbol_set S, LL1_flag iter_flag){
+    private void update_first_sub(Integer left, LL1_symbol_set S, LL1_flag iter_flag){
         LL1_symbol_set S_ = new LL1_symbol_set();
         S_.val.addAll(S.val);
         for(Integer p : S_.val){
@@ -212,7 +212,7 @@ public class Process {
         }
     }
 
-    void update_first(){
+    private void update_first(){
         LL1_flag iter_flag = new LL1_flag(true);
         while(iter_flag.val){
             iter_flag.val = false;
@@ -225,7 +225,7 @@ public class Process {
         }
     }
 
-    void resolve_follow_pending_expr(Integer left, LL1_expr expr){
+    private void resolve_follow_pending_expr(Integer left, LL1_expr expr){
         List<LL1_pair> V = expr.val;
         ListIterator<LL1_pair> i = V.listIterator();
         while(i.hasNext()){
@@ -257,13 +257,13 @@ public class Process {
         }
     }
 
-    void resolve_follow_pending(Integer left, LL1_expr_list expr_list){
+    private void resolve_follow_pending(Integer left, LL1_expr_list expr_list){
         for(LL1_expr expr : expr_list.val){
             resolve_follow_pending_expr(left, expr);
         }
     }
 
-    void update_follow_sub(Integer left, LL1_symbol_set S, LL1_flag iter_flag){
+    private void update_follow_sub(Integer left, LL1_symbol_set S, LL1_flag iter_flag){
         for(Integer s : S.val){
             if(merge_set_update(Follow_Map.val.get(left), Follow_Map.val.get(s))){
                 iter_flag.val = true;
@@ -271,7 +271,7 @@ public class Process {
         }
     }
 
-    void update_follow(){
+    private void update_follow(){
         LL1_flag iter_flag = new LL1_flag(true);
         while(iter_flag.val){
             iter_flag.val = false;
@@ -281,7 +281,7 @@ public class Process {
         }
     }
 
-    void resolve_select_expr(LL1_expr_select_list V, Integer left, LL1_expr expr){
+    private void resolve_select_expr(LL1_expr_select_list V, Integer left, LL1_expr expr){
         LL1_symbol_set S = new LL1_symbol_set();
         boolean can_reach_empty = true;
         for(LL1_pair p : expr.val){
@@ -305,7 +305,7 @@ public class Process {
         V.val.add(new LL1_expr_select(expr, S));
     }
 
-    void resolve_select_rule(Integer left, LL1_expr_list expr_list){
+    private void resolve_select_rule(Integer left, LL1_expr_list expr_list){
         LL1_expr_select_list tmp = new LL1_expr_select_list();
         for(LL1_expr expr : expr_list.val){
             resolve_select_expr(tmp, left, expr);
@@ -313,7 +313,7 @@ public class Process {
         Select_Map.val.put(left, tmp);
     }
 
-    Boolean check_LL1(){
+    private Boolean check_LL1(){
         for(Map.Entry<Integer, LL1_expr_select_list> pi : Select_Map.val.entrySet()){
             LL1_symbol_set S_cnt = new LL1_symbol_set();
             Set<Integer> S_cnt_v = S_cnt.val;
