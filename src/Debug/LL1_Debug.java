@@ -3,7 +3,7 @@ package Debug;
 import Grammar.Simple_Read.FileIO;
 import Grammar.Simple_Read.IO;
 import Grammar.LL1.Process;
-import Grammar.LL1.Process.Types.*;
+import Grammar.LL1.Types.*;
 import Grammar.Types.*;
 import java.io.File;
 import java.util.Map;

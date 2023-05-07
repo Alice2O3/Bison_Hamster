@@ -3,7 +3,7 @@ package Debug;
 import Grammar.LL1.Process;
 import Grammar.Process_Lexing.*;
 import Grammar.Types.*;
-import Grammar.LL1.Process.Types.*;
+import Grammar.LL1.Types.*;
 
 public class LL1_analyze_Debug {
     static String input_path = "Compile_Test/LL1_table_test/Easy_C.txt";
@@ -19,7 +19,7 @@ public class LL1_analyze_Debug {
         StringBuilder sb = new StringBuilder();
         sb.append(workflow.getSymbolInfo());
         sb.append("\nRule_Table:\n");
-        sb.append(Convert.LL1_List_to_str_full(workflow.getLL1List()));
+        sb.append(Convert.Grammar_List_to_str_full(workflow.getLL1List()));
         sb.append("\n");
         Grammar_list V = workflow.getLL1List();
         Process ll1 = new Process();
@@ -28,7 +28,7 @@ public class LL1_analyze_Debug {
             return;
         }
         Resolve_Exception e2 = ll1.resolve_LL1_table();
-        if(e2 == Process.Types.Resolve_Exception.HAS_LEFT_RECURSION){
+        if(e2 == Resolve_Exception.HAS_LEFT_RECURSION){
             System.out.print("\nGrammar has left recursion!\n");
             return;
         }

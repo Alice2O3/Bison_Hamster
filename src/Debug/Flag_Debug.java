@@ -1,6 +1,6 @@
 package Debug;
 
-import Grammar.LL1.Process.Types.LL1_flag;
+import Grammar.LL1.Types.LL1_flag;
 
 import java.util.Arrays;
 import java.util.List;

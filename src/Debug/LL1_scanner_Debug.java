@@ -21,7 +21,7 @@ public class LL1_scanner_Debug {
         sb.append("\n");
         sb.append(workflow.getSymbolInfo());
         sb.append("\n");
-        sb.append(Convert.LL1_List_to_str(workflow.getLL1List()));
+        sb.append(Convert.Grammar_List_to_str(workflow.getLL1List()));
         String ret = sb.toString();
         System.out.print(ret);
         filesystem.FileIO.writeFile(ret, output_path);

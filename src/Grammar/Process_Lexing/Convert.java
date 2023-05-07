@@ -3,7 +3,7 @@ package Grammar.Process_Lexing;
 import Grammar.Types.*;
 
 public class Convert {
-    public static String LL1_List_to_str_full(Grammar_list grammar_list){
+    public static String Grammar_List_to_str_full(Grammar_list grammar_list){
         StringBuilder ret = new StringBuilder();
         for(Grammar_rule rule : grammar_list.val){
             ret.append(String.format("<%d> -> ", rule.first));
@@ -33,7 +33,7 @@ public class Convert {
         return ret.toString();
     }
 
-    public static String LL1_List_to_str(Grammar_list grammar_list){
+    public static String Grammar_List_to_str(Grammar_list grammar_list){
         StringBuilder ret = new StringBuilder();
         for(Grammar_rule rule : grammar_list.val){
             ret.append(String.format("<%d> -> ", rule.first));

@@ -5,12 +5,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="65ce0729-d834-4110-97ea-b236a93b5951" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/Grammar/LL1/Types.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/cflex/DFA_node.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cflex/DFA_node.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/cflex/callback/DFA_callback.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cflex/callback/DFA_callback.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/cflex/callback/DFA_callback_demo.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/cflex/callback/Util.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/filesystem/FileIO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/filesystem/FileIO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Compile_Test/LL1_scanner_test/Easy_C.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Compile_Test/LL1_scanner_test/Easy_C.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Compile_Test/LL1_scanner_test/Easy_C_Scanner.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Debug/Flag_Debug.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Debug/Flag_Debug.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Debug/LL1_Debug.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Debug/LL1_Debug.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Debug/LL1_analyze_Debug.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Debug/LL1_analyze_Debug.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Debug/LL1_scanner_Debug.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Debug/LL1_scanner_Debug.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Grammar/LL1/Process.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Grammar/LL1/Process.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Grammar/Process_Lexing/Convert.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Grammar/Process_Lexing/Convert.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Grammar/Process_Lexing/Render.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Grammar/Process_Lexing/Render.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -157,6 +162,7 @@
       <workItem from="1683389914106" duration="138000" />
       <workItem from="1683437692532" duration="641000" />
       <workItem from="1683438742255" duration="286000" />
+      <workItem from="1683442879934" duration="419000" />
     </task>
     <servers />
   </component>

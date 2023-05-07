@@ -1,7 +1,7 @@
 package Grammar.Process_Lexing;
 
 import Grammar.LL1.Process;
-import Grammar.LL1.Process.Types.*;
+import Grammar.LL1.Types.*;
 import Grammar.Types.*;
 
 import java.util.Map;
@@ -44,9 +44,9 @@ public class Render {
 
     public static String LL1_Table_Render(Process ll1, Integer table_space){
         StringBuilder sb = new StringBuilder();
-        Process.Types.LL1_expr_pair_list expr_pair_index = ll1.get_expr_pair_index();
-        Process.Types.LL1_symbol_set terminal_set = ll1.get_terminals();
-        Process.Types.LL1_table LL1_Table = ll1.get_LL1_table();
+        LL1_expr_pair_list expr_pair_index = ll1.get_expr_pair_index();
+        LL1_symbol_set terminal_set = ll1.get_terminals();
+        LL1_table LL1_Table = ll1.get_LL1_table();
         sb.append(str_align("LL1 Table", table_space));
         for(Integer s : terminal_set.val){
             if(s.equals(ll1.get_end_tag())){
@@ -56,13 +56,13 @@ public class Render {
             }
         }
         sb.append("\n");
-        for(Map.Entry<Integer, Process.Types.LL1_symbol_index> pi: LL1_Table.val.entrySet()){
+        for(Map.Entry<Integer, LL1_symbol_index> pi: LL1_Table.val.entrySet()){
             sb.append(str_align(String.format("<%d>", pi.getKey()), table_space));
-            Process.Types.LL1_symbol_index S = pi.getValue();
+            LL1_symbol_index S = pi.getValue();
             for(Integer pj : terminal_set.val){
                 if(S.val.containsKey(pj)){
                     Integer ind = S.val.get(pj);
-                    Process.Types.LL1_expr_pair expr_pair = expr_pair_index.val.get(ind);
+                    LL1_expr_pair expr_pair = expr_pair_index.val.get(ind);
                     sb.append(str_align(expr_pair_to_str(expr_pair), table_space));
                 }
                 else {
