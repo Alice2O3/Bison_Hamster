@@ -1,16 +1,16 @@
-package LL1.Simple_Read;
+package Grammar.Simple_Read;
 
-import LL1.Types.*;
+import Grammar.Types.*;
 import java.util.List;
 
 public class IO {
-    private static void push_vec(LL1_rule V){
-        V.second.val.add(new LL1_expr());
+    private static void push_vec(Grammar_rule V){
+        V.second.val.add(new Grammar_expr());
     }
 
-    private static void push_char(LL1_rule V, Character c, boolean is_terminal){
-        List<LL1_expr> l = V.second.val;
-        l.get(l.size() - 1).val.add(new LL1_pair(is_terminal, (int)c));
+    private static void push_char(Grammar_rule V, Character c, boolean is_terminal){
+        List<Grammar_expr> l = V.second.val;
+        l.get(l.size() - 1).val.add(new Grammar_pair(is_terminal, (int)c));
     }
 
     private static Boolean is_non_terminal(Character c){
@@ -57,8 +57,8 @@ public class IO {
         OR
     }
 
-    public static LL1_rule str_to_vec(String s){
-        LL1_rule V = new LL1_rule();
+    public static Grammar_rule str_to_vec(String s){
+        Grammar_rule V = new Grammar_rule();
         String s_ = s + "#";
         States flag = States.LEFT;
         for (Character tmp : s_.toCharArray())
@@ -216,7 +216,7 @@ public class IO {
         return V;
     }
 
-    public static String vec_to_str(LL1_rule V){
+    public static String vec_to_str(Grammar_rule V){
         Integer first = V.first;
         if (first == -1) {
             return "<ERR>";
@@ -224,16 +224,16 @@ public class IO {
         StringBuilder ret = new StringBuilder();
         ret.append(Character.toChars(first));
         ret.append(" -> ");
-        List<LL1_expr> Vs = V.second.val;
+        List<Grammar_expr> Vs = V.second.val;
         int i = 0;
         int num = Vs.size();
-        for (LL1_expr pi : Vs) {
-            List<LL1_pair> Vj = pi.val;
+        for (Grammar_expr pi : Vs) {
+            List<Grammar_pair> Vj = pi.val;
             if(Vj.isEmpty()){
                 ret.append("@");
             }
             else{
-                for(LL1_pair pj : Vj){
+                for(Grammar_pair pj : Vj){
                     ret.append(Character.toChars(pj.second));
                 }
             }

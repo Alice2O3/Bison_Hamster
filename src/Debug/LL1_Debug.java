@@ -1,10 +1,10 @@
 package Debug;
 
-import LL1.Simple_Read.FileIO;
-import LL1.Simple_Read.IO;
-import LL1.Process;
-import LL1.Process.Types.*;
-import LL1.Types.*;
+import Grammar.Simple_Read.FileIO;
+import Grammar.Simple_Read.IO;
+import Grammar.LL1.Process;
+import Grammar.LL1.Process.Types.*;
+import Grammar.Types.*;
 import java.io.File;
 import java.util.Map;
 
@@ -39,12 +39,12 @@ public class LL1_Debug {
         StringBuilder sb = new StringBuilder();
         sb.append(int_to_str(expr_pair.first));
         sb.append(" -> ");
-        LL1_expr expr = expr_pair.second;
+        Grammar_expr expr = expr_pair.second;
         if(expr.val.isEmpty()){
             sb.append(empty_tag);
         }
         else {
-            for(LL1_pair pk : expr.val){
+            for(Grammar_pair pk : expr.val){
                 sb.append(int_to_str(pk.second));
             }
         }
@@ -52,12 +52,12 @@ public class LL1_Debug {
     }
 
     public static void get_LL1_table_test(){
-        LL1_list V = FileIO.read_from_file(new File(input_file));
+        Grammar_list V = FileIO.read_from_file(new File(input_file));
         if(V == null){
             System.out.print("\nInput Error!\n");
             return;
         }
-        for(LL1_rule rule : V.val){
+        for(Grammar_rule rule : V.val){
             System.out.printf("%s\n", IO.vec_to_str(rule));
         }
         Process ll1 = new Process();

@@ -5,39 +5,24 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="65ce0729-d834-4110-97ea-b236a93b5951" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Debug/LL1_analyze_Debug.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/LL1/Process_Lexing/Convert.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/LL1/Process_Lexing/Render.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/LL1/Process_Lexing/Workflow.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/LL1/Tokens.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Scanner/IScanner.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Scanner/Rule_Scanner.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Grammar/Types.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Compile_Test/LL1_table_test/get_LL1_table_test.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Compile_Test/LL1_table_test/output.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Compile_Test/LL1_table_test/Example_LL1_Table.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Compile_Test/LL1_table_test/Example_LL1_Table.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Debug/File_Debug.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Debug/File_Debug.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Debug/Flag_Debug.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Debug/Flag_Debug.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Debug/LL1_Debug.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Debug/LL1_Debug.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Debug/LL1_analyze_Debug.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Debug/LL1_analyze_Debug.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Debug/LL1_scanner_Debug.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Debug/LL1_scanner_Debug.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Debug/Rule_Debug.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Debug/Rule_Debug.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/LL1/FileIO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/LL1/Simple_Read/FileIO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/LL1/IO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/LL1/Simple_Read/IO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/LL1/Process.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/LL1/Process.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/LL1/Types.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/LL1/Types.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Scanner/LL1_scanner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Debug/LL1_scanner_Debug.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/cflex/dfa/DFA.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cflex/DFA.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/cflex/dfa/DFA_edge.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cflex/DFA_edge.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/cflex/dfa/DFA_edgeInterval.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cflex/DFA_edgeInterval.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/cflex/dfa/DFA_event.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cflex/DFA_event.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/cflex/dfa/DFA_lexing.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cflex/DFA_lexing.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/cflex/dfa/DFA_node.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cflex/DFA_node.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/cflex/dfa/callback/DFA_callback.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cflex/callback/DFA_callback.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/cflex/dfa/callback/DFA_callback_demo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cflex/callback/DFA_callback_demo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/cflex/dfa/callback/DFA_callback_fallback.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cflex/callback/DFA_callback_fallback.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/cflex/dfa/callback/ICallback.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cflex/callback/ICallback.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/cflex/dfa/callback/Util.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cflex/callback/Util.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/cflex/filesystem/FileIO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/filesystem/FileIO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/LL1/Process.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Grammar/LL1/Process.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/LL1/Process_Lexing/Convert.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Grammar/Process_Lexing/Convert.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/LL1/Process_Lexing/Render.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Grammar/Process_Lexing/Render.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/LL1/Process_Lexing/Workflow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Grammar/Process_Lexing/Workflow.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/LL1/Simple_Read/FileIO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Grammar/Simple_Read/FileIO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/LL1/Simple_Read/IO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Grammar/Simple_Read/IO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/LL1/Tokens.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Grammar/Tokens.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/LL1/Types.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Scanner/Rule_Scanner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Scanner/Grammar_Scanner.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -77,7 +62,8 @@
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settings.project.statistic.project.settings&quot;
   }
 }</component>
   <component name="RecentsManager">
@@ -85,7 +71,7 @@
       <recent name="Debug" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.LL1_analyze_Debug">
+  <component name="RunManager" selected="Application.LL1_Debug">
     <configuration name="Debug.LL1_scanner_Debug" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Debug.LL1_scanner_Debug" />
       <module name="C_Bison" />
@@ -153,11 +139,9 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.LL1_Debug" />
         <item itemvalue="Application.LL1_analyze_Debug" />
         <item itemvalue="Application.Debug.LL1_scanner_Debug" />
-        <item itemvalue="Application.Debug.LL1_Debug" />
-        <item itemvalue="Application.Debug.File_Debug" />
-        <item itemvalue="Application.Debug.Flag_Debug" />
       </list>
     </recent_temporary>
   </component>
@@ -179,6 +163,11 @@
       <workItem from="1683286758118" duration="1643000" />
       <workItem from="1683360322310" duration="224000" />
       <workItem from="1683361186017" duration="15175000" />
+      <workItem from="1683376746146" duration="76000" />
+      <workItem from="1683376833728" duration="115000" />
+      <workItem from="1683377214225" duration="2476000" />
+      <workItem from="1683389914106" duration="138000" />
+      <workItem from="1683437692532" duration="641000" />
     </task>
     <servers />
   </component>
@@ -195,5 +184,9 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
 </project>

@@ -1,6 +1,6 @@
 package Scanner;
 
-import LL1.Tokens;
+import Grammar.Tokens;
 import cflex.DFA;
 import cflex.DFA_edge;
 import cflex.DFA_edgeInterval;
@@ -10,7 +10,7 @@ import cflex.callback.ICallback;
 
 import java.util.List;
 
-public class Rule_Scanner implements IScanner {
+public class Grammar_Scanner implements IScanner {
 
     private final DFA dfa;
     private static class States {
@@ -33,7 +33,7 @@ public class Rule_Scanner implements IScanner {
             return new DFA_callback.Accept_Keep(token_type);
         }
     }
-    public Rule_Scanner(){
+    public Grammar_Scanner(){
         dfa = new DFA();
         dfa.initSize(States.length);
         //Set Rules

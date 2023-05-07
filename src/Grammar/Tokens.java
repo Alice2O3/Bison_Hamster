@@ -1,4 +1,4 @@
-package LL1;
+package Grammar;
 
 public class Tokens {
     public static final int ESCAPE = 0;

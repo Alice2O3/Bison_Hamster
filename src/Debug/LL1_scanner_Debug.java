@@ -1,7 +1,7 @@
 package Debug;
 
-import LL1.Process_Lexing.Workflow;
-import LL1.Process_Lexing.Convert;
+import Grammar.Process_Lexing.Workflow;
+import Grammar.Process_Lexing.Convert;
 
 public class LL1_scanner_Debug {
     static String input_path = "Compile_Test/LL1_scanner_test/Easy_C.txt";

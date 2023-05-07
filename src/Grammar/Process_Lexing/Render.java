@@ -1,8 +1,8 @@
-package LL1.Process_Lexing;
+package Grammar.Process_Lexing;
 
-import LL1.Process;
-import LL1.Process.Types.*;
-import LL1.Types.*;
+import Grammar.LL1.Process;
+import Grammar.LL1.Process.Types.*;
+import Grammar.Types.*;
 
 import java.util.Map;
 
@@ -30,12 +30,12 @@ public class Render {
     private static String expr_pair_to_str(LL1_expr_pair expr_pair){
         StringBuilder sb = new StringBuilder();
         sb.append(String.format("<%d> -> ", expr_pair.first));
-        LL1_expr expr = expr_pair.second;
+        Grammar_expr expr = expr_pair.second;
         if(expr.val.isEmpty()){
             sb.append(empty_tag);
         }
         else {
-            for(LL1_pair pk : expr.val){
+            for(Grammar_pair pk : expr.val){
                 sb.append(String.format("<%d>", pk.second));
             }
         }

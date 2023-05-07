@@ -1,13 +1,13 @@
 package Debug;
 
-import LL1.Process;
-import LL1.Process_Lexing.*;
-import LL1.Types.*;
-import LL1.Process.Types.*;
+import Grammar.LL1.Process;
+import Grammar.Process_Lexing.*;
+import Grammar.Types.*;
+import Grammar.LL1.Process.Types.*;
 
 public class LL1_analyze_Debug {
-    static String input_path = "Compile_Test/LL1_table_test/Example.txt";
-    static String output_path = "Compile_Test/LL1_table_test/Example_LL1_Table.txt";
+    static String input_path = "Compile_Test/LL1_table_test/Easy_C.txt";
+    static String output_path = "Compile_Test/LL1_table_test/Easy_C_LL1_Table.txt";
 
     public static void main(String[] args) {
         Workflow workflow = new Workflow();
@@ -21,7 +21,7 @@ public class LL1_analyze_Debug {
         sb.append("\nRule_Table:\n");
         sb.append(Convert.LL1_List_to_str_full(workflow.getLL1List()));
         sb.append("\n");
-        LL1_list V = workflow.getLL1List();
+        Grammar_list V = workflow.getLL1List();
         Process ll1 = new Process();
         if(ll1.pre_process(V) != Pre_Process_Exception.NORMAL){
             System.out.print("\nInput Error!\n");
@@ -36,7 +36,7 @@ public class LL1_analyze_Debug {
             System.out.print("\nGrammar is not LL1!\n");
             return;
         }
-        sb.append(Render.LL1_Table_Render(ll1, 24));
+        sb.append(Render.LL1_Table_Render(ll1, 48));
         String ret = sb.toString();
         System.out.print(ret);
         filesystem.FileIO.writeFile(ret, output_path);

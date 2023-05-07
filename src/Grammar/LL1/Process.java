@@ -1,7 +1,7 @@
-package LL1;
+package Grammar.LL1;
 
-import LL1.Types.*;
-import LL1.Process.Types.*;
+import Grammar.Types.*;
+import Grammar.LL1.Process.Types.*;
 
 import java.util.*;
 
@@ -12,7 +12,7 @@ public class Process {
         }
 
         public static class LL1_expr_map{
-            public Map<Integer, LL1_expr_list> val = new HashMap<>();
+            public Map<Integer, Grammar_expr_list> val = new HashMap<>();
         }
 
         public static class LL1_symbol_map{
@@ -31,9 +31,9 @@ public class Process {
         }
 
         public static class LL1_expr_select{
-            public LL1_expr first;
+            public Grammar_expr first;
             public LL1_symbol_set second;
-            public LL1_expr_select(LL1_expr first_, LL1_symbol_set second_){
+            public LL1_expr_select(Grammar_expr first_, LL1_symbol_set second_){
                 first = first_;
                 second = second_;
             }
@@ -49,8 +49,8 @@ public class Process {
 
         public static class LL1_expr_pair{
             public Integer first;
-            public LL1_expr second;
-            public LL1_expr_pair(Integer first_, LL1_expr second_){
+            public Grammar_expr second;
+            public LL1_expr_pair(Integer first_, Grammar_expr second_){
                 first = first_;
                 second = second_;
             }
@@ -97,16 +97,16 @@ public class Process {
     private final LL1_symbol_map Follow_Map = new LL1_symbol_map();
     private final LL1_expr_select_list_map Select_Map = new LL1_expr_select_list_map();
 
-    //LL1 Table
+    //Grammar.LL1 Table
     private final LL1_expr_pair_list Expr_Pair_Index = new LL1_expr_pair_list();
     private final LL1_table LL1_Table = new LL1_table();
 
-    private void append_rule(LL1_expr_list dest, LL1_expr_list src){
+    private void append_rule(Grammar_expr_list dest, Grammar_expr_list src){
         dest.val.addAll(src.val);
     }
 
-    private void collect_symbols_expr(LL1_expr expr){
-        for(LL1_pair p : expr.val){
+    private void collect_symbols_expr(Grammar_expr expr){
+        for(Grammar_pair p : expr.val){
             if(p.first){
                 Terminal_Set.val.add(p.second);
             } else {
@@ -115,21 +115,21 @@ public class Process {
         }
     }
 
-    private void collect_symbols_rule(Integer s, LL1_expr_list e_list){
+    private void collect_symbols_rule(Integer s, Grammar_expr_list e_list){
         Non_Terminal_Set.val.add(s);
-        for(LL1_expr e : e_list.val){
+        for(Grammar_expr e : e_list.val){
             collect_symbols_expr(e);
         }
     }
 
     private void collect_symbols(){
-        for(Map.Entry<Integer, LL1_expr_list> e : Non_Terminal_Map.val.entrySet()){
+        for(Map.Entry<Integer, Grammar_expr_list> e : Non_Terminal_Map.val.entrySet()){
             collect_symbols_rule(e.getKey(), e.getValue());
         }
     }
 
-    private Boolean has_terminals(LL1_expr expr){
-        for(LL1_pair p : expr.val){
+    private Boolean has_terminals(Grammar_expr expr){
+        for(Grammar_pair p : expr.val){
             if(p.first){
                 return true;
             }
@@ -137,10 +137,10 @@ public class Process {
         return false;
     }
 
-    private LL1_rule filter_terminal_rule(Integer rule_first, LL1_expr_list rule_second){
-        LL1_rule ret = new LL1_rule();
+    private Grammar_rule filter_terminal_rule(Integer rule_first, Grammar_expr_list rule_second){
+        Grammar_rule ret = new Grammar_rule();
         ret.first = rule_first;
-        for(LL1_expr expr : rule_second.val){
+        for(Grammar_expr expr : rule_second.val){
             if(!has_terminals(expr)){
                 ret.second.val.add(expr);
             }
@@ -148,8 +148,8 @@ public class Process {
         return ret;
     }
 
-    private void resolve_reach_empty_expr(Integer left, LL1_expr expr, LL1_flag iter_flag){
-        for(LL1_pair p : expr.val){
+    private void resolve_reach_empty_expr(Integer left, Grammar_expr expr, LL1_flag iter_flag){
+        for(Grammar_pair p : expr.val){
             if(!Reach_Empty_Map.val.get(p.second).val){
                 return;
             }
@@ -158,17 +158,17 @@ public class Process {
         iter_flag.val = true;
     }
 
-    private void resolve_reach_empty_rule(Integer left, LL1_expr_list expr_list, LL1_flag iter_flag){
+    private void resolve_reach_empty_rule(Integer left, Grammar_expr_list expr_list, LL1_flag iter_flag){
         if(Reach_Empty_Map.val.get(left).val){
             return;
         }
-        for(LL1_expr e : expr_list.val){
+        for(Grammar_expr e : expr_list.val){
             resolve_reach_empty_expr(left, e, iter_flag);
         }
     }
 
-    private void resolve_first_pending_expr(LL1_symbol_set S, Integer left, LL1_expr expr){
-        for(LL1_pair p : expr.val){
+    private void resolve_first_pending_expr(LL1_symbol_set S, Integer left, Grammar_expr expr){
+        for(Grammar_pair p : expr.val){
             Integer s = p.second;
             if(p.first){
                 First_Map.val.get(left).val.add(s);
@@ -181,10 +181,10 @@ public class Process {
         }
     }
 
-    private void resolve_first_pending(Integer left, LL1_expr_list expr_list){
+    private void resolve_first_pending(Integer left, Grammar_expr_list expr_list){
         LL1_symbol_set pending_set = new LL1_symbol_set();
         First_Map.val.put(left, new LL1_symbol_set());
-        for(LL1_expr expr : expr_list.val){
+        for(Grammar_expr expr : expr_list.val){
             resolve_first_pending_expr(pending_set, left, expr);
         }
         First_Pending.val.put(left, pending_set);
@@ -225,18 +225,18 @@ public class Process {
         }
     }
 
-    private void resolve_follow_pending_expr(Integer left, LL1_expr expr){
-        List<LL1_pair> V = expr.val;
-        ListIterator<LL1_pair> i = V.listIterator();
+    private void resolve_follow_pending_expr(Integer left, Grammar_expr expr){
+        List<Grammar_pair> V = expr.val;
+        ListIterator<Grammar_pair> i = V.listIterator();
         while(i.hasNext()){
-            LL1_pair pi = i.next();
+            Grammar_pair pi = i.next();
             if(!pi.first){
                 Integer si = pi.second;
                 LL1_symbol_set S = Follow_Map.val.get(si);
                 boolean flag = true;
-                ListIterator<LL1_pair> j = V.listIterator(i.nextIndex());
+                ListIterator<Grammar_pair> j = V.listIterator(i.nextIndex());
                 while(j.hasNext()){
-                    LL1_pair pj = j.next();
+                    Grammar_pair pj = j.next();
                     Integer sj = pj.second;
                     if(pj.first){
                         S.val.add(sj);
@@ -257,8 +257,8 @@ public class Process {
         }
     }
 
-    private void resolve_follow_pending(Integer left, LL1_expr_list expr_list){
-        for(LL1_expr expr : expr_list.val){
+    private void resolve_follow_pending(Integer left, Grammar_expr_list expr_list){
+        for(Grammar_expr expr : expr_list.val){
             resolve_follow_pending_expr(left, expr);
         }
     }
@@ -281,10 +281,10 @@ public class Process {
         }
     }
 
-    private void resolve_select_expr(LL1_expr_select_list V, Integer left, LL1_expr expr){
+    private void resolve_select_expr(LL1_expr_select_list V, Integer left, Grammar_expr expr){
         LL1_symbol_set S = new LL1_symbol_set();
         boolean can_reach_empty = true;
-        for(LL1_pair p : expr.val){
+        for(Grammar_pair p : expr.val){
             Integer s = p.second;
             if(p.first){
                 S.val.add(s);
@@ -305,9 +305,9 @@ public class Process {
         V.val.add(new LL1_expr_select(expr, S));
     }
 
-    private void resolve_select_rule(Integer left, LL1_expr_list expr_list){
+    private void resolve_select_rule(Integer left, Grammar_expr_list expr_list){
         LL1_expr_select_list tmp = new LL1_expr_select_list();
-        for(LL1_expr expr : expr_list.val){
+        for(Grammar_expr expr : expr_list.val){
             resolve_select_expr(tmp, left, expr);
         }
         Select_Map.val.put(left, tmp);
@@ -332,14 +332,14 @@ public class Process {
     }
 
     //Public Functions
-    public Pre_Process_Exception pre_process(LL1_list V){
+    public Pre_Process_Exception pre_process(Grammar_list V){
         if(V.val.isEmpty()){
             return Pre_Process_Exception.INPUT_ERR;
         }
         Terminal_Set.val.clear();
         Non_Terminal_Set.val.clear();
         Non_Terminal_Map.val.clear();
-        for(LL1_rule rule : V.val){
+        for(Grammar_rule rule : V.val){
             Integer s = rule.first;
             if(s.equals(Error_Tag)){
                 return Pre_Process_Exception.INPUT_ERR;
@@ -348,7 +348,7 @@ public class Process {
                 append_rule(Non_Terminal_Map.val.get(s), rule.second);
             }
             else {
-                LL1_expr_list expr_list = new LL1_expr_list();
+                Grammar_expr_list expr_list = new Grammar_expr_list();
                 append_rule(expr_list, rule.second);
                 Non_Terminal_Map.val.put(s, expr_list);
             }
@@ -364,8 +364,8 @@ public class Process {
 
     public void filter_terminal_expr(){
         Non_Terminal_Map_Filtered.val.clear();
-        for(Map.Entry<Integer, LL1_expr_list> p : Non_Terminal_Map.val.entrySet()){
-            LL1_rule rule = filter_terminal_rule(p.getKey(), p.getValue());
+        for(Map.Entry<Integer, Grammar_expr_list> p : Non_Terminal_Map.val.entrySet()){
+            Grammar_rule rule = filter_terminal_rule(p.getKey(), p.getValue());
             if(!rule.second.val.isEmpty()){
                 Non_Terminal_Map_Filtered.val.put(rule.first, rule.second);
             }
@@ -380,7 +380,7 @@ public class Process {
         LL1_flag iter_flag = new LL1_flag(true);
         while(iter_flag.val){
             iter_flag.val = false;
-            for(Map.Entry<Integer, LL1_expr_list> p : Non_Terminal_Map_Filtered.val.entrySet()){
+            for(Map.Entry<Integer, Grammar_expr_list> p : Non_Terminal_Map_Filtered.val.entrySet()){
                 resolve_reach_empty_rule(p.getKey(), p.getValue(), iter_flag);
             }
         }
@@ -390,7 +390,7 @@ public class Process {
         resolve_reach_empty();
         First_Map.val.clear();
         First_Pending.val.clear();
-        for(Map.Entry<Integer, LL1_expr_list> p : Non_Terminal_Map.val.entrySet()){
+        for(Map.Entry<Integer, Grammar_expr_list> p : Non_Terminal_Map.val.entrySet()){
             resolve_first_pending(p.getKey(), p.getValue());
         }
         update_first();
@@ -409,13 +409,13 @@ public class Process {
         }
         Follow_Map.val.clear();
         Follow_Pending.val.clear();
-        for(Map.Entry<Integer, LL1_expr_list> p : Non_Terminal_Map.val.entrySet()){
+        for(Map.Entry<Integer, Grammar_expr_list> p : Non_Terminal_Map.val.entrySet()){
             Integer left = p.getKey();
             Follow_Map.val.put(left, new LL1_symbol_set());
             Follow_Pending.val.put(left, new LL1_symbol_set());
         }
         Follow_Map.val.get(Start_Symbol).val.add(End_Tag);
-        for(Map.Entry<Integer, LL1_expr_list> p : Non_Terminal_Map.val.entrySet()){
+        for(Map.Entry<Integer, Grammar_expr_list> p : Non_Terminal_Map.val.entrySet()){
             resolve_follow_pending(p.getKey(), p.getValue());
         }
         update_follow();
@@ -428,7 +428,7 @@ public class Process {
             return e;
         }
         Select_Map.val.clear();
-        for(Map.Entry<Integer, LL1_expr_list> p : Non_Terminal_Map.val.entrySet()){
+        for(Map.Entry<Integer, Grammar_expr_list> p : Non_Terminal_Map.val.entrySet()){
             resolve_select_rule(p.getKey(), p.getValue());
         }
         if(!check_LL1()){
@@ -449,7 +449,7 @@ public class Process {
             Integer left = pi.getKey();
             LL1_symbol_index S = new LL1_symbol_index();
             for(LL1_expr_select pj : pi.getValue().val){
-                LL1_expr expr = pj.first;
+                Grammar_expr expr = pj.first;
                 Expr_Pair_Index.val.add(new LL1_expr_pair(left, expr));
                 for(Integer pk : pj.second.val){
                     S.val.put(pk, cnt);

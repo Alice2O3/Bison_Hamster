@@ -1,8 +1,8 @@
-package LL1.Process_Lexing;
+package Grammar.Process_Lexing;
 
 import Scanner.*;
-import LL1.Types.*;
-import LL1.Tokens;
+import Grammar.Types.*;
+import Grammar.Tokens;
 import cflex.DFA_lexing;
 
 import java.util.ArrayList;
@@ -29,9 +29,9 @@ public class Workflow {
     private final Map<String, Integer> Non_Terminal_Map = new HashMap<>();
     private final List<String> Symbol_Index = new ArrayList<>();
     private Integer Symbol_cnt = 0;
-    private final LL1_list LL1_List = new LL1_list();
-    public LL1_list getLL1List(){
-        return LL1_List;
+    private final Grammar_list Grammar_List = new Grammar_list();
+    public Grammar_list getLL1List(){
+        return Grammar_List;
     }
     private void data_clear(){
         Symbol_cnt = 0;
@@ -60,8 +60,8 @@ public class Workflow {
     }
     public Process_Exception process_tokens(List<DFA_lexing> lexing_list){ //true: Success, false: Error
         data_clear();
-        LL1_rule rule = new LL1_rule();
-        LL1_expr expr = new LL1_expr();
+        Grammar_rule rule = new Grammar_rule();
+        Grammar_expr expr = new Grammar_expr();
         for(DFA_lexing lexing : lexing_list){
             //System.out.printf("<'%s', %s>\n", lexing.token, Tokens.Map[lexing.token_type]);
             //Record the tokens
@@ -86,11 +86,11 @@ public class Workflow {
                     break;
                 case RIGHT_START:
                     if (token_type == Tokens.TERMINAL) {
-                        expr.val.add(new LL1_pair(true, Symbol_Map.get(token)));
+                        expr.val.add(new Grammar_pair(true, Symbol_Map.get(token)));
                         current_state = States.EXPRESSION;
                     }
                     else if (token_type == Tokens.NON_TERMINAL){
-                        expr.val.add(new LL1_pair(false, Symbol_Map.get(token)));
+                        expr.val.add(new Grammar_pair(false, Symbol_Map.get(token)));
                         current_state = States.EXPRESSION;
                     }
                     else if (token_type == Tokens.EMPTY){
@@ -103,19 +103,19 @@ public class Workflow {
                 case OR:
                     if (token_type == Tokens.TERMINAL) {
                         rule.second.val.add(expr);
-                        expr = new LL1_expr();
-                        expr.val.add(new LL1_pair(true, Symbol_Map.get(token)));
+                        expr = new Grammar_expr();
+                        expr.val.add(new Grammar_pair(true, Symbol_Map.get(token)));
                         current_state = States.EXPRESSION;
                     }
                     else if (token_type == Tokens.NON_TERMINAL){
                         rule.second.val.add(expr);
-                        expr = new LL1_expr();
-                        expr.val.add(new LL1_pair(false, Symbol_Map.get(token)));
+                        expr = new Grammar_expr();
+                        expr.val.add(new Grammar_pair(false, Symbol_Map.get(token)));
                         current_state = States.EXPRESSION;
                     }
                     else if (token_type == Tokens.EMPTY){
                         rule.second.val.add(expr);
-                        expr = new LL1_expr();
+                        expr = new Grammar_expr();
                         current_state = States.EMPTY;
                     }
                     else {
@@ -124,19 +124,19 @@ public class Workflow {
                     break;
                 case EXPRESSION:
                     if (token_type == Tokens.TERMINAL) {
-                        expr.val.add(new LL1_pair(true, Symbol_Map.get(token)));
+                        expr.val.add(new Grammar_pair(true, Symbol_Map.get(token)));
                     }
                     else if (token_type == Tokens.NON_TERMINAL){
-                        expr.val.add(new LL1_pair(false, Symbol_Map.get(token)));
+                        expr.val.add(new Grammar_pair(false, Symbol_Map.get(token)));
                     }
                     else if (token_type == Tokens.OR){
                         current_state = States.OR;
                     }
                     else if (token_type == Tokens.ESCAPE){
                         rule.second.val.add(expr);
-                        LL1_List.val.add(rule);
-                        rule = new LL1_rule();
-                        expr = new LL1_expr();
+                        Grammar_List.val.add(rule);
+                        rule = new Grammar_rule();
+                        expr = new Grammar_expr();
                         current_state = States.LEFT;
                     }
                     else {
@@ -149,9 +149,9 @@ public class Workflow {
                     }
                     else if (token_type == Tokens.ESCAPE){
                         rule.second.val.add(expr);
-                        LL1_List.val.add(rule);
-                        rule = new LL1_rule();
-                        expr = new LL1_expr();
+                        Grammar_List.val.add(rule);
+                        rule = new Grammar_rule();
+                        expr = new Grammar_expr();
                         current_state = States.LEFT;
                     }
                     else {
@@ -164,7 +164,7 @@ public class Workflow {
     }
 
     public Process_Exception process_text(String text){
-        return process_tokens(new Rule_Scanner().scan(text));
+        return process_tokens(new Grammar_Scanner().scan(text));
     }
 
     public String getSymbolInfo(){
