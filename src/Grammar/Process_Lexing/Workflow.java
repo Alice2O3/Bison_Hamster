@@ -3,7 +3,7 @@ package Grammar.Process_Lexing;
 import Scanner.*;
 import Grammar.Types.*;
 import Grammar.Tokens;
-import cflex.DFA_lexing;
+import Cflex.DFA_lexing;
 
 import java.util.ArrayList;
 import java.util.HashMap;

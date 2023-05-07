@@ -1,0 +1,16 @@
+E -> TZ
+Z -> +TZ | -TZ | @
+T -> PY
+Y -> *PY | /PY | @
+P -> FX
+X -> ^FX | @
+F -> -F | +F | a | (E)
+
+   LL1 Table           #               a               (               )               *               +               -               ^               /        
+       P               -            P -> FX         P -> FX            -               -            P -> FX         P -> FX            -               -        
+       T               -            T -> PY         T -> PY            -               -            T -> PY         T -> PY            -               -        
+       E               -            E -> TZ         E -> TZ            -               -            E -> TZ         E -> TZ            -               -        
+       F               -             F -> a         F -> (E)           -               -            F -> +F         F -> -F            -               -        
+       X             X -> @            -               -             X -> @          X -> @          X -> @          X -> @         X -> ^FX         X -> @     
+       Y             Y -> @            -               -             Y -> @         Y -> *PY         Y -> @          Y -> @            -            Y -> /PY    
+       Z             Z -> @            -               -             Z -> @            -            Z -> +TZ        Z -> -TZ           -               -        

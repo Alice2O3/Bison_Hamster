@@ -1,4 +1,4 @@
-package cflex;
+package Cflex;
 
 public class DFA_lexing {
     public Integer l_index_global;

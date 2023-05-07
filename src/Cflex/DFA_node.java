@@ -1,6 +1,6 @@
-package cflex;
+package Cflex;
 
-import cflex.callback.DFA_callback_fallback;
+import Cflex.callback.DFA_callback_fallback;
 
 import java.util.HashMap;
 import java.util.Map;

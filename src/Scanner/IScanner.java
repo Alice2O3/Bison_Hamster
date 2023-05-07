@@ -1,6 +1,6 @@
 package Scanner;
 
-import cflex.DFA_lexing;
+import Cflex.DFA_lexing;
 
 import java.util.List;
 

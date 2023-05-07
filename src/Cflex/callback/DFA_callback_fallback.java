@@ -1,7 +1,7 @@
-package cflex.callback;
+package Cflex.callback;
 
-import cflex.DFA;
-import cflex.DFA_event;
+import Cflex.DFA;
+import Cflex.DFA_event;
 
 public class DFA_callback_fallback implements ICallback{
     @Override

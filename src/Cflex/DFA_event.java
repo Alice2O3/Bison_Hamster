@@ -1,6 +1,6 @@
-package cflex;
+package Cflex;
 
-import cflex.callback.ICallback;
+import Cflex.callback.ICallback;
 
 public class DFA_event {
     private Character c;

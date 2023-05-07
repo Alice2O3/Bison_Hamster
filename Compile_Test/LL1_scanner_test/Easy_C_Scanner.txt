@@ -1,0 +1,76 @@
+prog -> prog_start_p EOF
+prog_start_p -> prog_start | @
+prog_start -> statement statement_p
+statement_p -> statement statement_p | @
+expression -> atom infix_expression
+infix_expression -> operator_expression | assign_expression | @
+operator_expression -> expression_operator expression
+assign_expression -> assign_operator expression
+atom -> const | Identifier
+const -> Integer
+statement -> block_statement | simple_statement
+simple_statement -> declare_statement | expression_statement | if_statement | loop_statement | return_statement
+block_statement -> Left_big_bracket statement_p Right_big_bracket statement_end_p
+statement_end_p -> Statement_end | @
+declare_statement -> identifier_declare_statement | type_func Identifier fuction_declare
+identifier_declare_statement -> type Identifier identifier_declare_statement_p
+identifier_declare_statement_p -> fuction_declare | identifier_declare_statement_assign | Statement_end
+identifier_declare_statement_assign -> declare_operator expression Statement_end
+expression_statement -> expression Statement_end
+fuction_declare -> Left_small_bracket param_list Right_small_bracket block_statement
+param_list -> param param_p
+param_p -> Comma param param_p | @
+param -> type Identifier
+if_statement -> If Left_small_bracket expression Right_small_bracket statement
+loop_statement -> For Left_small_bracket for_expression_l Statement_end for_expression_m Statement_end for_expression_r Right_small_bracket statement
+for_expression_l -> Identifier assign_expression
+for_expression_m -> expression
+for_expression_r -> Identifier assign_expression
+return_statement -> Return expression Statement_end
+type -> Int
+type_func -> Void
+expression_operator -> Plus | Minus | Equalto | Greater | Smaller | GreaterEqual | SmallerEqual
+declare_operator -> Assign
+assign_operator -> Assign | AssignAdd | AssignMinus
+
+Symbols:
+(0, prog), (1, prog_start_p), (2, EOF), (3, prog_start), (4, statement), (5, statement_p), (6, expression), (7, atom), (8, infix_expression), (9, operator_expression), (10, assign_expression), (11, expression_operator), (12, assign_operator), (13, const), (14, Identifier), (15, Integer), (16, block_statement), (17, simple_statement), (18, declare_statement), (19, expression_statement), (20, if_statement), (21, loop_statement), (22, return_statement), (23, Left_big_bracket), (24, Right_big_bracket), (25, statement_end_p), (26, Statement_end), (27, identifier_declare_statement), (28, type_func), (29, fuction_declare), (30, type), (31, identifier_declare_statement_p), (32, identifier_declare_statement_assign), (33, declare_operator), (34, Left_small_bracket), (35, param_list), (36, Right_small_bracket), (37, param), (38, param_p), (39, Comma), (40, If), (41, For), (42, for_expression_l), (43, for_expression_m), (44, for_expression_r), (45, Return), (46, Int), (47, Void), (48, Plus), (49, Minus), (50, Equalto), (51, Greater), (52, Smaller), (53, GreaterEqual), (54, SmallerEqual), (55, Assign), (56, AssignAdd), (57, AssignMinus)
+Terminals:
+(Return, 45), (For, 41), (Statement_end, 26), (SmallerEqual, 54), (Left_big_bracket, 23), (AssignMinus, 57), (AssignAdd, 56), (Int, 46), (Equalto, 50), (Integer, 15), (Comma, 39), (GreaterEqual, 53), (Right_small_bracket, 36), (Identifier, 14), (Left_small_bracket, 34), (Right_big_bracket, 24), (Greater, 51), (Assign, 55), (Smaller, 52), (Void, 47), (Plus, 48), (EOF, 2), (If, 40), (Minus, 49)
+Non_Terminals:
+(const, 13), (identifier_declare_statement_p, 31), (prog_start_p, 1), (operator_expression, 9), (type_func, 28), (for_expression_r, 44), (simple_statement, 17), (param_p, 38), (type, 30), (fuction_declare, 29), (param, 37), (statement, 4), (statement_end_p, 25), (block_statement, 16), (declare_statement, 18), (identifier_declare_statement, 27), (declare_operator, 33), (return_statement, 22), (expression, 6), (expression_statement, 19), (assign_operator, 12), (identifier_declare_statement_assign, 32), (prog, 0), (param_list, 35), (infix_expression, 8), (statement_p, 5), (expression_operator, 11), (if_statement, 20), (loop_statement, 21), (assign_expression, 10), (for_expression_m, 43), (prog_start, 3), (atom, 7), (for_expression_l, 42)
+
+<0> -> <1><2>
+<1> -> <3> | @
+<3> -> <4><5>
+<5> -> <4><5> | @
+<6> -> <7><8>
+<8> -> <9> | <10> | @
+<9> -> <11><6>
+<10> -> <12><6>
+<7> -> <13> | <14>
+<13> -> <15>
+<4> -> <16> | <17>
+<17> -> <18> | <19> | <20> | <21> | <22>
+<16> -> <23><5><24><25>
+<25> -> <26> | @
+<18> -> <27> | <28><14><29>
+<27> -> <30><14><31>
+<31> -> <29> | <32> | <26>
+<32> -> <33><6><26>
+<19> -> <6><26>
+<29> -> <34><35><36><16>
+<35> -> <37><38>
+<38> -> <39><37><38> | @
+<37> -> <30><14>
+<20> -> <40><34><6><36><4>
+<21> -> <41><34><42><26><43><26><44><36><4>
+<42> -> <14><10>
+<43> -> <6>
+<44> -> <14><10>
+<22> -> <45><6><26>
+<30> -> <46>
+<28> -> <47>
+<11> -> <48> | <49> | <50> | <51> | <52> | <53> | <54>
+<33> -> <55>
+<12> -> <55> | <56> | <57>

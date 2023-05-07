@@ -1,8 +1,8 @@
-package cflex.callback;
+package Cflex.callback;
 
-import cflex.DFA;
-import cflex.DFA_event;
-import cflex.DFA_lexing;
+import Cflex.DFA;
+import Cflex.DFA_event;
+import Cflex.DFA_lexing;
 
 public class DFA_callback {
     public static class Escape implements ICallback { //When meeting \n
@@ -14,16 +14,16 @@ public class DFA_callback {
         }
     }
 
-    public static class Escape_Keep implements ICallback { //When meeting \n
+    public static class Escape_Accept implements ICallback { //When meeting \n
         private final Integer token_type;
-        public Escape_Keep(Integer token_type_){
+        public Escape_Accept(Integer token_type_){
             token_type = token_type_;
         }
         public void execute(DFA dfa, DFA_event e) {
             //debugInfo(e);
 
             //System.out.printf("'\\n' detected, using escape method%n");
-            processEscapeKeep(dfa, token_type);
+            processEscapeAccept(dfa, token_type);
         }
     }
 
@@ -82,7 +82,7 @@ public class DFA_callback {
         dfa.line_index++;
     }
 
-    public static void processEscapeKeep(DFA dfa, Integer token_type){
+    public static void processEscapeAccept(DFA dfa, Integer token_type){
         dfa.clearLexeme();
         addTokenInfo(dfa, token_type);
         dfa.gotoInitialState();

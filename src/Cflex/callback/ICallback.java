@@ -1,7 +1,7 @@
-package cflex.callback;
+package Cflex.callback;
 
-import cflex.DFA;
-import cflex.DFA_event;
+import Cflex.DFA;
+import Cflex.DFA_event;
 
 public interface ICallback {
     void execute(DFA dfa, DFA_event e);

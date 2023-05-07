@@ -5,17 +5,31 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="65ce0729-d834-4110-97ea-b236a93b5951" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/Grammar/LL1/Types.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Debug/LL1_Read_Debug.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Debug/LL1_Simple_Debug.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Compile_Test/LL1_scanner_test/Easy_C.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Compile_Test/LL1_scanner_test/Easy_C.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Compile_Test/LL1_scanner_test/Easy_C_Scanner.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Debug/Flag_Debug.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Debug/Flag_Debug.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Debug/LL1_Debug.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Debug/LL1_Debug.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Debug/LL1_analyze_Debug.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Debug/LL1_analyze_Debug.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Debug/LL1_scanner_Debug.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Debug/LL1_scanner_Debug.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Grammar/LL1/Process.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Grammar/LL1/Process.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Grammar/Process_Lexing/Convert.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Grammar/Process_Lexing/Convert.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Grammar/Process_Lexing/Render.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Grammar/Process_Lexing/Render.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Compile_Test/LL1_read_test/output.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Compile_Test/LL1_read_test/output.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Debug/File_Debug.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Debug/LL1_Debug.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Debug/LL1_analyze_Debug.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Debug/LL1_Analyze_Debug.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Debug/LL1_scanner_Debug.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Debug/LL1_Scanner_Debug.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Debug/Rule_Debug.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Grammar/Process_Lexing/Render.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Grammar/LL1/Render.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Grammar/Process_Lexing/Workflow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Grammar/Process_Lexing/Workflow.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Grammar/Simple_Read/FileIO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Grammar/Simple_Read/IO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Grammar/Simple_Read/Workflow.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Scanner/Grammar_Scanner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Scanner/Grammar_Scanner.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Scanner/IScanner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Scanner/IScanner.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/cflex/DFA.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Cflex/DFA.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/cflex/DFA_edge.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Cflex/DFA_edge.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/cflex/DFA_edgeInterval.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Cflex/DFA_edgeInterval.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/cflex/DFA_event.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Cflex/DFA_event.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/cflex/DFA_lexing.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Cflex/DFA_lexing.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/cflex/DFA_node.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Cflex/DFA_node.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/cflex/callback/DFA_callback.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Cflex/callback/DFA_callback.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/cflex/callback/DFA_callback_fallback.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Cflex/callback/DFA_callback_fallback.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/cflex/callback/ICallback.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Cflex/callback/ICallback.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/filesystem/FileIO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Filesystem/FileIO.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -64,34 +78,8 @@
       <recent name="Debug" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.LL1_Debug">
-    <configuration name="Debug.LL1_scanner_Debug" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Debug.LL1_scanner_Debug" />
-      <module name="C_Bison" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="Debug.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="File_Debug" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Debug.File_Debug" />
-      <module name="C_Bison" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="Debug.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="Flag_Debug" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="Application.LL1_Read_Debug">
+    <configuration name="Debug.Flag_Debug" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Debug.Flag_Debug" />
       <module name="C_Bison" />
       <extension name="coverage">
@@ -104,8 +92,8 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="LL1_Debug" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Debug.LL1_Debug" />
+    <configuration name="Debug.LL1_Scanner_Debug" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Debug.LL1_Scanner_Debug" />
       <module name="C_Bison" />
       <extension name="coverage">
         <pattern>
@@ -117,8 +105,34 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="LL1_analyze_Debug" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Debug.LL1_analyze_Debug" />
+    <configuration name="Debug.LL1_Simple_Debug" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Debug.LL1_Simple_Debug" />
+      <module name="C_Bison" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Debug.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="LL1_Analyze_Debug" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Debug.LL1_Analyze_Debug" />
+      <module name="C_Bison" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Debug.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="LL1_Read_Debug" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Debug.LL1_Read_Debug" />
       <module name="C_Bison" />
       <extension name="coverage">
         <pattern>
@@ -132,9 +146,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.LL1_Debug" />
-        <item itemvalue="Application.LL1_analyze_Debug" />
-        <item itemvalue="Application.Debug.LL1_scanner_Debug" />
+        <item itemvalue="Application.LL1_Read_Debug" />
+        <item itemvalue="Application.Debug.Flag_Debug" />
+        <item itemvalue="Application.Debug.LL1_Scanner_Debug" />
+        <item itemvalue="Application.Debug.LL1_Simple_Debug" />
+        <item itemvalue="Application.Debug.LL1_Analyze_Debug" />
       </list>
     </recent_temporary>
   </component>
@@ -163,6 +179,7 @@
       <workItem from="1683437692532" duration="641000" />
       <workItem from="1683438742255" duration="286000" />
       <workItem from="1683442879934" duration="419000" />
+      <workItem from="1683445784215" duration="3111000" />
     </task>
     <servers />
   </component>

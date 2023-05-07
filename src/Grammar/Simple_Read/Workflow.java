@@ -3,7 +3,7 @@ package Grammar.Simple_Read;
 import Grammar.Types.*;
 import java.util.List;
 
-public class IO {
+public class Workflow {
     private static void push_vec(Grammar_rule V){
         V.second.val.add(new Grammar_expr());
     }
@@ -57,8 +57,8 @@ public class IO {
         OR
     }
 
-    public static Grammar_rule str_to_vec(String s){
-        Grammar_rule V = new Grammar_rule();
+    private static Grammar_rule str_to_rule(String s){
+        Grammar_rule rule = new Grammar_rule();
         String s_ = s + "#";
         States flag = States.LEFT;
         for (Character tmp : s_.toCharArray())
@@ -70,10 +70,10 @@ public class IO {
                 }
                 else if (is_non_terminal(tmp)) {
                     flag = States.ARROW;
-                    V.first = (int)tmp;
+                    rule.first = (int)tmp;
                 }
                 else {
-                    V.first = -1;
+                    rule.first = -1;
                     break;
                 }
             }
@@ -85,7 +85,7 @@ public class IO {
                     flag = States.ARROW_2;
                 }
                 else {
-                    V.first = -1;
+                    rule.first = -1;
                     break;
                 }
             }
@@ -94,7 +94,7 @@ public class IO {
                     flag = States.RIGHT_START;
                 }
                 else {
-                    V.first = -1;
+                    rule.first = -1;
                     break;
                 }
             }
@@ -103,21 +103,21 @@ public class IO {
                     continue;
                 }
                 else if (is_empty(tmp)) {
-                    push_vec(V);
+                    push_vec(rule);
                     flag = States.RIGHT_EMPTY;
                 }
                 else if (is_terminal(tmp)) {
-                    push_vec(V);
-                    push_char(V, tmp, true);
+                    push_vec(rule);
+                    push_char(rule, tmp, true);
                     flag = States.RIGHT_STR;
                 }
                 else if (is_non_terminal(tmp)) {
-                    push_vec(V);
-                    push_char(V, tmp, false);
+                    push_vec(rule);
+                    push_char(rule, tmp, false);
                     flag = States.RIGHT_STR;
                 }
                 else {
-                    V.first = -1;
+                    rule.first = -1;
                     break;
                 }
             }
@@ -129,21 +129,21 @@ public class IO {
                     flag = States.OR;
                 }
                 else if (is_empty(tmp)) {
-                    push_vec(V);
+                    push_vec(rule);
                     flag = States.RIGHT_EMPTY;
                 }
                 else if (is_terminal(tmp)) {
-                    push_vec(V);
-                    push_char(V, tmp, true);
+                    push_vec(rule);
+                    push_char(rule, tmp, true);
                     flag = States.RIGHT_STR;
                 }
                 else if (is_non_terminal(tmp)) {
-                    push_vec(V);
-                    push_char(V, tmp, false);
+                    push_vec(rule);
+                    push_char(rule, tmp, false);
                     flag = States.RIGHT_STR;
                 }
                 else {
-                    V.first = -1;
+                    rule.first = -1;
                     break;
                 }
             }
@@ -155,7 +155,7 @@ public class IO {
                     flag = States.OR;
                 }
                 else {
-                    V.first = -1;
+                    rule.first = -1;
                     break;
                 }
             }
@@ -164,16 +164,16 @@ public class IO {
                     flag = States.RIGHT_2;
                 }
                 else if (is_terminal(tmp)) {
-                    push_char(V, tmp, true);
+                    push_char(rule, tmp, true);
                 }
                 else if (is_non_terminal(tmp)) {
-                    push_char(V, tmp, false);
+                    push_char(rule, tmp, false);
                 }
                 else if (is_or(tmp)) {
                     flag = States.OR;
                 }
                 else {
-                    V.first = -1;
+                    rule.first = -1;
                     break;
                 }
             }
@@ -185,7 +185,7 @@ public class IO {
                     flag = States.OR;
                 }
                 else {
-                    V.first = -1;
+                    rule.first = -1;
                     break;
                 }
             }
@@ -194,37 +194,36 @@ public class IO {
                     flag = States.RIGHT;
                 }
                 else if (is_empty(tmp)) {
-                    push_vec(V);
+                    push_vec(rule);
                     flag = States.RIGHT_EMPTY;
                 }
                 else if (is_terminal(tmp)) {
-                    push_vec(V);
-                    push_char(V, tmp, true);
+                    push_vec(rule);
+                    push_char(rule, tmp, true);
                     flag = States.RIGHT_STR;
                 }
                 else if (is_non_terminal(tmp)) {
-                    push_vec(V);
-                    push_char(V, tmp, false);
+                    push_vec(rule);
+                    push_char(rule, tmp, false);
                     flag = States.RIGHT_STR;
                 }
                 else {
-                    V.first = -1;
+                    rule.first = -1;
                     break;
                 }
             }
         }
-        return V;
+        return rule;
     }
 
-    public static String vec_to_str(Grammar_rule V){
-        Integer first = V.first;
+    private static String rule_to_str(Grammar_rule rule){
+        Integer first = rule.first;
         if (first == -1) {
             return "<ERR>";
         }
         StringBuilder ret = new StringBuilder();
-        ret.append(Character.toChars(first));
-        ret.append(" -> ");
-        List<Grammar_expr> Vs = V.second.val;
+        ret.append(Character.toChars(first)).append(" -> ");
+        List<Grammar_expr> Vs = rule.second.val;
         int i = 0;
         int num = Vs.size();
         for (Grammar_expr pi : Vs) {
@@ -243,5 +242,25 @@ public class IO {
             }
         }
         return ret.toString();
+    }
+
+    public static Grammar_list str_to_grammar(String code){
+        Grammar_list ret = new Grammar_list();
+        for(String line : code.split("\n")){
+            Grammar_rule rule = str_to_rule(line);
+            if(rule.first == -1){
+                return null;
+            }
+            ret.val.add(rule);
+        }
+        return ret;
+    }
+
+    public static String grammar_to_str(Grammar_list V){
+        StringBuilder sb = new StringBuilder();
+        for(Grammar_rule rule : V.val){
+            sb.append(rule_to_str(rule)).append("\n");
+        }
+        return sb.toString();
     }
 }

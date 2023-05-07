@@ -1,12 +1,12 @@
 package Scanner;
 
 import Grammar.Tokens;
-import cflex.DFA;
-import cflex.DFA_edge;
-import cflex.DFA_edgeInterval;
-import cflex.DFA_lexing;
-import cflex.callback.DFA_callback;
-import cflex.callback.ICallback;
+import Cflex.DFA;
+import Cflex.DFA_edge;
+import Cflex.DFA_edgeInterval;
+import Cflex.DFA_lexing;
+import Cflex.callback.DFA_callback;
+import Cflex.callback.ICallback;
 
 import java.util.List;
 
@@ -27,7 +27,7 @@ public class Grammar_Scanner implements IScanner {
     private static class Callbacks{
         private static final ICallback ACCEPT = new DFA_callback.Accept();
         private static final ICallback FORWARD = new DFA_callback.Forward();
-        private static final ICallback ESCAPE_KEEP = new DFA_callback.Escape_Keep(Tokens.ESCAPE);
+        private static final ICallback ESCAPE_ACCEPT = new DFA_callback.Escape_Accept(Tokens.ESCAPE);
         private static final ICallback DISCARD_KEEP = new DFA_callback.Discard_Keep();
         private static ICallback KEEP(Integer token_type){
             return new DFA_callback.Accept_Keep(token_type);
@@ -58,7 +58,7 @@ public class Grammar_Scanner implements IScanner {
         dfa.addEdge(new DFA_edgeInterval(States.EMPTY, States.INITIAL, 0, 127, Callbacks.KEEP(Tokens.EMPTY))); //5: EMPTY
 
         //Process Escapes
-        dfa.addEdge(new DFA_edge(States.INITIAL, States.INITIAL, '\n', Callbacks.ESCAPE_KEEP));
+        dfa.addEdge(new DFA_edge(States.INITIAL, States.INITIAL, '\n', Callbacks.ESCAPE_ACCEPT));
     }
 
     private void setIdentifiers(){

@@ -1,4 +1,4 @@
-package filesystem;
+package Filesystem;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
@@ -13,7 +13,7 @@ public class FileIO {
         try (BufferedReader br = new BufferedReader(new FileReader(filePath))) {
             String line;
             while ((line = br.readLine()) != null) {
-                sb.append(line).append(" \n");
+                sb.append(line).append("\n");
             }
         } catch (IOException e) {
             e.printStackTrace();
