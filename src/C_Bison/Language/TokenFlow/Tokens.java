@@ -4,5 +4,6 @@ public class Tokens {
     public static final int TOKEN_STR = 0;
     public static final int LEFT_BRACKET = 1;
     public static final int RIGHT_BRACKET = 2;
-    public static final String[] Map = {"TOKEN_STR", "LEFT_BRACKET", "RIGHT_BRACKET"};
+    public static final int COMMA = 3;
+    public static final int QUOTE = 4;
 }

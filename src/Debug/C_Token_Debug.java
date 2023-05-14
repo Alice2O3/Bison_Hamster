@@ -2,12 +2,12 @@ package Debug;
 
 import Filesystem.FileIO;
 import C_Bison.PreProcess.PreProcess_C;
-import C_Bison.Scanner.C_Scanner;
+import C_Bison.Language.Easy_C.Lexing.Workflow;
 
 public class C_Token_Debug {
     private final static String input_file = "Compile_Test/C_token_test/Example.c";
     private final static String preprocessed_file = "Compile_Test/C_token_test/Example.pp.c";
-    private final static String output_file = "Compile_Test/C_token_test/tokens.txt";
+    private final static String output_file = "Compile_Test/C_token_test/token_flow.txt";
     public static void main(String[] args) {
         //Preprocessing code
         String source_code = FileIO.readFile(input_file);
@@ -24,7 +24,10 @@ public class C_Token_Debug {
             System.out.print("File Read Error!\n");
             return;
         }
-        C_Scanner scanner = new C_Scanner();
-
+        Workflow workflow = new Workflow();
+        workflow.process_code(source_code_2);
+        String token_info = workflow.getTokenInfo();
+        System.out.print(token_info);
+        FileIO.writeFile(token_info, output_file);
     }
 }

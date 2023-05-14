@@ -7,5 +7,4 @@ public class Tokens {
     public static final int ARROW = 3;
     public static final int OR = 4;
     public static final int EMPTY = 5;
-    public static final String[] Map = {"ESCAPE", "TERMINAL", "NON_TERMINAL", "ARROW", "OR", "EMPTY"};
 }

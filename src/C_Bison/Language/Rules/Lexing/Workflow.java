@@ -1,4 +1,4 @@
-package C_Bison.Language.Rules.Process_Lexing;
+package C_Bison.Language.Rules.Lexing;
 
 import C_Bison.Scanner.*;
 import C_Bison.Grammar.Types.*;
@@ -30,7 +30,7 @@ public class Workflow {
     private final List<String> Symbol_Index = new ArrayList<>();
     private Integer Symbol_cnt = 0;
     private final Grammar_list Grammar_List = new Grammar_list();
-    public Grammar_list getLL1List(){
+    public Grammar_list getGrammarList(){
         return Grammar_List;
     }
     private void data_clear(){
@@ -58,7 +58,7 @@ public class Workflow {
             }
         }
     }
-    public Process_Exception process_tokens(List<DFA_lexing> lexing_list){ //true: Success, false: Error
+    private Process_Exception process_tokens(List<DFA_lexing> lexing_list){ //true: Success, false: Error
         data_clear();
         Grammar_rule rule = new Grammar_rule();
         Grammar_expr expr = new Grammar_expr();

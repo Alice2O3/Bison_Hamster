@@ -3,12 +3,12 @@ package Debug;
 import Filesystem.FileIO;
 import C_Bison.Grammar.LL1.Process;
 import C_Bison.Grammar.LL1.Render;
-import C_Bison.Language.Rules.Process_Lexing.*;
+import C_Bison.Language.Rules.Lexing.*;
 import C_Bison.Grammar.Types.*;
 import C_Bison.Grammar.LL1.Types.*;
 
 public class LL1_Analyze_Debug {
-    private static String input_path = "Compile_Test/LL1_table_test/Easy_C.txt";
+    private static String input_path = "Compile_Test/LL1_table_test/Easy_C.bison";
     private static String output_path = "Compile_Test/LL1_table_test/Easy_C_LL1_Table.txt";
 
     public static void main(String[] args) {
@@ -18,12 +18,12 @@ public class LL1_Analyze_Debug {
             System.out.print("\nInput Error!\n");
             return;
         }
+        Grammar_list V = workflow.getGrammarList();
         StringBuilder sb = new StringBuilder();
         sb.append(workflow.getSymbolInfo());
         sb.append("\nRule_Table:\n");
-        sb.append(Convert.Grammar_List_to_str_full(workflow.getLL1List()));
+        sb.append(Convert.Grammar_List_to_str_full(V));
         sb.append("\n");
-        Grammar_list V = workflow.getLL1List();
         Process ll1 = new Process();
         if(ll1.pre_process(V) != Pre_Process_Exception.NORMAL){
             System.out.print("\nInput Error!\n");

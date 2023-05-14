@@ -5,18 +5,20 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="65ce0729-d834-4110-97ea-b236a93b5951" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/C_Flex/callback/Util.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/C_Bison/Language/Easy_C/Lexing/Workflow.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/C_Bison/Grammar/Process_Lexing/Convert.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/C_Bison/Language/Rules/Process_Lexing/Convert.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/C_Bison/Grammar/Process_Lexing/Workflow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/C_Bison/Language/Rules/Process_Lexing/Workflow.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/C_Bison/Grammar/Simple_Read/Workflow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/C_Bison/Language/Rules/Simple_Read/Workflow.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Compile_Test/C_token_test/Tokens_List.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Compile_Test/LL1_scanner_test/Easy_C.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Compile_Test/LL1_table_test/Easy_C.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Compile_Test/LL1_table_test/Example.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/C_Bison/Language/Rules/Process_Lexing/Convert.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/C_Bison/Language/Rules/Lexing/Convert.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/C_Bison/Language/Rules/Process_Lexing/Workflow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/C_Bison/Language/Rules/Lexing/Workflow.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/C_Bison/Language/Rules/Tokens.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/C_Bison/Language/Rules/Tokens.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/C_Bison/Language/TokenFlow/Tokens.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/C_Bison/Language/TokenFlow/Tokens.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/C_Bison/Scanner/C_Scanner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/C_Bison/Scanner/C_Scanner.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/C_Flex/callback/Common.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/C_Flex/callback/Common.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Debug/C_Token_Debug.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Debug/C_Token_Debug.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Debug/LL1_Analyze_Debug.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Debug/LL1_Analyze_Debug.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Debug/LL1_Read_Debug.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Debug/LL1_Read_Debug.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Debug/LL1_Scanner_Debug.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Debug/LL1_Scanner_Debug.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Debug/LL1_Simple_Debug.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Debug/LL1_Simple_Debug.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -65,7 +67,7 @@
       <recent name="Debug" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.C_Token_Debug">
+  <component name="RunManager" selected="Application.Debug.LL1_Scanner_Debug">
     <configuration name="C_Token_Debug" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Debug.C_Token_Debug" />
       <module name="C_Bison" />
@@ -133,11 +135,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Debug.LL1_Scanner_Debug" />
         <item itemvalue="Application.C_Token_Debug" />
         <item itemvalue="Application.LL1_Analyze_Debug" />
         <item itemvalue="Application.Debug.LL1_Simple_Debug" />
         <item itemvalue="Application.LL1_Read_Debug" />
-        <item itemvalue="Application.Debug.LL1_Scanner_Debug" />
       </list>
     </recent_temporary>
   </component>
@@ -173,6 +175,9 @@
       <workItem from="1684050799732" duration="2881000" />
       <workItem from="1684053710905" duration="2642000" />
       <workItem from="1684056844191" duration="1362000" />
+      <workItem from="1684058244103" duration="2232000" />
+      <workItem from="1684060551965" duration="58000" />
+      <workItem from="1684060748351" duration="59000" />
     </task>
     <servers />
   </component>
