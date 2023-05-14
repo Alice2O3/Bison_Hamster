@@ -1,14 +1,15 @@
 package Debug;
 
-import Grammar.Process_Lexing.Workflow;
-import Grammar.Process_Lexing.Convert;
+import Filesystem.FileIO;
+import C_Bison.Grammar.Process_Lexing.Workflow;
+import C_Bison.Grammar.Process_Lexing.Convert;
 
 public class LL1_Scanner_Debug {
     static String input_path = "Compile_Test/LL1_scanner_test/Easy_C.txt";
     static String output_path = "Compile_Test/LL1_scanner_test/Easy_C_Scanner.txt";
 
     public static void main(String[] args) {
-        String code = Filesystem.FileIO.readFile(input_path);
+        String code = FileIO.readFile(input_path);
         //String code = filesystem.FileIO.readFile(input_path);
         if(code == null){
             System.out.print("File Read Error!\n");
@@ -27,6 +28,6 @@ public class LL1_Scanner_Debug {
         sb.append(Convert.Grammar_List_to_str(workflow.getLL1List()));
         String ret = sb.toString();
         System.out.print(ret);
-        Filesystem.FileIO.writeFile(ret, output_path);
+        FileIO.writeFile(ret, output_path);
     }
 }

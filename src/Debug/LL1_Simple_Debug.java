@@ -1,11 +1,11 @@
 package Debug;
 
 import Filesystem.FileIO;
-import Grammar.LL1.Types.*;
-import Grammar.LL1.Process;
-import Grammar.LL1.Render;
-import Grammar.Types.*;
-import Grammar.Simple_Read.Workflow;
+import C_Bison.Grammar.LL1.Types.*;
+import C_Bison.Grammar.LL1.Process;
+import C_Bison.Grammar.LL1.Render;
+import C_Bison.Grammar.Types.*;
+import C_Bison.Grammar.Simple_Read.Workflow;
 
 public class LL1_Simple_Debug {
     private final static String input_file = "Compile_Test/LL1_simple_test/LL1_simple_test.txt";

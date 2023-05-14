@@ -1,7 +1,7 @@
 package Debug;
 
-import Grammar.Types.*;
-import Grammar.Simple_Read.Workflow;
+import C_Bison.Grammar.Types.*;
+import C_Bison.Grammar.Simple_Read.Workflow;
 import Filesystem.FileIO;
 
 public class LL1_Read_Debug {

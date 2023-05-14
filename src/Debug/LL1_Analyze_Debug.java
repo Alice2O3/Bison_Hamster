@@ -1,10 +1,11 @@
 package Debug;
 
-import Grammar.LL1.Process;
-import Grammar.LL1.Render;
-import Grammar.Process_Lexing.*;
-import Grammar.Types.*;
-import Grammar.LL1.Types.*;
+import Filesystem.FileIO;
+import C_Bison.Grammar.LL1.Process;
+import C_Bison.Grammar.LL1.Render;
+import C_Bison.Grammar.Process_Lexing.*;
+import C_Bison.Grammar.Types.*;
+import C_Bison.Grammar.LL1.Types.*;
 
 public class LL1_Analyze_Debug {
     private static String input_path = "Compile_Test/LL1_table_test/Easy_C.txt";
@@ -12,7 +13,7 @@ public class LL1_Analyze_Debug {
 
     public static void main(String[] args) {
         Workflow workflow = new Workflow();
-        Workflow.Process_Exception e1 = workflow.process_text(Filesystem.FileIO.readFile(input_path));
+        Workflow.Process_Exception e1 = workflow.process_text(FileIO.readFile(input_path));
         if(e1 != Workflow.Process_Exception.NORMAL){
             System.out.print("\nInput Error!\n");
             return;
@@ -40,6 +41,6 @@ public class LL1_Analyze_Debug {
         sb.append(Render.LL1_Table_Render(ll1, 48));
         String ret = sb.toString();
         System.out.print(ret);
-        Filesystem.FileIO.writeFile(ret, output_path);
+        FileIO.writeFile(ret, output_path);
     }
 }
