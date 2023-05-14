@@ -22,7 +22,7 @@ Smaller, 19
 Void, 20
 Plus, 21
 EOF, 22
-IF, 23
+If, 23
 Minus, 24
 
 --------
