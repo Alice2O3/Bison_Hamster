@@ -3,7 +3,7 @@ package Debug;
 import Filesystem.FileIO;
 import C_Bison.Grammar.LL1.Process;
 import C_Bison.Grammar.LL1.Render;
-import C_Bison.Grammar.Process_Lexing.*;
+import C_Bison.Language.Rules.Process_Lexing.*;
 import C_Bison.Grammar.Types.*;
 import C_Bison.Grammar.LL1.Types.*;
 

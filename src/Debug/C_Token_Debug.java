@@ -2,6 +2,7 @@ package Debug;
 
 import Filesystem.FileIO;
 import C_Bison.PreProcess.PreProcess_C;
+import C_Bison.Scanner.C_Scanner;
 
 public class C_Token_Debug {
     private final static String input_file = "Compile_Test/C_token_test/Example.c";
@@ -23,6 +24,7 @@ public class C_Token_Debug {
             System.out.print("File Read Error!\n");
             return;
         }
+        C_Scanner scanner = new C_Scanner();
 
     }
 }

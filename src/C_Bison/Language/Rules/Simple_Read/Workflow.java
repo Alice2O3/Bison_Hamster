@@ -1,4 +1,4 @@
-package C_Bison.Grammar.Simple_Read;
+package C_Bison.Language.Rules.Simple_Read;
 
 import C_Bison.Grammar.Types.*;
 import java.util.List;

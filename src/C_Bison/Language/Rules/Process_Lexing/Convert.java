@@ -1,4 +1,4 @@
-package C_Bison.Grammar.Process_Lexing;
+package C_Bison.Language.Rules.Process_Lexing;
 
 import C_Bison.Grammar.Types.*;
 

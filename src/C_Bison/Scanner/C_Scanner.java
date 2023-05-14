@@ -4,10 +4,9 @@ import C_Bison.Language.Easy_C.Tokens;
 import C_Flex.*;
 import C_Flex.callback.Common;
 import C_Flex.callback.ICallback;
+import C_Flex.callback.Util;
 
 import java.util.List;
-
-import static C_Flex.callback.Common.acceptFinishedKeep;
 
 public class C_Scanner implements IScanner {
     private final DFA dfa;
@@ -23,22 +22,22 @@ public class C_Scanner implements IScanner {
         public void execute(DFA dfa, DFA_event e) {
             String lexeme = dfa.getLexeme();
             if(lexeme.equals("if")){
-                acceptFinishedKeep(dfa, Tokens.IF);
+                Util.acceptFinishedKeep(dfa, Tokens.IF);
             }
             else if(lexeme.equals("for")){
-                acceptFinishedKeep(dfa, Tokens.FOR);
+                Util.acceptFinishedKeep(dfa, Tokens.FOR);
             }
             else if(lexeme.equals("return")){
-                acceptFinishedKeep(dfa, Tokens.RETURN);
+                Util.acceptFinishedKeep(dfa, Tokens.RETURN);
             }
             else if(lexeme.equals("int")){
-                acceptFinishedKeep(dfa, Tokens.INT);
+                Util.acceptFinishedKeep(dfa, Tokens.INT);
             }
             else if(lexeme.equals("void")){
-                acceptFinishedKeep(dfa, Tokens.VOID);
+                Util.acceptFinishedKeep(dfa, Tokens.VOID);
             }
             else {
-                acceptFinishedKeep(dfa, Tokens.IDENTIFIER);
+                Util.acceptFinishedKeep(dfa, Tokens.IDENTIFIER);
             }
         }
     }
@@ -59,6 +58,8 @@ public class C_Scanner implements IScanner {
         dfa.initSize(C_Scanner.States.length);
         //Set Rules
         setGeneralRules();
+        setIdentifiers();
+        setIntegers();
     }
 
     @Override
@@ -68,6 +69,24 @@ public class C_Scanner implements IScanner {
     }
 
     private void setGeneralRules(){
+        dfa.addEdge(new DFA_edgeInterval(States.INITIAL, States.INITIAL, 0, 127, Callbacks.FORWARD));
+        dfa.addEdge(new DFA_edgeInterval(States.IDENTIFIER, States.INITIAL, 0, 127, Callbacks.IDENTIFIER_KEEP));
+        dfa.addEdge(new DFA_edgeInterval(States.INTEGER, States.INITIAL, 0, 127, Callbacks.KEEP(Tokens.INTEGER)));
+
         dfa.addEdge(new DFA_edge(States.INITIAL, States.INITIAL, '\n', Callbacks.ESCAPE));
+    }
+
+    private void setIdentifiers(){
+        dfa.addEdge(new DFA_edge(States.INITIAL, States.IDENTIFIER, '_', Callbacks.ACCEPT));
+        dfa.addEdge(new DFA_edgeInterval(States.INITIAL, States.IDENTIFIER, 'A', 'Z', Callbacks.ACCEPT));
+        dfa.addEdge(new DFA_edgeInterval(States.INITIAL, States.IDENTIFIER, 'a', 'z', Callbacks.ACCEPT));
+        dfa.addEdge(new DFA_edge(States.IDENTIFIER, States.IDENTIFIER, '_', Callbacks.ACCEPT));
+        dfa.addEdge(new DFA_edgeInterval(States.IDENTIFIER, States.IDENTIFIER, 'A', 'Z', Callbacks.ACCEPT));
+        dfa.addEdge(new DFA_edgeInterval(States.IDENTIFIER, States.IDENTIFIER, 'a', 'z', Callbacks.ACCEPT));
+    }
+
+    private void setIntegers(){
+        dfa.addEdge(new DFA_edgeInterval(States.INITIAL, States.INTEGER, '1', '9', Callbacks.ACCEPT));
+        dfa.addEdge(new DFA_edgeInterval(States.INTEGER, States.INTEGER, '0', '9', Callbacks.ACCEPT));
     }
 }

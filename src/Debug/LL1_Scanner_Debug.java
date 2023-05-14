@@ -1,8 +1,8 @@
 package Debug;
 
 import Filesystem.FileIO;
-import C_Bison.Grammar.Process_Lexing.Workflow;
-import C_Bison.Grammar.Process_Lexing.Convert;
+import C_Bison.Language.Rules.Process_Lexing.Workflow;
+import C_Bison.Language.Rules.Process_Lexing.Convert;
 
 public class LL1_Scanner_Debug {
     static String input_path = "Compile_Test/LL1_scanner_test/Easy_C.txt";
