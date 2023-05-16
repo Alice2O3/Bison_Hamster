@@ -6,7 +6,7 @@ import C_Flex.Types.*;
 import java.util.List;
 
 public class Convert {
-    public static String Convert_Tokens_to_str(List<DFA_lexing> Token_pair_list){
+    public static String Convert_Tokens_to_str(DFA_lexing_list Token_pair_list){
         StringBuilder sb = new StringBuilder();
         /*
             ["int", Int]
@@ -41,7 +41,7 @@ public class Convert {
             ["}", Right_big_bracket]
             ["EOF", EOF]
         */
-        for(DFA_lexing lexing : Token_pair_list) {
+        for(DFA_lexing lexing : Token_pair_list.val) {
             sb.append("[").append("\"").append(lexing.token).append("\"").append(", ").append(Tokens.Map[lexing.token_type]).append("]\n");
         }
         return sb.toString();

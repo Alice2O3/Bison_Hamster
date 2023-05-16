@@ -5,5 +5,5 @@ import C_Flex.Types.*;
 import java.util.List;
 
 public interface IScanner {
-    List<DFA_lexing> scan(String code);
+    DFA_lexing_list scan(String code);
 }

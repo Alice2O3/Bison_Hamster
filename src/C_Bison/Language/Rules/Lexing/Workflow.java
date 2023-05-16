@@ -58,11 +58,11 @@ public class Workflow {
             }
         }
     }
-    private Process_Exception process_tokens(List<DFA_lexing> lexing_list){ //true: Success, false: Error
+    private Process_Exception process_tokens(DFA_lexing_list lexing_list){ //true: Success, false: Error
         data_clear();
         Grammar_rule rule = new Grammar_rule();
         Grammar_expr expr = new Grammar_expr();
-        for(DFA_lexing lexing : lexing_list){
+        for(DFA_lexing lexing : lexing_list.val){
             //System.out.printf("<'%s', %s>\n", lexing.token, Tokens.Map[lexing.token_type]);
             //Record the tokens
             record_tokens(lexing);

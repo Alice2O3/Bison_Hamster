@@ -2,6 +2,9 @@ package C_Flex;
 
 import C_Flex.callback.ICallback;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Types {
     public static class DFA_edge {
         public final Integer u;
@@ -76,5 +79,9 @@ public class Types {
             token = token_;
             token_type = token_type_;
         }
+    }
+
+    public static class DFA_lexing_list{
+        public List<DFA_lexing> val = new ArrayList<>();
     }
 }

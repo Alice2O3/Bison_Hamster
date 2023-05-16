@@ -41,7 +41,7 @@ public class Grammar_Scanner implements IScanner {
         setOperators();
     }
     @Override
-    public List<DFA_lexing> scan(String code) {
+    public DFA_lexing_list scan(String code) {
         dfa.processString(code);
         return dfa.tokens_list;
     }

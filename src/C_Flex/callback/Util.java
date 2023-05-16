@@ -70,6 +70,6 @@ public class Util {
     }
 
     public static void addTokenInfo(DFA dfa, Integer token_type){
-        dfa.tokens_list.add(new DFA_lexing(dfa.l_index_global, dfa.r_index_global - 1, dfa.line_index, dfa.l_index, dfa.getLexeme(), token_type));
+        dfa.tokens_list.val.add(new DFA_lexing(dfa.l_index_global, dfa.r_index_global - 1, dfa.line_index, dfa.l_index, dfa.getLexeme(), token_type));
     }
 }

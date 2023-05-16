@@ -5,29 +5,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="65ce0729-d834-4110-97ea-b236a93b5951" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/C_Bison/Language/Easy_C/Lexing/Convert.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/C_Bison/Parser/C_Parser.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/C_Flex/Types.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Debug/C_Grammar_Debug.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Compile_Test/C_grammar_test/token_flow.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Compile_Test/C_token_test/token_flow.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Compile_Test/C_token_test/token_flow.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/C_Bison/Language/Easy_C/Lexing/Convert.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/C_Bison/Language/Easy_C/Lexing/Convert.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/C_Bison/Language/Easy_C/Lexing/Workflow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/C_Bison/Language/Easy_C/Lexing/Workflow.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/C_Bison/Language/Rules/Lexing/Workflow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/C_Bison/Language/Rules/Lexing/Workflow.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/C_Bison/Language/TokenFlow/Tokens.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/C_Bison/Scanner/C_Scanner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/C_Bison/Scanner/C_Scanner.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/C_Bison/Scanner/Grammar_Scanner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/C_Bison/Scanner/Grammar_Scanner.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/C_Bison/Scanner/IScanner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/C_Bison/Scanner/IScanner.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/C_Flex/DFA.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/C_Flex/DFA.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/C_Flex/DFA_edge.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/C_Flex/DFA_edgeInterval.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/C_Flex/DFA_event.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/C_Flex/DFA_lexing.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/C_Flex/DFA_node.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/C_Flex/DFA_node.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/C_Flex/callback/Common.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/C_Flex/callback/Common.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/C_Flex/callback/Fallback.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/C_Flex/callback/Fallback.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/C_Flex/callback/ICallback.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/C_Flex/callback/ICallback.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/C_Flex/Types.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/C_Flex/Types.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/C_Flex/callback/Util.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/C_Flex/callback/Util.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Debug/C_Grammar_Debug.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Debug/C_Grammar_Debug.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Debug/C_Token_Debug.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Debug/C_Token_Debug.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -189,7 +177,7 @@
       <workItem from="1684060551965" duration="58000" />
       <workItem from="1684060748351" duration="59000" />
       <workItem from="1684061009613" duration="679000" />
-      <workItem from="1684223681582" duration="2126000" />
+      <workItem from="1684223681582" duration="2398000" />
     </task>
     <servers />
   </component>

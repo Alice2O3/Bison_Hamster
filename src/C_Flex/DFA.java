@@ -17,11 +17,11 @@ public class DFA {
     public Integer r_index_global;
     public Integer line_index;
     public boolean keep;
-    public List<DFA_lexing> tokens_list;
+    public DFA_lexing_list tokens_list;
 
     public DFA(){
         node_list = new ArrayList<>();
-        tokens_list = new ArrayList<>();
+        tokens_list = new DFA_lexing_list();
         lexeme = new StringBuilder();
         resetState();
     }
@@ -46,7 +46,7 @@ public class DFA {
         l_index_global = 0;
         r_index_global = 0;
         line_index = 0;
-        tokens_list.clear();
+        tokens_list.val.clear();
         gotoInitialState();
     }
 
