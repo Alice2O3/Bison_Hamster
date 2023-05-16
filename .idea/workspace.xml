@@ -6,13 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="65ce0729-d834-4110-97ea-b236a93b5951" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Compile_Test/C_grammar_test/Easy_C.bison" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/C_Bison/Language/Easy_C/Lexing/Convert.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/C_Bison/Language/Easy_C/Lexing/Render.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/C_Bison/Language/Rules/Lexing/Convert.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/C_Bison/Language/Rules/Lexing/Render.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Debug/C_Grammar_Debug.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Debug/C_Grammar_Debug.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Debug/C_Token_Debug.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Debug/C_Token_Debug.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Debug/LL1_Analyze_Debug.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Debug/LL1_Analyze_Debug.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Debug/LL1_Scanner_Debug.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Debug/LL1_Scanner_Debug.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Compile_Test/C_token_test/token_flow.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Compile_Test/C_token_test/token_flow.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/C_Bison/Language/Easy_C/Lexing/Render.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/C_Bison/Language/Easy_C/Lexing/Render.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -61,7 +56,7 @@
       <recent name="Debug" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.C_Grammar_Debug">
+  <component name="RunManager" selected="Application.Debug.C_Token_Debug">
     <configuration name="C_Grammar_Debug" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Debug.C_Grammar_Debug" />
       <module name="C_Bison" />
@@ -129,8 +124,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.C_Grammar_Debug" />
         <item itemvalue="Application.Debug.C_Token_Debug" />
+        <item itemvalue="Application.C_Grammar_Debug" />
         <item itemvalue="Application.Debug.LL1_Scanner_Debug" />
         <item itemvalue="Application.Debug.LL1_Analyze_Debug" />
         <item itemvalue="Application.Debug.LL1_Simple_Debug" />
@@ -173,7 +168,7 @@
       <workItem from="1684060551965" duration="58000" />
       <workItem from="1684060748351" duration="59000" />
       <workItem from="1684061009613" duration="679000" />
-      <workItem from="1684223681582" duration="2716000" />
+      <workItem from="1684223681582" duration="2968000" />
     </task>
     <servers />
   </component>
