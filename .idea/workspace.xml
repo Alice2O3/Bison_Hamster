@@ -5,9 +5,21 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="65ce0729-d834-4110-97ea-b236a93b5951" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/C_Bison/Parser/IParser.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Compile_Test/C_token_test/token_flow.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Compile_Test/C_token_test/token_flow.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/C_Bison/Language/Easy_C/Lexing/Render.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/C_Bison/Language/Easy_C/Lexing/Render.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Compile_Test/C_grammar_test/Example.c" beforeDir="false" afterPath="$PROJECT_DIR$/Compile_Test/C_grammar_test/Example.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Compile_Test/C_grammar_test/Example.pp.c" beforeDir="false" afterPath="$PROJECT_DIR$/Compile_Test/C_grammar_test/Example.pp.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Compile_Test/LL1_scanner_test/Easy_C.bison" beforeDir="false" afterPath="$PROJECT_DIR$/Compile_Test/LL1_scanner_test/Easy_C.bison" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Grammars/Easy_C.bison" beforeDir="false" afterPath="$PROJECT_DIR$/Grammars/Easy_C.bison" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/C_Bison/Grammar/LL1/Process.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/C_Bison/Grammar/LL1/Process.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/C_Bison/Grammar/LL1/Render.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/C_Bison/Grammar/LL1/Render.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/C_Bison/Grammar/LL1/Types.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/C_Bison/Grammar/LL1/Types.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/C_Bison/Language/Easy_C/Lexing/Workflow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/C_Bison/Language/Easy_C/Lexing/Workflow.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/C_Bison/Language/Rules/Lexing/Workflow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/C_Bison/Language/Rules/Lexing/Workflow.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/C_Bison/Parser/C_Parser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/C_Bison/Parser/C_Parser.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Debug/C_Grammar_Debug.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Debug/C_Parser_Debug.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Debug/C_Token_Debug.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Debug/C_Token_Debug.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Debug/LL1_Analyze_Debug.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Debug/LL1_Analyze_Debug.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -17,8 +29,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Interface" />
         <option value="Class" />
+        <option value="Interface" />
       </list>
     </option>
   </component>
@@ -56,9 +68,9 @@
       <recent name="Debug" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Debug.C_Token_Debug">
-    <configuration name="C_Grammar_Debug" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Debug.C_Grammar_Debug" />
+  <component name="RunManager" selected="Application.C_Parser_Debug">
+    <configuration name="C_Parser_Debug" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Debug.C_Parser_Debug" />
       <module name="C_Bison" />
       <extension name="coverage">
         <pattern>
@@ -70,7 +82,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Debug.C_Token_Debug" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+    <configuration name="C_Token_Debug" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Debug.C_Token_Debug" />
       <module name="C_Bison" />
       <extension name="coverage">
@@ -83,20 +95,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Debug.LL1_Analyze_Debug" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Debug.LL1_Analyze_Debug" />
-      <module name="C_Bison" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="Debug.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="LL1_Scanner_Debug" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+    <configuration name="Debug.LL1_Scanner_Debug" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Debug.LL1_Scanner_Debug" />
       <module name="C_Bison" />
       <extension name="coverage">
@@ -109,8 +108,21 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="LL1_Simple_Debug" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+    <configuration name="Debug.LL1_Simple_Debug" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Debug.LL1_Simple_Debug" />
+      <module name="C_Bison" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Debug.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="LL1_Analyze_Debug" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Debug.LL1_Analyze_Debug" />
       <module name="C_Bison" />
       <extension name="coverage">
         <pattern>
@@ -124,10 +136,10 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Debug.C_Token_Debug" />
-        <item itemvalue="Application.C_Grammar_Debug" />
-        <item itemvalue="Application.Debug.LL1_Scanner_Debug" />
+        <item itemvalue="Application.C_Parser_Debug" />
         <item itemvalue="Application.Debug.LL1_Analyze_Debug" />
+        <item itemvalue="Application.Debug.C_Token_Debug" />
+        <item itemvalue="Application.Debug.LL1_Scanner_Debug" />
         <item itemvalue="Application.Debug.LL1_Simple_Debug" />
       </list>
     </recent_temporary>
@@ -168,7 +180,7 @@
       <workItem from="1684060551965" duration="58000" />
       <workItem from="1684060748351" duration="59000" />
       <workItem from="1684061009613" duration="679000" />
-      <workItem from="1684223681582" duration="2968000" />
+      <workItem from="1684223681582" duration="13294000" />
     </task>
     <servers />
   </component>

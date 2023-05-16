@@ -2,7 +2,7 @@ package Debug;
 
 import Filesystem.FileIO;
 import C_Bison.Grammar.LL1.Process;
-import C_Bison.Language.Rules.Lexing.*;
+import C_Bison.Language.Rules.Lexing.Workflow;
 import C_Bison.Grammar.Types.*;
 import C_Bison.Grammar.LL1.Types.*;
 
@@ -21,7 +21,7 @@ public class LL1_Analyze_Debug {
         StringBuilder sb = new StringBuilder();
         sb.append(workflow.getSymbolInfo());
         sb.append("\nRule_Table:\n");
-        sb.append(Render.Grammar_List_to_str_full(V));
+        sb.append(C_Bison.Language.Rules.Lexing.Render.Grammar_List_to_str_full(V));
         sb.append("\n");
         Process ll1 = new Process();
         if(ll1.pre_process(V) != Pre_Process_Exception.NORMAL){

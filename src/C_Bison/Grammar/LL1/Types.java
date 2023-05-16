@@ -1,6 +1,7 @@
 package C_Bison.Grammar.LL1;
 
 import java.util.*;
+import C_Bison.Grammar.Types.*;
 
 public class Types{
     public static class LL1_symbol_set{
@@ -8,7 +9,7 @@ public class Types{
     }
 
     public static class LL1_expr_map{
-        public Map<Integer, C_Bison.Grammar.Types.Grammar_expr_list> val = new HashMap<>();
+        public Map<Integer, Grammar_expr_list> val = new HashMap<>();
     }
 
     public static class LL1_symbol_map{

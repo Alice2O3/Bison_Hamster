@@ -63,7 +63,6 @@ public class Workflow {
         Grammar_rule rule = new Grammar_rule();
         Grammar_expr expr = new Grammar_expr();
         for(DFA_lexing lexing : lexing_list.val){
-            //System.out.printf("<'%s', %s>\n", lexing.token, Tokens.Map[lexing.token_type]);
             //Record the tokens
             record_tokens(lexing);
             String token = lexing.token;
@@ -203,5 +202,9 @@ public class Workflow {
         }
         ret.append("\n");
         return ret.toString();
+    }
+
+    public Map<String, Integer> getTerminal_Map(){
+        return Terminal_Map;
     }
 }

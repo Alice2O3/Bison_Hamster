@@ -28,9 +28,9 @@ public class C_Token_Debug {
         }
         Workflow workflow = new Workflow();
         workflow.process_code(source_code_2);
-        DFA_lexing_list token_info = workflow.getTokenInfo();
-        String tokens_output = Render.Convert_Tokens_to_str(token_info);
-        System.out.print(tokens_output);
-        FileIO.writeFile(tokens_output, output_file);
+        DFA_lexing_list token_list = workflow.getTokenList();
+        String token_output = Render.Convert_Tokens_to_str(token_list);
+        System.out.print(token_output);
+        FileIO.writeFile(token_output, output_file);
     }
 }

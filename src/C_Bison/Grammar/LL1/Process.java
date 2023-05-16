@@ -6,7 +6,6 @@ import C_Bison.Grammar.LL1.Types.*;
 import java.util.*;
 
 public class Process {
-    private final static Integer Error_Tag = -1;
     private final static Integer End_Tag = -1;
 
     private Integer Start_Symbol = 0;
@@ -267,10 +266,7 @@ public class Process {
         Non_Terminal_Map.val.clear();
         for(Grammar_rule rule : V.val){
             Integer s = rule.first;
-            if(s.equals(Error_Tag)){
-                return Pre_Process_Exception.INPUT_ERR;
-            }
-            else if(Non_Terminal_Map.val.containsKey(s)){
+            if(Non_Terminal_Map.val.containsKey(s)){
                 append_rule(Non_Terminal_Map.val.get(s), rule.second);
             }
             else {
@@ -401,5 +397,9 @@ public class Process {
 
     public Integer get_end_tag(){
         return End_Tag;
+    }
+
+    public Integer get_start_symbol(){
+        return Start_Symbol;
     }
 }

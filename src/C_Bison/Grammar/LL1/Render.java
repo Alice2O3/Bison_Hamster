@@ -9,6 +9,10 @@ public class Render {
     private final static String empty_tag = "@";
     private final static String end_tag = "#";
 
+    private static String int_to_str(Integer s){
+        return Character.toString((char) s.intValue());
+    }
+
     private static String space_n(Integer n){
         StringBuilder ret = new StringBuilder();
         for(int i = 0; i < n; i++){
@@ -26,7 +30,7 @@ public class Render {
         return space_n(len_l) + S + space_n(len_r);
     }
 
-    private static String expr_pair_to_str(LL1_expr_pair expr_pair){
+    public static String expr_pair_to_str(LL1_expr_pair expr_pair){
         StringBuilder sb = new StringBuilder();
         sb.append(String.format("<%d> -> ", expr_pair.first));
         Grammar_expr expr = expr_pair.second;
@@ -41,7 +45,7 @@ public class Render {
         return sb.toString();
     }
 
-    private static String expr_pair_to_str_simple(LL1_expr_pair expr_pair){
+    public static String expr_pair_to_str_simple(LL1_expr_pair expr_pair){
         StringBuilder sb = new StringBuilder();
         sb.append(int_to_str(expr_pair.first));
         sb.append(" -> ");
@@ -55,10 +59,6 @@ public class Render {
             }
         }
         return sb.toString();
-    }
-
-    private static String int_to_str(Integer s){
-        return Character.toString((char) s.intValue());
     }
 
     public static String LL1_Table_Render(Process ll1, Integer table_space){
