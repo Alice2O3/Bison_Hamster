@@ -1,12 +1,10 @@
 package Debug;
 
-import C_Bison.Language.Easy_C.Lexing.Convert;
+import C_Bison.Language.Easy_C.Lexing.Render;
 import C_Flex.Types.*;
 import Filesystem.FileIO;
 import C_Bison.PreProcess.PreProcess_C;
 import C_Bison.Language.Easy_C.Lexing.Workflow;
-
-import java.util.List;
 
 public class C_Token_Debug {
     private final static String input_file = "Compile_Test/C_token_test/Example.c";
@@ -31,7 +29,7 @@ public class C_Token_Debug {
         Workflow workflow = new Workflow();
         workflow.process_code(source_code_2);
         DFA_lexing_list token_info = workflow.getTokenInfo();
-        String tokens_output = Convert.Convert_Tokens_to_str(token_info);
+        String tokens_output = Render.Convert_Tokens_to_str(token_info);
         System.out.print(tokens_output);
         FileIO.writeFile(tokens_output, output_file);
     }

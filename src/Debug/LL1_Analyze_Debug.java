@@ -2,7 +2,6 @@ package Debug;
 
 import Filesystem.FileIO;
 import C_Bison.Grammar.LL1.Process;
-import C_Bison.Grammar.LL1.Render;
 import C_Bison.Language.Rules.Lexing.*;
 import C_Bison.Grammar.Types.*;
 import C_Bison.Grammar.LL1.Types.*;
@@ -22,7 +21,7 @@ public class LL1_Analyze_Debug {
         StringBuilder sb = new StringBuilder();
         sb.append(workflow.getSymbolInfo());
         sb.append("\nRule_Table:\n");
-        sb.append(Convert.Grammar_List_to_str_full(V));
+        sb.append(Render.Grammar_List_to_str_full(V));
         sb.append("\n");
         Process ll1 = new Process();
         if(ll1.pre_process(V) != Pre_Process_Exception.NORMAL){
@@ -38,7 +37,7 @@ public class LL1_Analyze_Debug {
             System.out.print("\nGrammar is not LL1!\n");
             return;
         }
-        sb.append(Render.LL1_Table_Render(ll1, 48));
+        sb.append(C_Bison.Grammar.LL1.Render.LL1_Table_Render(ll1, 48));
         String ret = sb.toString();
         System.out.print(ret);
         FileIO.writeFile(ret, output_path);

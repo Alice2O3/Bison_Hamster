@@ -2,7 +2,7 @@ package Debug;
 
 import Filesystem.FileIO;
 import C_Bison.Language.Rules.Lexing.Workflow;
-import C_Bison.Language.Rules.Lexing.Convert;
+import C_Bison.Language.Rules.Lexing.Render;
 
 public class LL1_Scanner_Debug {
     static String input_path = "Compile_Test/LL1_scanner_test/Easy_C.bison";
@@ -25,7 +25,7 @@ public class LL1_Scanner_Debug {
         StringBuilder sb = new StringBuilder();
         sb.append(code).append("\n");
         sb.append(workflow.getSymbolInfo()).append("\n");
-        sb.append(Convert.Grammar_List_to_str(workflow.getGrammarList()));
+        sb.append(Render.Grammar_List_to_str(workflow.getGrammarList()));
         String ret = sb.toString();
         System.out.print(ret);
         FileIO.writeFile(ret, output_path);

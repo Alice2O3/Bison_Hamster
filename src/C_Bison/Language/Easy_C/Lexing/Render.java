@@ -3,9 +3,7 @@ package C_Bison.Language.Easy_C.Lexing;
 import C_Bison.Language.Easy_C.Tokens;
 import C_Flex.Types.*;
 
-import java.util.List;
-
-public class Convert {
+public class Render {
     public static String Convert_Tokens_to_str(DFA_lexing_list Token_pair_list){
         StringBuilder sb = new StringBuilder();
         /*

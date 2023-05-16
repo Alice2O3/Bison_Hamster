@@ -2,7 +2,7 @@ package C_Bison.Language.Rules.Lexing;
 
 import C_Bison.Grammar.Types.*;
 
-public class Convert {
+public class Render {
     public static String Grammar_List_to_str_full(Grammar_list grammar_list){
         StringBuilder ret = new StringBuilder();
         for(Grammar_rule rule : grammar_list.val){

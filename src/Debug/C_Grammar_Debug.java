@@ -8,10 +8,9 @@ import Filesystem.FileIO;
 import java.util.List;
 
 public class C_Grammar_Debug {
-    private final static String grammar_file = "Compile_Test/C_grammar_test/Easy_C.bison";
+    private final static String grammar_file = "Grammars/Easy_C.bison";
     private final static String input_file = "Compile_Test/C_grammar_test/Example.c";
     private final static String preprocessed_file = "Compile_Test/C_grammar_test/Example.pp.c";
-    private final static String output_file = "Compile_Test/C_grammar_test/token_flow.txt";
     public static void main(String[] args) {
         //Preprocessing code
         String source_code = FileIO.readFile(input_file);
