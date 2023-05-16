@@ -1,17 +1,17 @@
 package Debug;
 
-import C_Bison.Language.Easy_C.Lexing.Convert;
+import C_Bison.Language.Easy_C.Lexing.Workflow;
+import C_Bison.PreProcess.PreProcess_C;
 import C_Flex.Types.*;
 import Filesystem.FileIO;
-import C_Bison.PreProcess.PreProcess_C;
-import C_Bison.Language.Easy_C.Lexing.Workflow;
 
 import java.util.List;
 
-public class C_Token_Debug {
-    private final static String input_file = "Compile_Test/C_token_test/Example.c";
-    private final static String preprocessed_file = "Compile_Test/C_token_test/Example.pp.c";
-    private final static String output_file = "Compile_Test/C_token_test/token_flow.txt";
+public class C_Grammar_Debug {
+    private final static String grammar_file = "Compile_Test/C_grammar_test/Easy_C.bison";
+    private final static String input_file = "Compile_Test/C_grammar_test/Example.c";
+    private final static String preprocessed_file = "Compile_Test/C_grammar_test/Example.pp.c";
+    private final static String output_file = "Compile_Test/C_grammar_test/token_flow.txt";
     public static void main(String[] args) {
         //Preprocessing code
         String source_code = FileIO.readFile(input_file);
@@ -31,8 +31,6 @@ public class C_Token_Debug {
         Workflow workflow = new Workflow();
         workflow.process_code(source_code_2);
         List<DFA_lexing> token_info = workflow.getTokenInfo();
-        String tokens_output = Convert.Convert_Tokens_to_str(token_info);
-        System.out.print(tokens_output);
-        FileIO.writeFile(tokens_output, output_file);
+        
     }
 }

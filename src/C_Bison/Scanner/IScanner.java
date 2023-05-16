@@ -1,6 +1,6 @@
 package C_Bison.Scanner;
 
-import C_Flex.DFA_lexing;
+import C_Flex.Types.*;
 
 import java.util.List;
 

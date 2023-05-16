@@ -4,6 +4,7 @@ import C_Flex.callback.Fallback;
 
 import java.util.HashMap;
 import java.util.Map;
+import C_Flex.Types.*;
 
 public class DFA_node {
     private final Map<Character, DFA_event> next_state;

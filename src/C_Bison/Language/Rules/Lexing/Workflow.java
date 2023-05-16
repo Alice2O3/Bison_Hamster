@@ -3,7 +3,7 @@ package C_Bison.Language.Rules.Lexing;
 import C_Bison.Scanner.*;
 import C_Bison.Grammar.Types.*;
 import C_Bison.Language.Rules.Tokens;
-import C_Flex.DFA_lexing;
+import C_Flex.Types.*;
 
 import java.util.ArrayList;
 import java.util.HashMap;

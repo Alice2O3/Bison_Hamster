@@ -1,7 +1,8 @@
 package C_Bison.Scanner;
 
 import C_Bison.Language.Easy_C.Tokens;
-import C_Flex.*;
+import C_Flex.DFA;
+import C_Flex.Types.*;
 import C_Flex.callback.Common;
 import C_Flex.callback.ICallback;
 import C_Flex.callback.Util;

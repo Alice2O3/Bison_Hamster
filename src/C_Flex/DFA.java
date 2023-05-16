@@ -2,6 +2,7 @@ package C_Flex;
 
 import java.util.ArrayList;
 import java.util.List;
+import C_Flex.Types.*;
 
 public class DFA {
     private final List<DFA_node> node_list;
