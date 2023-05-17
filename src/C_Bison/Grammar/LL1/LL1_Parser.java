@@ -23,17 +23,14 @@ public class LL1_Parser {
         AST_node current_node = S_top.first;
         Integer non_terminal_index = S_top.second;
         if(!LL1_Table.val.containsKey(non_terminal_index)){
-            //System.out.print("Token not in LL1 table!\n");
             return false;
         }
         LL1_symbol_index symbol_index = LL1_Table.val.get(non_terminal_index);
         if(!symbol_index.val.containsKey(mapped_token)){
-            //System.out.print("Token not in LL1 table!\n");
             return false;
         }
         LL1_expr_pair expr_pair = expr_pair_index.val.get(symbol_index.val.get(mapped_token));
         Grammar_expr expr = expr_pair.second;
-        //System.out.printf("Replace using rule %s\n", LL1_Render.expr_pair_to_str(expr_pair));
         Token_Stack.pop();
         ListIterator<Grammar_pair> expr_it = expr.val.listIterator(expr.val.size());
         while(expr_it.hasPrevious()){
@@ -50,7 +47,6 @@ public class LL1_Parser {
         AST_node root_node = AST_node_factory.Factory_Non_Terminal(start_symbol);
         ast.setRoot(root_node);
         ast.setSymbols(Symbol_List);
-
         Token_Stack.clear();
         Token_Stack.push(new AST_node_pair(root_node, start_symbol));
 
@@ -60,9 +56,7 @@ public class LL1_Parser {
         while(true){
             Integer mapped_token = Terminal_Map.get(Token_Map[lexing_top.token_type]);
             AST_node_pair S_top = Token_Stack.peek();
-            //System.out.printf("Processing: <%d>\nStack State: %s\nStack Top: %d\n", mapped_token, Token_Stack, S_top.second);
             if(S_top.second.equals(mapped_token)){ //Matched
-                //System.out.print("Token Matched\n\n");
                 S_top.first.addChild(AST_node_factory.Factory_Terminal(lexing_top));
                 Token_Stack.pop();
                 if(!it.hasNext()){
@@ -70,27 +64,18 @@ public class LL1_Parser {
                 }
                 lexing_top = it.next();
             } else { //Not matched
-                //System.out.print("Token Not Matched\n");
                 if(!Push_Expr(S_top, mapped_token)){
-                    //System.out.print("\n");
                     return Parser_Exception.PARSE_ERROR;
                 }
-                //System.out.print("\n");
             }
         }
         //Process String End (#)
         while(!Token_Stack.empty()){
             AST_node_pair S_top = Token_Stack.peek();
-            //System.out.printf("Processing: #\nStack State: %s\nStack Top: %d\n", Token_Stack, S_top.second);
             if(!Push_Expr(S_top, LL1_Process.End_Tag)){
-                //System.out.print("\n");
                 return Parser_Exception.PARSE_ERROR;
             }
-            //System.out.print("\n");
         }
-
-        //System.out.print("LL1 parse successful!\n");
-
         return Parser_Exception.NORMAL;
     }
 
@@ -116,14 +101,6 @@ public class LL1_Parser {
         else if(e2 == Resolve_Exception.NOT_LL1){
             return Parser_Exception.NOT_LL1;
         }
-
-        /*
-        System.out.print(rules_workflow.getSymbolInfo());
-        System.out.print("\n");
-        System.out.print(LL1_Render.LL1_Table_Render(ll1,48));
-        System.out.print("\n");
-        */
-
         Terminal_Map = rules_workflow.getTerminalMap();
         Symbol_List = rules_workflow.getSymbolList();
         LL1_Table = ll1.get_LL1_table();

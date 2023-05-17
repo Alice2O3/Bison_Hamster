@@ -5,14 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="65ce0729-d834-4110-97ea-b236a93b5951" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/C_Bison/Grammar/AST_Types.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/C_Bison/Grammar/AST.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/C_Bison/Grammar/AST.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/C_Bison/Grammar/LL1/LL1_Parser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/C_Bison/Grammar/LL1/LL1_Parser.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/C_Bison/Grammar/LL1/LL1_Process.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/C_Bison/Grammar/LL1/LL1_Process.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/C_Bison/Grammar/LL1/LL1_Types.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/C_Bison/Grammar/LL1/LL1_Types.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/C_Bison/Language/Rules/Lexing/Rules_Workflow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/C_Bison/Language/Rules/Lexing/Rules_Workflow.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Debug/C_Parser_Debug.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Debug/C_Parser_Debug.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -175,7 +169,7 @@
       <workItem from="1684249544986" duration="43000" />
       <workItem from="1684307457514" duration="11000" />
       <workItem from="1684307789892" duration="6655000" />
-      <workItem from="1684314604714" duration="4366000" />
+      <workItem from="1684314604714" duration="4590000" />
     </task>
     <servers />
   </component>
