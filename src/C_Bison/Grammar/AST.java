@@ -35,11 +35,11 @@ public class AST {
             if(S_top.state){
                 sb.append(tab_n(layer));
                 if(ast_node.isFinished){
-                    sb.append("\"token\": \"")
+                    sb.append("\"value\": \"")
                             .append(ast_node.lexing.token)
                             .append("\"\n");
                 } else {
-                    sb.append("\"name\": \"")
+                    sb.append("\"type\": \"")
                             .append(Symbol_List.get(ast_node.symbol_index))
                             .append("\",\n")
                             .append(tab_n(layer))

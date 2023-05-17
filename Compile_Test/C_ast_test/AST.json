@@ -1,70 +1,70 @@
 {
-	"name": "prog",
+	"type": "prog",
 	"children":
 	[
 		{
-			"name": "statement",
+			"type": "statement",
 			"children":
 			[
 				{
-					"name": "simple_statement",
+					"type": "simple_statement",
 					"children":
 					[
 						{
-							"name": "declare_statement",
+							"type": "declare_statement",
 							"children":
 							[
 								{
-									"name": "identifier_declare_statement",
+									"type": "identifier_declare_statement",
 									"children":
 									[
 										{
-											"name": "type",
+											"type": "type",
 											"children":
 											[
 												{
-													"name": "Int",
+													"type": "Int",
 													"children":
 													[
 														{
-															"token": "int"
+															"value": "int"
 														}
 													]
 												}
 											],
-											"name": "Identifier",
+											"type": "Identifier",
 											"children":
 											[
 												{
-													"token": "main"
+													"value": "main"
 												}
 											],
-											"name": "identifier_declare_statement_p",
+											"type": "identifier_declare_statement_p",
 											"children":
 											[
 												{
-													"name": "fuction_declare",
+													"type": "fuction_declare",
 													"children":
 													[
 														{
-															"name": "Left_small_bracket",
+															"type": "Left_small_bracket",
 															"children":
 															[
 																{
-																	"token": "("
+																	"value": "("
 																}
 															],
-															"name": "param_list",
+															"type": "param_list",
 															"children":
 															[
 																{
-																	"name": "param",
+																	"type": "param",
 																	"children":
 																	[
 																		{
 																		}
 																	],
-																	"name": "param_p",
+																	"type": "param_p",
 																	"children":
 																	[
 																		{
@@ -72,71 +72,71 @@
 																	]
 																}
 															],
-															"name": "Right_small_bracket",
+															"type": "Right_small_bracket",
 															"children":
 															[
 																{
-																	"token": ")"
+																	"value": ")"
 																}
 															],
-															"name": "block_statement",
+															"type": "block_statement",
 															"children":
 															[
 																{
-																	"name": "Left_big_bracket",
+																	"type": "Left_big_bracket",
 																	"children":
 																	[
 																		{
-																			"token": "{"
+																			"value": "{"
 																		}
 																	],
-																	"name": "statement_p",
+																	"type": "statement_p",
 																	"children":
 																	[
 																		{
-																			"name": "statement",
+																			"type": "statement",
 																			"children":
 																			[
 																				{
-																					"name": "simple_statement",
+																					"type": "simple_statement",
 																					"children":
 																					[
 																						{
-																							"name": "return_statement",
+																							"type": "return_statement",
 																							"children":
 																							[
 																								{
-																									"name": "Return",
+																									"type": "Return",
 																									"children":
 																									[
 																										{
-																											"token": "return"
+																											"value": "return"
 																										}
 																									],
-																									"name": "expression",
+																									"type": "expression",
 																									"children":
 																									[
 																										{
-																											"name": "atom",
+																											"type": "atom",
 																											"children":
 																											[
 																												{
-																													"name": "const",
+																													"type": "const",
 																													"children":
 																													[
 																														{
-																															"name": "Integer",
+																															"type": "Integer",
 																															"children":
 																															[
 																																{
-																																	"token": "0"
+																																	"value": "0"
 																																}
 																															]
 																														}
 																													]
 																												}
 																											],
-																											"name": "infix_expression",
+																											"type": "infix_expression",
 																											"children":
 																											[
 																												{
@@ -144,11 +144,11 @@
 																											]
 																										}
 																									],
-																									"name": "Statement_end",
+																									"type": "Statement_end",
 																									"children":
 																									[
 																										{
-																											"token": ";"
+																											"value": ";"
 																										}
 																									]
 																								}
@@ -157,7 +157,7 @@
 																					]
 																				}
 																			],
-																			"name": "statement_p",
+																			"type": "statement_p",
 																			"children":
 																			[
 																				{
@@ -165,14 +165,14 @@
 																			]
 																		}
 																	],
-																	"name": "Right_big_bracket",
+																	"type": "Right_big_bracket",
 																	"children":
 																	[
 																		{
-																			"token": "}"
+																			"value": "}"
 																		}
 																	],
-																	"name": "statement_end_p",
+																	"type": "statement_end_p",
 																	"children":
 																	[
 																		{
@@ -192,7 +192,7 @@
 					]
 				}
 			],
-			"name": "statement_p",
+			"type": "statement_p",
 			"children":
 			[
 				{
