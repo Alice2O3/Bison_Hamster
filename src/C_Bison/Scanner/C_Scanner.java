@@ -81,9 +81,6 @@ public class C_Scanner implements IScanner {
     @Override
     public DFA_lexing_list scan(String code) {
         dfa.processString(code);
-        Util.moveForward(dfa);
-        dfa.setLexeme("EOF");
-        Util.addTokenInfo(dfa, Easy_C_Tokens.EOF);
         return dfa.tokens_list;
     }
 

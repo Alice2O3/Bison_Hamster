@@ -24,12 +24,11 @@ public class Easy_C_Tokens {
     public static final int FOR = 20;
     public static final int IF = 21;
     public static final int RETURN = 22;
-    public static final int EOF = 23;
     public static final String[] Token_Map = {
             "Identifier", "Integer", "Int", "Void", "Left_small_bracket", "Right_small_bracket",
             "Left_big_bracket", "Right_big_bracket", "Comma", "Statement_end", "Plus",
             "Minus", "Assign", "AssignAdd", "AssignMinus", "Smaller",
             "Greater", "SmallerEqual", "GreaterEqual", "Equalto", "For",
-            "If", "Return", "EOF"
+            "If", "Return"
     };
 }

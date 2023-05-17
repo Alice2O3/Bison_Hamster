@@ -1,6 +1,4 @@
-prog -> prog_start_p EOF
-prog_start_p -> prog_start | @
-prog_start -> statement statement_p
+prog -> statement statement_p
 statement_p -> statement statement_p | @
 expression -> atom infix_expression
 infix_expression -> operator_expression | assign_expression | @

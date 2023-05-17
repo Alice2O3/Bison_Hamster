@@ -68,7 +68,7 @@ public class LL1_Render {
         LL1_table LL1_Table = ll1.get_LL1_table();
         sb.append(str_align("LL1 Table", table_space));
         for(Integer s : terminal_set.val){
-            if(s.equals(ll1.get_end_tag())){
+            if(s.equals(LL1_Process.End_Tag)){
                 sb.append(str_align(end_tag, table_space));
             } else {
                 sb.append(str_align(String.format("<%d>", s), table_space));
@@ -100,7 +100,7 @@ public class LL1_Render {
         LL1_table LL1_Table = ll1.get_LL1_table();
         sb.append(String.format("%s", str_align("LL1 Table", table_space)));
         for(Integer s : terminal_set.val){
-            if(s.equals(ll1.get_end_tag())){
+            if(s.equals(LL1_Process.End_Tag)){
                 sb.append(String.format("%s", str_align(end_tag, table_space)));
             } else {
                 sb.append(String.format("%s", str_align(int_to_str(s), table_space)));

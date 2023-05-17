@@ -12,15 +12,24 @@ import java.util.Map;
 import java.util.Stack;
 
 public class LL1_Parser {
-    private AST ast = new AST();
+    private AST ast;
     private LL1_table LL1_Table;
     private LL1_expr_pair_list expr_pair_index;
     private Map<String, Integer> Terminal_Map;
     private Integer start_symbol;
     private String[] Token_Map;
-    private Stack<Integer> Token_Stack = new Stack<>();
+    private final Stack<Integer> Token_Stack = new Stack<>();
 
-    private void Push_Expr(LL1_symbol_index symbol_index, Integer mapped_token){
+    private Boolean Push_Expr(Integer S_top, Integer mapped_token){
+        if(!LL1_Table.val.containsKey(S_top)){
+            System.out.print("Token not in LL1 table!\n");
+            return false;
+        }
+        LL1_symbol_index symbol_index = LL1_Table.val.get(S_top);
+        if(!symbol_index.val.containsKey(mapped_token)){
+            System.out.print("Token not in LL1 table!\n");
+            return false;
+        }
         LL1_expr_pair expr_pair = expr_pair_index.val.get(symbol_index.val.get(mapped_token));
         Grammar_expr expr = expr_pair.second;
         System.out.printf("Replace using rule %s\n", LL1_Render.expr_pair_to_str(expr_pair));
@@ -30,6 +39,7 @@ public class LL1_Parser {
             Grammar_pair p = expr_it.previous();
             Token_Stack.push(p.second);
         }
+        return true;
     }
 
     private Parser_Exception Process_Tokens(DFA_lexing_list token_list){
@@ -41,41 +51,37 @@ public class LL1_Parser {
         //Process
         while(true){
             Integer mapped_token = Terminal_Map.get(Token_Map[lexing_top.token_type]);
-            System.out.printf("Processing: <%d>\n", mapped_token);
-            System.out.printf("Stack State: %s\n", Token_Stack);
-
             Integer S_top = Token_Stack.peek();
-            System.out.printf("Stack Top: %d\n", S_top);
-
+            System.out.printf("Processing: <%d>\nStack State: %s\nStack Top: %d\n", mapped_token, Token_Stack, S_top);
             if(S_top.equals(mapped_token)){ //Matched
-                System.out.print("Token Matched\n");
+                System.out.print("Token Matched\n\n");
                 Token_Stack.pop();
                 if(!it.hasNext()){
                     break;
                 }
                 lexing_top = it.next();
             } else { //Not matched
-                if(!LL1_Table.val.containsKey(S_top)){
-                    System.out.print("Token not in LL1 table!\n");
+                System.out.print("Token Not Matched\n");
+                if(!Push_Expr(S_top, mapped_token)){
+                    System.out.print("\n");
                     return Parser_Exception.PARSE_ERROR;
                 }
-                LL1_symbol_index symbol_index = LL1_Table.val.get(S_top);
-                if(!symbol_index.val.containsKey(mapped_token)){
-                    System.out.print("Token not in LL1 table!\n");
-                    return Parser_Exception.PARSE_ERROR;
-                }
-                Push_Expr(symbol_index, mapped_token);
+                System.out.print("\n");
+            }
+        }
+        //Process Remaining Strings
+        while(!Token_Stack.empty()){
+            Integer S_top = Token_Stack.peek();
+            System.out.printf("Processing: #\nStack State: %s\nStack Top: %d\n", Token_Stack, S_top);
+            if(!Push_Expr(S_top, LL1_Process.End_Tag)){
+                System.out.print("\n");
+                return Parser_Exception.PARSE_ERROR;
             }
             System.out.print("\n");
         }
 
-        if(Token_Stack.empty()){
-            System.out.print("\nLL1 parse successful!\n");
-            return Parser_Exception.NORMAL;
-        } else {
-            System.out.print("\nStack is not empty!\n");
-            return Parser_Exception.PARSE_ERROR;
-        }
+        System.out.print("LL1 parse successful!\n");
+        return Parser_Exception.NORMAL;
     }
 
     public Parser_Exception Parse_Tokens(String rule_table, DFA_lexing_list token_list, String[] token_map){
@@ -100,6 +106,11 @@ public class LL1_Parser {
         else if(e2 == Resolve_Exception.NOT_LL1){
             return Parser_Exception.NOT_LL1;
         }
+
+        System.out.print(rules_workflow.getSymbolInfo());
+        System.out.print("\n");
+        System.out.print(LL1_Render.LL1_Table_Render(ll1,48));
+        System.out.print("\n");
 
         Terminal_Map = rules_workflow.getTerminal_Map();
         LL1_Table = ll1.get_LL1_table();

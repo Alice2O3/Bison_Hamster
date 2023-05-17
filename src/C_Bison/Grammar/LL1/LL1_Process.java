@@ -6,9 +6,7 @@ import C_Bison.Grammar.LL1.LL1_Types.*;
 import java.util.*;
 
 public class LL1_Process {
-    private final static Integer End_Tag = -1;
-
-    private Integer Start_Symbol = 0;
+    public final static Integer End_Tag = -1;
     private final LL1_symbol_set Terminal_Set = new LL1_symbol_set();
     private final LL1_symbol_set Non_Terminal_Set = new LL1_symbol_set();
     private final LL1_expr_map Non_Terminal_Map = new LL1_expr_map();
@@ -25,6 +23,7 @@ public class LL1_Process {
     //Grammar.LL1 Table
     private final LL1_expr_pair_list Expr_Pair_Index = new LL1_expr_pair_list();
     private final LL1_table LL1_Table = new LL1_table();
+    private Integer Start_Symbol = 0;
 
     private void append_rule(Grammar_expr_list dest, Grammar_expr_list src){
         dest.val.addAll(src.val);
@@ -393,10 +392,6 @@ public class LL1_Process {
 
     public LL1_table get_LL1_table(){
         return LL1_Table;
-    }
-
-    public Integer get_end_tag(){
-        return End_Tag;
     }
 
     public Integer get_start_symbol(){
