@@ -27,25 +27,22 @@ public class Rules_Workflow {
     private final Map<String, Integer> Symbol_Map = new HashMap<>();
     private final Map<String, Integer> Terminal_Map = new HashMap<>();
     private final Map<String, Integer> Non_Terminal_Map = new HashMap<>();
-    private final List<String> Symbol_Index = new ArrayList<>();
+    private final List<String> Symbol_List = new ArrayList<>();
     private Integer Symbol_cnt = 0;
     private final Grammar_list Grammar_List = new Grammar_list();
-    public Grammar_list getGrammarList(){
-        return Grammar_List;
-    }
     private void data_clear(){
         Symbol_cnt = 0;
         Symbol_Map.clear();
         Terminal_Map.clear();
         Non_Terminal_Map.clear();
-        Symbol_Index.clear();
+        Symbol_List.clear();
     }
     private void record_tokens(DFA_lexing lexing){
         if(lexing.token_type == Rules_Tokens.NON_TERMINAL){
             if(!Symbol_Map.containsKey(lexing.token)){
                 Non_Terminal_Map.put(lexing.token, Symbol_cnt);
                 Symbol_Map.put(lexing.token, Symbol_cnt);
-                Symbol_Index.add(lexing.token);
+                Symbol_List.add(lexing.token);
                 Symbol_cnt++;
             }
         }
@@ -53,7 +50,7 @@ public class Rules_Workflow {
             if(!Symbol_Map.containsKey(lexing.token)){
                 Terminal_Map.put(lexing.token, Symbol_cnt);
                 Symbol_Map.put(lexing.token, Symbol_cnt);
-                Symbol_Index.add(lexing.token);
+                Symbol_List.add(lexing.token);
                 Symbol_cnt++;
             }
         }
@@ -171,7 +168,7 @@ public class Rules_Workflow {
         ret.append("Symbols:\n");
         int symbol_cnt = 0;
         Boolean flag = false;
-        for(String s : Symbol_Index){
+        for(String s : Symbol_List){
             if(flag){
                 ret.append(", ");
             } else {
@@ -204,7 +201,11 @@ public class Rules_Workflow {
         return ret.toString();
     }
 
-    public Map<String, Integer> getTerminal_Map(){
+    public Map<String, Integer> getTerminalMap(){
         return Terminal_Map;
     }
+    public Grammar_list getGrammarList(){
+        return Grammar_List;
+    }
+    public List<String> getSymbolList() { return Symbol_List; }
 }

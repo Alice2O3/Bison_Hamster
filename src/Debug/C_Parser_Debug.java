@@ -31,5 +31,6 @@ public class C_Parser_Debug {
             System.out.print("AST Parsing Error!\n");
             return;
         }
+        ast.Traverse();
     }
 }

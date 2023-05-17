@@ -20,7 +20,7 @@ public class LL1_Process {
     private final LL1_symbol_map Follow_Map = new LL1_symbol_map();
     private final LL1_expr_select_list_map Select_Map = new LL1_expr_select_list_map();
 
-    //Grammar.LL1 Table
+    //LL1 Table
     private final LL1_expr_pair_list Expr_Pair_Index = new LL1_expr_pair_list();
     private final LL1_table LL1_Table = new LL1_table();
     private Integer Start_Symbol = 0;
