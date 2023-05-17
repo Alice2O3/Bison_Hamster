@@ -1,16 +1,16 @@
 package C_Bison.Language.Rules.Lexing;
 
 import C_Bison.Scanner.*;
-import C_Bison.Grammar.Types.*;
-import C_Bison.Language.Rules.Tokens;
-import C_Flex.Types.*;
+import C_Bison.Grammar.Grammar_Types.*;
+import C_Bison.Language.Rules.Rules_Tokens;
+import C_Flex.DFA_Types.*;
 
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public class Workflow {
+public class Rules_Workflow {
     private enum States {
         LEFT,
         ARROW,
@@ -41,7 +41,7 @@ public class Workflow {
         Symbol_Index.clear();
     }
     private void record_tokens(DFA_lexing lexing){
-        if(lexing.token_type == Tokens.NON_TERMINAL){
+        if(lexing.token_type == Rules_Tokens.NON_TERMINAL){
             if(!Symbol_Map.containsKey(lexing.token)){
                 Non_Terminal_Map.put(lexing.token, Symbol_cnt);
                 Symbol_Map.put(lexing.token, Symbol_cnt);
@@ -49,7 +49,7 @@ public class Workflow {
                 Symbol_cnt++;
             }
         }
-        else if(lexing.token_type == Tokens.TERMINAL){
+        else if(lexing.token_type == Rules_Tokens.TERMINAL){
             if(!Symbol_Map.containsKey(lexing.token)){
                 Terminal_Map.put(lexing.token, Symbol_cnt);
                 Symbol_Map.put(lexing.token, Symbol_cnt);
@@ -69,7 +69,7 @@ public class Workflow {
             Integer token_type = lexing.token_type;
             switch(current_state){
                 case LEFT:
-                    if (token_type == Tokens.NON_TERMINAL) {
+                    if (token_type == Rules_Tokens.NON_TERMINAL) {
                         rule.first = Symbol_Map.get(token);
                         current_state = States.ARROW;
                     } else {
@@ -77,22 +77,22 @@ public class Workflow {
                     }
                     break;
                 case ARROW:
-                    if (token_type == Tokens.ARROW) {
+                    if (token_type == Rules_Tokens.ARROW) {
                         current_state = States.RIGHT_START;
                     } else {
                         return Process_Exception.ERROR;
                     }
                     break;
                 case RIGHT_START:
-                    if (token_type == Tokens.TERMINAL) {
+                    if (token_type == Rules_Tokens.TERMINAL) {
                         expr.val.add(new Grammar_pair(true, Symbol_Map.get(token)));
                         current_state = States.EXPRESSION;
                     }
-                    else if (token_type == Tokens.NON_TERMINAL){
+                    else if (token_type == Rules_Tokens.NON_TERMINAL){
                         expr.val.add(new Grammar_pair(false, Symbol_Map.get(token)));
                         current_state = States.EXPRESSION;
                     }
-                    else if (token_type == Tokens.EMPTY){
+                    else if (token_type == Rules_Tokens.EMPTY){
                         current_state = States.EMPTY;
                     }
                     else {
@@ -100,19 +100,19 @@ public class Workflow {
                     }
                     break;
                 case OR:
-                    if (token_type == Tokens.TERMINAL) {
+                    if (token_type == Rules_Tokens.TERMINAL) {
                         rule.second.val.add(expr);
                         expr = new Grammar_expr();
                         expr.val.add(new Grammar_pair(true, Symbol_Map.get(token)));
                         current_state = States.EXPRESSION;
                     }
-                    else if (token_type == Tokens.NON_TERMINAL){
+                    else if (token_type == Rules_Tokens.NON_TERMINAL){
                         rule.second.val.add(expr);
                         expr = new Grammar_expr();
                         expr.val.add(new Grammar_pair(false, Symbol_Map.get(token)));
                         current_state = States.EXPRESSION;
                     }
-                    else if (token_type == Tokens.EMPTY){
+                    else if (token_type == Rules_Tokens.EMPTY){
                         rule.second.val.add(expr);
                         expr = new Grammar_expr();
                         current_state = States.EMPTY;
@@ -122,16 +122,16 @@ public class Workflow {
                     }
                     break;
                 case EXPRESSION:
-                    if (token_type == Tokens.TERMINAL) {
+                    if (token_type == Rules_Tokens.TERMINAL) {
                         expr.val.add(new Grammar_pair(true, Symbol_Map.get(token)));
                     }
-                    else if (token_type == Tokens.NON_TERMINAL){
+                    else if (token_type == Rules_Tokens.NON_TERMINAL){
                         expr.val.add(new Grammar_pair(false, Symbol_Map.get(token)));
                     }
-                    else if (token_type == Tokens.OR){
+                    else if (token_type == Rules_Tokens.OR){
                         current_state = States.OR;
                     }
-                    else if (token_type == Tokens.ESCAPE){
+                    else if (token_type == Rules_Tokens.ESCAPE){
                         rule.second.val.add(expr);
                         Grammar_List.val.add(rule);
                         rule = new Grammar_rule();
@@ -143,10 +143,10 @@ public class Workflow {
                     }
                     break;
                 case EMPTY:
-                    if (token_type == Tokens.OR){
+                    if (token_type == Rules_Tokens.OR){
                         current_state = States.OR;
                     }
-                    else if (token_type == Tokens.ESCAPE){
+                    else if (token_type == Rules_Tokens.ESCAPE){
                         rule.second.val.add(expr);
                         Grammar_List.val.add(rule);
                         rule = new Grammar_rule();

@@ -1,11 +1,11 @@
 package C_Bison.Grammar.LL1;
 
-import C_Bison.Grammar.Types.*;
-import C_Bison.Grammar.LL1.Types.*;
+import C_Bison.Grammar.Grammar_Types.*;
+import C_Bison.Grammar.LL1.LL1_Types.*;
 
 import java.util.*;
 
-public class Process {
+public class LL1_Process {
     private final static Integer End_Tag = -1;
 
     private Integer Start_Symbol = 0;

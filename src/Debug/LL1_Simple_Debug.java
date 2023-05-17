@@ -1,11 +1,11 @@
 package Debug;
 
 import Filesystem.FileIO;
-import C_Bison.Grammar.LL1.Types.*;
-import C_Bison.Grammar.LL1.Process;
-import C_Bison.Grammar.LL1.Render;
-import C_Bison.Grammar.Types.*;
-import C_Bison.Language.Rules.Simple_Read.Workflow;
+import C_Bison.Grammar.LL1.LL1_Types.*;
+import C_Bison.Grammar.LL1.LL1_Process;
+import C_Bison.Grammar.LL1.LL1_Render;
+import C_Bison.Grammar.Grammar_Types.*;
+import C_Bison.Language.Rules.Simple_Read.Simple_Read_Workflow;
 
 public class LL1_Simple_Debug {
     private final static String input_file = "Compile_Test/LL1_simple_test/LL1_simple_test.txt";
@@ -17,12 +17,12 @@ public class LL1_Simple_Debug {
             System.out.print("File Read Error!\n");
             return;
         }
-        Grammar_list V = Workflow.str_to_grammar(code);
+        Grammar_list V = Simple_Read_Workflow.str_to_grammar(code);
         if(V == null){
             System.out.print("Input Error!\n");
             return;
         }
-        Process ll1 = new Process();
+        LL1_Process ll1 = new LL1_Process();
         if(ll1.pre_process(V) != Pre_Process_Exception.NORMAL){
             System.out.print("Pre Process Error!\n");
             return;
@@ -37,8 +37,8 @@ public class LL1_Simple_Debug {
             return;
         }
         StringBuilder sb = new StringBuilder();
-        sb.append(Workflow.grammar_to_str(V)).append("\n");
-        sb.append(Render.LL1_Table_Render_Simple(ll1, 16));
+        sb.append(Simple_Read_Workflow.grammar_to_str(V)).append("\n");
+        sb.append(LL1_Render.LL1_Table_Render_Simple(ll1, 16));
         String ret = sb.toString();
         System.out.print(ret);
         FileIO.writeFile(ret, output_file);

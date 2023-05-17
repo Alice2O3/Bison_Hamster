@@ -1,6 +1,6 @@
 package Debug;
 
-import C_Bison.Grammar.LL1.Types.LL1_flag;
+import C_Bison.Grammar.LL1.LL1_Types.LL1_flag;
 
 import java.util.Arrays;
 import java.util.List;

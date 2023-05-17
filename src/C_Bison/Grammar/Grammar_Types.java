@@ -3,7 +3,7 @@ package C_Bison.Grammar;
 import java.util.List;
 import java.util.ArrayList;
 
-public class Types {
+public class Grammar_Types {
     public static class Grammar_pair {
         public Boolean first; //0: Non_Terminal 1: Terminal
         public Integer second;

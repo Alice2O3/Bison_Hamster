@@ -1,9 +1,9 @@
 package C_Bison.Language.Rules.Simple_Read;
 
-import C_Bison.Grammar.Types.*;
+import C_Bison.Grammar.Grammar_Types.*;
 import java.util.List;
 
-public class Workflow {
+public class Simple_Read_Workflow {
     private static void push_vec(Grammar_rule V){
         V.second.val.add(new Grammar_expr());
     }

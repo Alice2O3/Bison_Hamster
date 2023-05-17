@@ -5,21 +5,39 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="65ce0729-d834-4110-97ea-b236a93b5951" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/C_Bison/Parser/IParser.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/C_Bison/Grammar/AST.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/C_Bison/Grammar/LL1/LL1_Parser.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Compile_Test/C_grammar_test/Example.c" beforeDir="false" afterPath="$PROJECT_DIR$/Compile_Test/C_grammar_test/Example.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Compile_Test/C_grammar_test/Example.pp.c" beforeDir="false" afterPath="$PROJECT_DIR$/Compile_Test/C_grammar_test/Example.pp.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Compile_Test/LL1_scanner_test/Easy_C.bison" beforeDir="false" afterPath="$PROJECT_DIR$/Compile_Test/LL1_scanner_test/Easy_C.bison" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Grammars/Easy_C.bison" beforeDir="false" afterPath="$PROJECT_DIR$/Grammars/Easy_C.bison" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/C_Bison/Grammar/LL1/Process.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/C_Bison/Grammar/LL1/Process.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/C_Bison/Grammar/LL1/Render.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/C_Bison/Grammar/LL1/Render.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/C_Bison/Grammar/LL1/Types.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/C_Bison/Grammar/LL1/Types.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/C_Bison/Language/Easy_C/Lexing/Workflow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/C_Bison/Language/Easy_C/Lexing/Workflow.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/C_Bison/Language/Rules/Lexing/Workflow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/C_Bison/Language/Rules/Lexing/Workflow.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/C_Bison/Grammar/LL1/Process.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/C_Bison/Grammar/LL1/LL1_Process.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/C_Bison/Grammar/LL1/Render.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/C_Bison/Grammar/LL1/LL1_Render.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/C_Bison/Grammar/LL1/Types.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/C_Bison/Grammar/LL1/LL1_Types.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/C_Bison/Grammar/Types.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/C_Bison/Grammar/Grammar_Types.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/C_Bison/Language/Easy_C/Lexing/Render.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/C_Bison/Language/Easy_C/Lexing/Easy_C_Render.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/C_Bison/Language/Easy_C/Lexing/Workflow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/C_Bison/Language/Easy_C/Lexing/Easy_C_Workflow.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/C_Bison/Language/Easy_C/Tokens.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/C_Bison/Language/Easy_C/Easy_C_Tokens.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/C_Bison/Language/Rules/Lexing/Render.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/C_Bison/Language/Rules/Lexing/Rules_Render.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/C_Bison/Language/Rules/Lexing/Workflow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/C_Bison/Language/Rules/Lexing/Rules_Workflow.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/C_Bison/Language/Rules/Simple_Read/Workflow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/C_Bison/Language/Rules/Simple_Read/Simple_Read_Workflow.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/C_Bison/Language/Rules/Tokens.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/C_Bison/Language/Rules/Rules_Tokens.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/C_Bison/Parser/C_Parser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/C_Bison/Parser/C_Parser.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Debug/C_Grammar_Debug.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Debug/C_Parser_Debug.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/C_Bison/Parser/IParser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/C_Bison/Parser/IParser.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/C_Bison/Scanner/C_Scanner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/C_Bison/Scanner/C_Scanner.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/C_Bison/Scanner/Grammar_Scanner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/C_Bison/Scanner/Grammar_Scanner.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/C_Bison/Scanner/IScanner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/C_Bison/Scanner/IScanner.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/C_Flex/DFA.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/C_Flex/DFA.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/C_Flex/DFA_node.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/C_Flex/DFA_node.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/C_Flex/Types.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/C_Flex/DFA_Types.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/C_Flex/callback/Common.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/C_Flex/callback/Common.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/C_Flex/callback/Fallback.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/C_Flex/callback/Fallback.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/C_Flex/callback/ICallback.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/C_Flex/callback/ICallback.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/C_Flex/callback/Util.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/C_Flex/callback/Util.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Debug/C_Parser_Debug.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Debug/C_Parser_Debug.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Debug/C_Token_Debug.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Debug/C_Token_Debug.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Debug/Flag_Debug.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Debug/Flag_Debug.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Debug/LL1_Analyze_Debug.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Debug/LL1_Analyze_Debug.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Debug/LL1_Read_Debug.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Debug/LL1_Read_Debug.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Debug/LL1_Scanner_Debug.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Debug/LL1_Scanner_Debug.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Debug/LL1_Simple_Debug.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Debug/LL1_Simple_Debug.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -29,8 +47,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="Interface" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -137,8 +155,6 @@
     <recent_temporary>
       <list>
         <item itemvalue="Application.C_Parser_Debug" />
-        <item itemvalue="Application.Debug.LL1_Analyze_Debug" />
-        <item itemvalue="Application.Debug.C_Token_Debug" />
         <item itemvalue="Application.Debug.LL1_Scanner_Debug" />
         <item itemvalue="Application.Debug.LL1_Simple_Debug" />
       </list>
@@ -181,6 +197,9 @@
       <workItem from="1684060748351" duration="59000" />
       <workItem from="1684061009613" duration="679000" />
       <workItem from="1684223681582" duration="13294000" />
+      <workItem from="1684249544986" duration="43000" />
+      <workItem from="1684307457514" duration="11000" />
+      <workItem from="1684307789892" duration="4702000" />
     </task>
     <servers />
   </component>

@@ -1,6 +1,6 @@
 package C_Bison.Language.Rules;
 
-public class Tokens {
+public class Rules_Tokens {
     public static final int ESCAPE = 0;
     public static final int TERMINAL = 1;
     public static final int NON_TERMINAL = 2;

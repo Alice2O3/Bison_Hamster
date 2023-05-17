@@ -1,8 +1,6 @@
 package C_Bison.Scanner;
 
-import C_Flex.Types.*;
-
-import java.util.List;
+import C_Flex.DFA_Types.*;
 
 public interface IScanner {
     DFA_lexing_list scan(String code);

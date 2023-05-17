@@ -1,7 +1,7 @@
 package C_Flex.callback;
 
 import C_Flex.DFA;
-import C_Flex.Types.*;
+import C_Flex.DFA_Types.*;
 
 public class Fallback implements ICallback{
     @Override

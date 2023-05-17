@@ -1,19 +1,21 @@
 package Debug;
 
 import Filesystem.FileIO;
-import C_Bison.Grammar.LL1.Process;
-import C_Bison.Language.Rules.Lexing.Workflow;
-import C_Bison.Grammar.Types.*;
-import C_Bison.Grammar.LL1.Types.*;
+import C_Bison.Language.Rules.Lexing.Rules_Render;
+import C_Bison.Language.Rules.Lexing.Rules_Workflow;
+import C_Bison.Grammar.LL1.LL1_Render;
+import C_Bison.Grammar.LL1.LL1_Process;
+import C_Bison.Grammar.LL1.LL1_Types.*;
+import C_Bison.Grammar.Grammar_Types.*;
 
 public class LL1_Analyze_Debug {
     private static String input_path = "Compile_Test/LL1_table_test/Easy_C.bison";
     private static String output_path = "Compile_Test/LL1_table_test/Easy_C_LL1_Table.txt";
 
     public static void main(String[] args) {
-        Workflow workflow = new Workflow();
-        Workflow.Process_Exception e1 = workflow.process_text(FileIO.readFile(input_path));
-        if(e1 != Workflow.Process_Exception.NORMAL){
+        Rules_Workflow workflow = new Rules_Workflow();
+        Rules_Workflow.Process_Exception e1 = workflow.process_text(FileIO.readFile(input_path));
+        if(e1 != Rules_Workflow.Process_Exception.NORMAL){
             System.out.print("\nInput Error!\n");
             return;
         }
@@ -21,9 +23,9 @@ public class LL1_Analyze_Debug {
         StringBuilder sb = new StringBuilder();
         sb.append(workflow.getSymbolInfo());
         sb.append("\nRule_Table:\n");
-        sb.append(C_Bison.Language.Rules.Lexing.Render.Grammar_List_to_str_full(V));
+        sb.append(Rules_Render.Grammar_List_to_str_full(V));
         sb.append("\n");
-        Process ll1 = new Process();
+        LL1_Process ll1 = new LL1_Process();
         if(ll1.pre_process(V) != Pre_Process_Exception.NORMAL){
             System.out.print("\nInput Error!\n");
             return;
@@ -37,7 +39,7 @@ public class LL1_Analyze_Debug {
             System.out.print("\nGrammar is not LL1!\n");
             return;
         }
-        sb.append(C_Bison.Grammar.LL1.Render.LL1_Table_Render(ll1, 48));
+        sb.append(LL1_Render.LL1_Table_Render(ll1, 48));
         String ret = sb.toString();
         System.out.print(ret);
         FileIO.writeFile(ret, output_path);

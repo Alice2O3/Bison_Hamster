@@ -1,6 +1,6 @@
 package C_Bison.Language.Easy_C;
 
-public class Tokens {
+public class Easy_C_Tokens {
     public static final int IDENTIFIER = 0;
     public static final int INTEGER = 1;
     public static final int INT = 2;
@@ -25,7 +25,7 @@ public class Tokens {
     public static final int IF = 21;
     public static final int RETURN = 22;
     public static final int EOF = 23;
-    public static final String[] Map = {
+    public static final String[] Token_Map = {
             "Identifier", "Integer", "Int", "Void", "Left_small_bracket", "Right_small_bracket",
             "Left_big_bracket", "Right_big_bracket", "Comma", "Statement_end", "Plus",
             "Minus", "Assign", "AssignAdd", "AssignMinus", "Smaller",

@@ -5,7 +5,7 @@ import C_Flex.callback.ICallback;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Types {
+public class DFA_Types {
     public static class DFA_edge {
         public final Integer u;
         public final Integer v;

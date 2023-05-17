@@ -1,11 +1,11 @@
 package C_Bison.Grammar.LL1;
 
-import C_Bison.Grammar.LL1.Types.*;
-import C_Bison.Grammar.Types.*;
+import C_Bison.Grammar.LL1.LL1_Types.*;
+import C_Bison.Grammar.Grammar_Types.*;
 
 import java.util.Map;
 
-public class Render {
+public class LL1_Render {
     private final static String empty_tag = "@";
     private final static String end_tag = "#";
 
@@ -61,7 +61,7 @@ public class Render {
         return sb.toString();
     }
 
-    public static String LL1_Table_Render(Process ll1, Integer table_space){
+    public static String LL1_Table_Render(LL1_Process ll1, Integer table_space){
         StringBuilder sb = new StringBuilder();
         LL1_expr_pair_list expr_pair_index = ll1.get_expr_pair_index();
         LL1_symbol_set terminal_set = ll1.get_terminals();
@@ -93,7 +93,7 @@ public class Render {
         return sb.toString();
     }
 
-    public static String LL1_Table_Render_Simple(Process ll1, Integer table_space){
+    public static String LL1_Table_Render_Simple(LL1_Process ll1, Integer table_space){
         StringBuilder sb = new StringBuilder();
         LL1_expr_pair_list expr_pair_index = ll1.get_expr_pair_index();
         LL1_symbol_set terminal_set = ll1.get_terminals();

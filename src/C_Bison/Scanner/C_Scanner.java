@@ -1,13 +1,11 @@
 package C_Bison.Scanner;
 
-import C_Bison.Language.Easy_C.Tokens;
+import C_Bison.Language.Easy_C.Easy_C_Tokens;
 import C_Flex.DFA;
-import C_Flex.Types.*;
+import C_Flex.DFA_Types.*;
 import C_Flex.callback.Common;
 import C_Flex.callback.ICallback;
 import C_Flex.callback.Util;
-
-import java.util.List;
 
 public class C_Scanner implements IScanner {
     private final DFA dfa;
@@ -39,22 +37,22 @@ public class C_Scanner implements IScanner {
         public void execute(DFA dfa, DFA_event e) {
             String lexeme = dfa.getLexeme();
             if(lexeme.equals("if")){
-                Util.acceptFinishedKeep(dfa, Tokens.IF);
+                Util.acceptFinishedKeep(dfa, Easy_C_Tokens.IF);
             }
             else if(lexeme.equals("for")){
-                Util.acceptFinishedKeep(dfa, Tokens.FOR);
+                Util.acceptFinishedKeep(dfa, Easy_C_Tokens.FOR);
             }
             else if(lexeme.equals("return")){
-                Util.acceptFinishedKeep(dfa, Tokens.RETURN);
+                Util.acceptFinishedKeep(dfa, Easy_C_Tokens.RETURN);
             }
             else if(lexeme.equals("int")){
-                Util.acceptFinishedKeep(dfa, Tokens.INT);
+                Util.acceptFinishedKeep(dfa, Easy_C_Tokens.INT);
             }
             else if(lexeme.equals("void")){
-                Util.acceptFinishedKeep(dfa, Tokens.VOID);
+                Util.acceptFinishedKeep(dfa, Easy_C_Tokens.VOID);
             }
             else {
-                Util.acceptFinishedKeep(dfa, Tokens.IDENTIFIER);
+                Util.acceptFinishedKeep(dfa, Easy_C_Tokens.IDENTIFIER);
             }
         }
     }
@@ -85,32 +83,32 @@ public class C_Scanner implements IScanner {
         dfa.processString(code);
         Util.moveForward(dfa);
         dfa.setLexeme("EOF");
-        Util.addTokenInfo(dfa, Tokens.EOF);
+        Util.addTokenInfo(dfa, Easy_C_Tokens.EOF);
         return dfa.tokens_list;
     }
 
     private void setGeneralRules(){
         dfa.addEdge(new DFA_edgeInterval(States.INITIAL, States.INITIAL, 0, 127, Callbacks.FORWARD));
         dfa.addEdge(new DFA_edgeInterval(States.IDENTIFIER, States.INITIAL, 0, 127, Callbacks.IDENTIFIER_KEEP));
-        dfa.addEdge(new DFA_edgeInterval(States.INTEGER, States.INITIAL, 0, 127, Callbacks.KEEP(Tokens.INTEGER)));
+        dfa.addEdge(new DFA_edgeInterval(States.INTEGER, States.INITIAL, 0, 127, Callbacks.KEEP(Easy_C_Tokens.INTEGER)));
 
-        dfa.addEdge(new DFA_edgeInterval(States.LEFT_BIG_BRACKET, States.INITIAL, 0, 127, Callbacks.KEEP(Tokens.LEFT_BIG_BRACKET))); //{
-        dfa.addEdge(new DFA_edgeInterval(States.RIGHT_BIG_BRACKET, States.INITIAL, 0, 127, Callbacks.KEEP(Tokens.RIGHT_BIG_BRACKET))); //}
-        dfa.addEdge(new DFA_edgeInterval(States.LEFT_SMALL_BRACKET, States.INITIAL, 0, 127, Callbacks.KEEP(Tokens.LEFT_SMALL_BRACKET))); //(
-        dfa.addEdge(new DFA_edgeInterval(States.RIGHT_SMALL_BRACKET, States.INITIAL, 0, 127, Callbacks.KEEP(Tokens.RIGHT_SMALL_BRACKET))); //)
-        dfa.addEdge(new DFA_edgeInterval(States.COMMA, States.INITIAL, 0, 127, Callbacks.KEEP(Tokens.COMMA))); //,
-        dfa.addEdge(new DFA_edgeInterval(States.STATEMENT_END, States.INITIAL, 0, 127, Callbacks.KEEP(Tokens.STATEMENT_END))); //;
+        dfa.addEdge(new DFA_edgeInterval(States.LEFT_BIG_BRACKET, States.INITIAL, 0, 127, Callbacks.KEEP(Easy_C_Tokens.LEFT_BIG_BRACKET))); //{
+        dfa.addEdge(new DFA_edgeInterval(States.RIGHT_BIG_BRACKET, States.INITIAL, 0, 127, Callbacks.KEEP(Easy_C_Tokens.RIGHT_BIG_BRACKET))); //}
+        dfa.addEdge(new DFA_edgeInterval(States.LEFT_SMALL_BRACKET, States.INITIAL, 0, 127, Callbacks.KEEP(Easy_C_Tokens.LEFT_SMALL_BRACKET))); //(
+        dfa.addEdge(new DFA_edgeInterval(States.RIGHT_SMALL_BRACKET, States.INITIAL, 0, 127, Callbacks.KEEP(Easy_C_Tokens.RIGHT_SMALL_BRACKET))); //)
+        dfa.addEdge(new DFA_edgeInterval(States.COMMA, States.INITIAL, 0, 127, Callbacks.KEEP(Easy_C_Tokens.COMMA))); //,
+        dfa.addEdge(new DFA_edgeInterval(States.STATEMENT_END, States.INITIAL, 0, 127, Callbacks.KEEP(Easy_C_Tokens.STATEMENT_END))); //;
 
-        dfa.addEdge(new DFA_edgeInterval(States.PLUS, States.INITIAL, 0, 127, Callbacks.KEEP(Tokens.PLUS))); //+
-        dfa.addEdge(new DFA_edgeInterval(States.MINUS, States.INITIAL, 0, 127, Callbacks.KEEP(Tokens.MINUS))); //-
-        dfa.addEdge(new DFA_edgeInterval(States.ASSIGN, States.INITIAL, 0, 127, Callbacks.KEEP(Tokens.ASSIGN))); //=
-        dfa.addEdge(new DFA_edgeInterval(States.ASSIGNADD, States.INITIAL, 0, 127, Callbacks.KEEP(Tokens.ASSIGNADD))); //+=
-        dfa.addEdge(new DFA_edgeInterval(States.ASSIGNMINUS, States.INITIAL, 0, 127, Callbacks.KEEP(Tokens.ASSIGNMINUS))); //-=
-        dfa.addEdge(new DFA_edgeInterval(States.SMALLER, States.INITIAL, 0, 127, Callbacks.KEEP(Tokens.SMALLER))); //<
-        dfa.addEdge(new DFA_edgeInterval(States.GREATER, States.INITIAL, 0, 127, Callbacks.KEEP(Tokens.GREATER))); //>
-        dfa.addEdge(new DFA_edgeInterval(States.SMALLEREQUAL, States.INITIAL, 0, 127, Callbacks.KEEP(Tokens.SMALLEREQUAL))); //<=
-        dfa.addEdge(new DFA_edgeInterval(States.GREATEREQUAL, States.INITIAL, 0, 127, Callbacks.KEEP(Tokens.GREATEREQUAL))); //>=
-        dfa.addEdge(new DFA_edgeInterval(States.EQUALTO, States.INITIAL, 0, 127, Callbacks.KEEP(Tokens.EQUALTO))); //==
+        dfa.addEdge(new DFA_edgeInterval(States.PLUS, States.INITIAL, 0, 127, Callbacks.KEEP(Easy_C_Tokens.PLUS))); //+
+        dfa.addEdge(new DFA_edgeInterval(States.MINUS, States.INITIAL, 0, 127, Callbacks.KEEP(Easy_C_Tokens.MINUS))); //-
+        dfa.addEdge(new DFA_edgeInterval(States.ASSIGN, States.INITIAL, 0, 127, Callbacks.KEEP(Easy_C_Tokens.ASSIGN))); //=
+        dfa.addEdge(new DFA_edgeInterval(States.ASSIGNADD, States.INITIAL, 0, 127, Callbacks.KEEP(Easy_C_Tokens.ASSIGNADD))); //+=
+        dfa.addEdge(new DFA_edgeInterval(States.ASSIGNMINUS, States.INITIAL, 0, 127, Callbacks.KEEP(Easy_C_Tokens.ASSIGNMINUS))); //-=
+        dfa.addEdge(new DFA_edgeInterval(States.SMALLER, States.INITIAL, 0, 127, Callbacks.KEEP(Easy_C_Tokens.SMALLER))); //<
+        dfa.addEdge(new DFA_edgeInterval(States.GREATER, States.INITIAL, 0, 127, Callbacks.KEEP(Easy_C_Tokens.GREATER))); //>
+        dfa.addEdge(new DFA_edgeInterval(States.SMALLEREQUAL, States.INITIAL, 0, 127, Callbacks.KEEP(Easy_C_Tokens.SMALLEREQUAL))); //<=
+        dfa.addEdge(new DFA_edgeInterval(States.GREATEREQUAL, States.INITIAL, 0, 127, Callbacks.KEEP(Easy_C_Tokens.GREATEREQUAL))); //>=
+        dfa.addEdge(new DFA_edgeInterval(States.EQUALTO, States.INITIAL, 0, 127, Callbacks.KEEP(Easy_C_Tokens.EQUALTO))); //==
 
         dfa.addEdge(new DFA_edge(States.INITIAL, States.INITIAL, '\n', Callbacks.ESCAPE));
     }

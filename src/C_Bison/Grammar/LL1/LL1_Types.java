@@ -1,9 +1,11 @@
 package C_Bison.Grammar.LL1;
 
 import java.util.*;
-import C_Bison.Grammar.Types.*;
 
-public class Types{
+import C_Bison.Grammar.Grammar_Types;
+import C_Bison.Grammar.Grammar_Types.*;
+
+public class LL1_Types {
     public static class LL1_symbol_set{
         public Set<Integer> val = new HashSet<>();
     }
@@ -28,9 +30,9 @@ public class Types{
     }
 
     public static class LL1_expr_select{
-        public C_Bison.Grammar.Types.Grammar_expr first;
+        public Grammar_Types.Grammar_expr first;
         public LL1_symbol_set second;
-        public LL1_expr_select(C_Bison.Grammar.Types.Grammar_expr first_, LL1_symbol_set second_){
+        public LL1_expr_select(Grammar_Types.Grammar_expr first_, LL1_symbol_set second_){
             first = first_;
             second = second_;
         }
@@ -46,8 +48,8 @@ public class Types{
 
     public static class LL1_expr_pair{
         public Integer first;
-        public C_Bison.Grammar.Types.Grammar_expr second;
-        public LL1_expr_pair(Integer first_, C_Bison.Grammar.Types.Grammar_expr second_){
+        public Grammar_Types.Grammar_expr second;
+        public LL1_expr_pair(Integer first_, Grammar_Types.Grammar_expr second_){
             first = first_;
             second = second_;
         }
@@ -75,5 +77,14 @@ public class Types{
         NORMAL,
         HAS_LEFT_RECURSION,
         NOT_LL1
+    }
+
+    public enum Parser_Exception{
+        NORMAL,
+        READ_ERROR,
+        INPUT_ERROR,
+        HAS_LEFT_RECURSION,
+        NOT_LL1,
+        PARSE_ERROR
     }
 }

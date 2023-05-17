@@ -1,12 +1,10 @@
 package C_Bison.Scanner;
 
-import C_Bison.Language.Rules.Tokens;
+import C_Bison.Language.Rules.Rules_Tokens;
 import C_Flex.DFA;
-import C_Flex.Types.*;
+import C_Flex.DFA_Types.*;
 import C_Flex.callback.Common;
 import C_Flex.callback.ICallback;
-
-import java.util.List;
 
 public class Grammar_Scanner implements IScanner {
 
@@ -25,7 +23,7 @@ public class Grammar_Scanner implements IScanner {
     private static class Callbacks {
         private static final ICallback ACCEPT = new Common.Accept();
         private static final ICallback FORWARD = new Common.Forward();
-        private static final ICallback ESCAPE_ACCEPT = new Common.Escape_Accept(Tokens.ESCAPE);
+        private static final ICallback ESCAPE_ACCEPT = new Common.Escape_Accept(Rules_Tokens.ESCAPE);
         private static final ICallback DISCARD_KEEP = new Common.Discard_Keep();
 
         private static ICallback KEEP(Integer token_type) {
@@ -49,12 +47,12 @@ public class Grammar_Scanner implements IScanner {
     private void setGeneralRules(){
         //Finish Rules
         dfa.addEdge(new DFA_edgeInterval(States.INITIAL, States.INITIAL, 0, 127, Callbacks.FORWARD));
-        dfa.addEdge(new DFA_edgeInterval(States.TERMINAL, States.INITIAL, 0, 127, Callbacks.KEEP(Tokens.TERMINAL))); //1: TERMINAL
-        dfa.addEdge(new DFA_edgeInterval(States.NON_TERMINAL, States.INITIAL, 0, 127, Callbacks.KEEP(Tokens.NON_TERMINAL))); //2: NON_TERMINAL
+        dfa.addEdge(new DFA_edgeInterval(States.TERMINAL, States.INITIAL, 0, 127, Callbacks.KEEP(Rules_Tokens.TERMINAL))); //1: TERMINAL
+        dfa.addEdge(new DFA_edgeInterval(States.NON_TERMINAL, States.INITIAL, 0, 127, Callbacks.KEEP(Rules_Tokens.NON_TERMINAL))); //2: NON_TERMINAL
         dfa.addEdge(new DFA_edgeInterval(States.ARROW_L, States.INITIAL, 0, 127, Callbacks.DISCARD_KEEP));
-        dfa.addEdge(new DFA_edgeInterval(States.ARROW_R, States.INITIAL, 0, 127, Callbacks.KEEP(Tokens.ARROW))); //3: ARROW
-        dfa.addEdge(new DFA_edgeInterval(States.OR, States.INITIAL, 0, 127, Callbacks.KEEP(Tokens.OR))); //4: OR
-        dfa.addEdge(new DFA_edgeInterval(States.EMPTY, States.INITIAL, 0, 127, Callbacks.KEEP(Tokens.EMPTY))); //5: EMPTY
+        dfa.addEdge(new DFA_edgeInterval(States.ARROW_R, States.INITIAL, 0, 127, Callbacks.KEEP(Rules_Tokens.ARROW))); //3: ARROW
+        dfa.addEdge(new DFA_edgeInterval(States.OR, States.INITIAL, 0, 127, Callbacks.KEEP(Rules_Tokens.OR))); //4: OR
+        dfa.addEdge(new DFA_edgeInterval(States.EMPTY, States.INITIAL, 0, 127, Callbacks.KEEP(Rules_Tokens.EMPTY))); //5: EMPTY
 
         //Process Escapes
         dfa.addEdge(new DFA_edge(States.INITIAL, States.INITIAL, '\n', Callbacks.ESCAPE_ACCEPT));
