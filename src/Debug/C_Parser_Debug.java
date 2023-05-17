@@ -6,8 +6,9 @@ import C_Bison.PreProcess.PreProcess_C;
 import Filesystem.FileIO;
 
 public class C_Parser_Debug {
-    private final static String input_file = "Compile_Test/C_grammar_test/Example.c";
-    private final static String preprocessed_file = "Compile_Test/C_grammar_test/Example.pp.c";
+    private final static String input_file = "Compile_Test/C_ast_test/Example.c";
+    private final static String preprocessed_file = "Compile_Test/C_ast_test/Example.pp.c";
+    private final static String ast_file = "Compile_Test/C_ast_test/AST.json";
     public static void main(String[] args) {
         //Preprocessing code
         String source_code = FileIO.readFile(input_file);
@@ -31,6 +32,8 @@ public class C_Parser_Debug {
             System.out.print("AST Parsing Error!\n");
             return;
         }
-        ast.Traverse();
+        String node_info = ast.convert_to_json();
+        System.out.print(node_info);
+        FileIO.writeFile(node_info, ast_file);
     }
 }

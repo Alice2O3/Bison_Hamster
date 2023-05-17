@@ -35,7 +35,7 @@ public class LL1_Parser {
         ListIterator<Grammar_pair> expr_it = expr.val.listIterator(expr.val.size());
         while(expr_it.hasPrevious()){
             Grammar_pair p = expr_it.previous();
-            AST_node new_node = AST_node_factory.Factory_Non_Terminal(p.second);
+            AST_node new_node = AST_node_factory.Factory_Non_Finished(p.second);
             current_node.addChild(new_node);
             Token_Stack.push(new AST_node_pair(new_node, p.second));
         }
@@ -44,9 +44,9 @@ public class LL1_Parser {
 
     private Parser_Exception Process_Tokens(DFA_lexing_list token_list){
         ast = new AST();
-        AST_node root_node = AST_node_factory.Factory_Non_Terminal(start_symbol);
+        AST_node root_node = AST_node_factory.Factory_Non_Finished(start_symbol);
         ast.setRoot(root_node);
-        ast.setSymbols(Symbol_List);
+        ast.setSymbols(Terminal_Map, Symbol_List);
         Token_Stack.clear();
         Token_Stack.push(new AST_node_pair(root_node, start_symbol));
 
@@ -57,7 +57,7 @@ public class LL1_Parser {
             Integer mapped_token = Terminal_Map.get(Token_Map[lexing_top.token_type]);
             AST_node_pair S_top = Token_Stack.peek();
             if(S_top.second.equals(mapped_token)){ //Matched
-                S_top.first.addChild(AST_node_factory.Factory_Terminal(lexing_top));
+                S_top.first.addChild(AST_node_factory.Factory_Finished(lexing_top));
                 Token_Stack.pop();
                 if(!it.hasNext()){
                     break;

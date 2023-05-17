@@ -1,0 +1,203 @@
+{
+	"name": "prog",
+	"children":
+	[
+		{
+			"name": "statement",
+			"children":
+			[
+				{
+					"name": "simple_statement",
+					"children":
+					[
+						{
+							"name": "declare_statement",
+							"children":
+							[
+								{
+									"name": "identifier_declare_statement",
+									"children":
+									[
+										{
+											"name": "type",
+											"children":
+											[
+												{
+													"name": "Int",
+													"children":
+													[
+														{
+															"token": "int"
+														}
+													]
+												}
+											],
+											"name": "Identifier",
+											"children":
+											[
+												{
+													"token": "main"
+												}
+											],
+											"name": "identifier_declare_statement_p",
+											"children":
+											[
+												{
+													"name": "fuction_declare",
+													"children":
+													[
+														{
+															"name": "Left_small_bracket",
+															"children":
+															[
+																{
+																	"token": "("
+																}
+															],
+															"name": "param_list",
+															"children":
+															[
+																{
+																	"name": "param",
+																	"children":
+																	[
+																		{
+																		}
+																	],
+																	"name": "param_p",
+																	"children":
+																	[
+																		{
+																		}
+																	]
+																}
+															],
+															"name": "Right_small_bracket",
+															"children":
+															[
+																{
+																	"token": ")"
+																}
+															],
+															"name": "block_statement",
+															"children":
+															[
+																{
+																	"name": "Left_big_bracket",
+																	"children":
+																	[
+																		{
+																			"token": "{"
+																		}
+																	],
+																	"name": "statement_p",
+																	"children":
+																	[
+																		{
+																			"name": "statement",
+																			"children":
+																			[
+																				{
+																					"name": "simple_statement",
+																					"children":
+																					[
+																						{
+																							"name": "return_statement",
+																							"children":
+																							[
+																								{
+																									"name": "Return",
+																									"children":
+																									[
+																										{
+																											"token": "return"
+																										}
+																									],
+																									"name": "expression",
+																									"children":
+																									[
+																										{
+																											"name": "atom",
+																											"children":
+																											[
+																												{
+																													"name": "const",
+																													"children":
+																													[
+																														{
+																															"name": "Integer",
+																															"children":
+																															[
+																																{
+																																	"token": "0"
+																																}
+																															]
+																														}
+																													]
+																												}
+																											],
+																											"name": "infix_expression",
+																											"children":
+																											[
+																												{
+																												}
+																											]
+																										}
+																									],
+																									"name": "Statement_end",
+																									"children":
+																									[
+																										{
+																											"token": ";"
+																										}
+																									]
+																								}
+																							]
+																						}
+																					]
+																				}
+																			],
+																			"name": "statement_p",
+																			"children":
+																			[
+																				{
+																				}
+																			]
+																		}
+																	],
+																	"name": "Right_big_bracket",
+																	"children":
+																	[
+																		{
+																			"token": "}"
+																		}
+																	],
+																	"name": "statement_end_p",
+																	"children":
+																	[
+																		{
+																		}
+																	]
+																}
+															]
+														}
+													]
+												}
+											]
+										}
+									]
+								}
+							]
+						}
+					]
+				}
+			],
+			"name": "statement_p",
+			"children":
+			[
+				{
+				}
+			]
+		}
+	]
+}

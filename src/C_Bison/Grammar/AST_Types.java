@@ -7,7 +7,7 @@ import java.util.List;
 
 public class AST_Types {
     public static class AST_node{
-        public Boolean isTerminal;
+        public Boolean isFinished;
         public Integer symbol_index; //Non terminal
         public DFA_Types.DFA_lexing lexing; //Is terminal
         public List<AST_node> node_list = new ArrayList<>();
@@ -17,16 +17,16 @@ public class AST_Types {
     }
 
     public static class AST_node_factory{
-        public static AST_node Factory_Terminal(DFA_Types.DFA_lexing lexing){
+        public static AST_node Factory_Finished(DFA_Types.DFA_lexing lexing){
             AST_node ret = new AST_node();
-            ret.isTerminal = true;
+            ret.isFinished = true;
             ret.lexing = lexing;
             return ret;
         }
 
-        public static AST_node Factory_Non_Terminal(Integer symbol_index){
+        public static AST_node Factory_Non_Finished(Integer symbol_index){
             AST_node ret = new AST_node();
-            ret.isTerminal = false;
+            ret.isFinished = false;
             ret.symbol_index = symbol_index;
             return ret;
         }
@@ -38,6 +38,19 @@ public class AST_Types {
         public AST_node_pair(AST_node first_, Integer second_){
             first = first_;
             second = second_;
+        }
+    }
+
+    public static class AST_stack_info{
+        public AST_node node;
+        public Integer layer;
+        public Boolean state; //0: out, 1: in
+        public Boolean list_end;
+        public AST_stack_info(AST_node node_, Integer layer_, Boolean state_, Boolean list_end_){
+            node = node_;
+            layer = layer_;
+            state = state_;
+            list_end = list_end_;
         }
     }
 }
