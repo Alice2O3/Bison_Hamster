@@ -31,14 +31,18 @@
 														}
 													]
 												}
-											],
+											]
+										},
+										{
 											"type": "Identifier",
 											"children":
 											[
 												{
 													"value": "main"
 												}
-											],
+											]
+										},
+										{
 											"type": "identifier_declare_statement_p",
 											"children":
 											[
@@ -53,7 +57,9 @@
 																{
 																	"value": "("
 																}
-															],
+															]
+														},
+														{
 															"type": "param_list",
 															"children":
 															[
@@ -63,7 +69,9 @@
 																	[
 																		{
 																		}
-																	],
+																	]
+																},
+																{
 																	"type": "param_p",
 																	"children":
 																	[
@@ -71,14 +79,18 @@
 																		}
 																	]
 																}
-															],
+															]
+														},
+														{
 															"type": "Right_small_bracket",
 															"children":
 															[
 																{
 																	"value": ")"
 																}
-															],
+															]
+														},
+														{
 															"type": "block_statement",
 															"children":
 															[
@@ -89,7 +101,9 @@
 																		{
 																			"value": "{"
 																		}
-																	],
+																	]
+																},
+																{
 																	"type": "statement_p",
 																	"children":
 																	[
@@ -112,7 +126,9 @@
 																										{
 																											"value": "return"
 																										}
-																									],
+																									]
+																								},
+																								{
 																									"type": "expression",
 																									"children":
 																									[
@@ -135,7 +151,9 @@
 																														}
 																													]
 																												}
-																											],
+																											]
+																										},
+																										{
 																											"type": "infix_expression",
 																											"children":
 																											[
@@ -143,7 +161,9 @@
 																												}
 																											]
 																										}
-																									],
+																									]
+																								},
+																								{
 																									"type": "Statement_end",
 																									"children":
 																									[
@@ -156,7 +176,9 @@
 																						}
 																					]
 																				}
-																			],
+																			]
+																		},
+																		{
 																			"type": "statement_p",
 																			"children":
 																			[
@@ -164,14 +186,18 @@
 																				}
 																			]
 																		}
-																	],
+																	]
+																},
+																{
 																	"type": "Right_big_bracket",
 																	"children":
 																	[
 																		{
 																			"value": "}"
 																		}
-																	],
+																	]
+																},
+																{
 																	"type": "statement_end_p",
 																	"children":
 																	[
@@ -191,7 +217,9 @@
 						}
 					]
 				}
-			],
+			]
+		},
+		{
 			"type": "statement_p",
 			"children":
 			[

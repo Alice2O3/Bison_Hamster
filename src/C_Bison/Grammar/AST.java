@@ -68,7 +68,11 @@ public class AST {
                             .append(tab_n(layer))
                             .append("]");
                     if(!S_top.list_end){
-                        sb.append(",");
+                        sb.append("\n")
+                                .append(tab_n(layer - 1))
+                                .append("},\n")
+                                .append(tab_n(layer - 1))
+                                .append("{");
                     }
                     sb.append("\n");
                 }

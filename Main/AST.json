@@ -1,0 +1,580 @@
+{
+	"type": "prog",
+	"children":
+	[
+		{
+			"type": "statement",
+			"children":
+			[
+				{
+					"type": "simple_statement",
+					"children":
+					[
+						{
+							"type": "declare_statement",
+							"children":
+							[
+								{
+									"type": "identifier_declare_statement",
+									"children":
+									[
+										{
+											"type": "type",
+											"children":
+											[
+												{
+													"type": "Int",
+													"children":
+													[
+														{
+															"value": "int"
+														}
+													]
+												}
+											],
+											"type": "Identifier",
+											"children":
+											[
+												{
+													"value": "main"
+												}
+											],
+											"type": "identifier_declare_statement_p",
+											"children":
+											[
+												{
+													"type": "fuction_declare",
+													"children":
+													[
+														{
+															"type": "Left_small_bracket",
+															"children":
+															[
+																{
+																	"value": "("
+																}
+															],
+															"type": "param_list",
+															"children":
+															[
+																{
+																	"type": "param",
+																	"children":
+																	[
+																		{
+																		}
+																	],
+																	"type": "param_p",
+																	"children":
+																	[
+																		{
+																		}
+																	]
+																}
+															],
+															"type": "Right_small_bracket",
+															"children":
+															[
+																{
+																	"value": ")"
+																}
+															],
+															"type": "block_statement",
+															"children":
+															[
+																{
+																	"type": "Left_big_bracket",
+																	"children":
+																	[
+																		{
+																			"value": "{"
+																		}
+																	],
+																	"type": "statement_p",
+																	"children":
+																	[
+																		{
+																			"type": "statement",
+																			"children":
+																			[
+																				{
+																					"type": "simple_statement",
+																					"children":
+																					[
+																						{
+																							"type": "declare_statement",
+																							"children":
+																							[
+																								{
+																									"type": "identifier_declare_statement",
+																									"children":
+																									[
+																										{
+																											"type": "type",
+																											"children":
+																											[
+																												{
+																													"type": "Int",
+																													"children":
+																													[
+																														{
+																															"value": "int"
+																														}
+																													]
+																												}
+																											],
+																											"type": "Identifier",
+																											"children":
+																											[
+																												{
+																													"value": "bison"
+																												}
+																											],
+																											"type": "identifier_declare_statement_p",
+																											"children":
+																											[
+																												{
+																													"type": "identifier_declare_statement_assign",
+																													"children":
+																													[
+																														{
+																															"type": "declare_operator",
+																															"children":
+																															[
+																																{
+																																	"type": "Assign",
+																																	"children":
+																																	[
+																																		{
+																																			"value": "="
+																																		}
+																																	]
+																																}
+																															],
+																															"type": "expression",
+																															"children":
+																															[
+																																{
+																																	"type": "atom",
+																																	"children":
+																																	[
+																																		{
+																																			"type": "const",
+																																			"children":
+																																			[
+																																				{
+																																					"type": "Integer",
+																																					"children":
+																																					[
+																																						{
+																																							"value": "1"
+																																						}
+																																					]
+																																				}
+																																			]
+																																		}
+																																	],
+																																	"type": "infix_expression",
+																																	"children":
+																																	[
+																																		{
+																																		}
+																																	]
+																																}
+																															],
+																															"type": "Statement_end",
+																															"children":
+																															[
+																																{
+																																	"value": ";"
+																																}
+																															]
+																														}
+																													]
+																												}
+																											]
+																										}
+																									]
+																								}
+																							]
+																						}
+																					]
+																				}
+																			],
+																			"type": "statement_p",
+																			"children":
+																			[
+																				{
+																					"type": "statement",
+																					"children":
+																					[
+																						{
+																							"type": "simple_statement",
+																							"children":
+																							[
+																								{
+																									"type": "declare_statement",
+																									"children":
+																									[
+																										{
+																											"type": "identifier_declare_statement",
+																											"children":
+																											[
+																												{
+																													"type": "type",
+																													"children":
+																													[
+																														{
+																															"type": "Int",
+																															"children":
+																															[
+																																{
+																																	"value": "int"
+																																}
+																															]
+																														}
+																													],
+																													"type": "Identifier",
+																													"children":
+																													[
+																														{
+																															"value": "hamster"
+																														}
+																													],
+																													"type": "identifier_declare_statement_p",
+																													"children":
+																													[
+																														{
+																															"type": "identifier_declare_statement_assign",
+																															"children":
+																															[
+																																{
+																																	"type": "declare_operator",
+																																	"children":
+																																	[
+																																		{
+																																			"type": "Assign",
+																																			"children":
+																																			[
+																																				{
+																																					"value": "="
+																																				}
+																																			]
+																																		}
+																																	],
+																																	"type": "expression",
+																																	"children":
+																																	[
+																																		{
+																																			"type": "atom",
+																																			"children":
+																																			[
+																																				{
+																																					"type": "const",
+																																					"children":
+																																					[
+																																						{
+																																							"type": "Integer",
+																																							"children":
+																																							[
+																																								{
+																																									"value": "2"
+																																								}
+																																							]
+																																						}
+																																					]
+																																				}
+																																			],
+																																			"type": "infix_expression",
+																																			"children":
+																																			[
+																																				{
+																																				}
+																																			]
+																																		}
+																																	],
+																																	"type": "Statement_end",
+																																	"children":
+																																	[
+																																		{
+																																			"value": ";"
+																																		}
+																																	]
+																																}
+																															]
+																														}
+																													]
+																												}
+																											]
+																										}
+																									]
+																								}
+																							]
+																						}
+																					],
+																					"type": "statement_p",
+																					"children":
+																					[
+																						{
+																							"type": "statement",
+																							"children":
+																							[
+																								{
+																									"type": "simple_statement",
+																									"children":
+																									[
+																										{
+																											"type": "declare_statement",
+																											"children":
+																											[
+																												{
+																													"type": "identifier_declare_statement",
+																													"children":
+																													[
+																														{
+																															"type": "type",
+																															"children":
+																															[
+																																{
+																																	"type": "Int",
+																																	"children":
+																																	[
+																																		{
+																																			"value": "int"
+																																		}
+																																	]
+																																}
+																															],
+																															"type": "Identifier",
+																															"children":
+																															[
+																																{
+																																	"value": "bison_hamster"
+																																}
+																															],
+																															"type": "identifier_declare_statement_p",
+																															"children":
+																															[
+																																{
+																																	"type": "identifier_declare_statement_assign",
+																																	"children":
+																																	[
+																																		{
+																																			"type": "declare_operator",
+																																			"children":
+																																			[
+																																				{
+																																					"type": "Assign",
+																																					"children":
+																																					[
+																																						{
+																																							"value": "="
+																																						}
+																																					]
+																																				}
+																																			],
+																																			"type": "expression",
+																																			"children":
+																																			[
+																																				{
+																																					"type": "atom",
+																																					"children":
+																																					[
+																																						{
+																																							"type": "Identifier",
+																																							"children":
+																																							[
+																																								{
+																																									"value": "bison"
+																																								}
+																																							]
+																																						}
+																																					],
+																																					"type": "infix_expression",
+																																					"children":
+																																					[
+																																						{
+																																							"type": "operator_expression",
+																																							"children":
+																																							[
+																																								{
+																																									"type": "expression_operator",
+																																									"children":
+																																									[
+																																										{
+																																											"type": "Plus",
+																																											"children":
+																																											[
+																																												{
+																																													"value": "+"
+																																												}
+																																											]
+																																										}
+																																									],
+																																									"type": "expression",
+																																									"children":
+																																									[
+																																										{
+																																											"type": "atom",
+																																											"children":
+																																											[
+																																												{
+																																													"type": "Identifier",
+																																													"children":
+																																													[
+																																														{
+																																															"value": "hamster"
+																																														}
+																																													]
+																																												}
+																																											],
+																																											"type": "infix_expression",
+																																											"children":
+																																											[
+																																												{
+																																												}
+																																											]
+																																										}
+																																									]
+																																								}
+																																							]
+																																						}
+																																					]
+																																				}
+																																			],
+																																			"type": "Statement_end",
+																																			"children":
+																																			[
+																																				{
+																																					"value": ";"
+																																				}
+																																			]
+																																		}
+																																	]
+																																}
+																															]
+																														}
+																													]
+																												}
+																											]
+																										}
+																									]
+																								}
+																							],
+																							"type": "statement_p",
+																							"children":
+																							[
+																								{
+																									"type": "statement",
+																									"children":
+																									[
+																										{
+																											"type": "simple_statement",
+																											"children":
+																											[
+																												{
+																													"type": "return_statement",
+																													"children":
+																													[
+																														{
+																															"type": "Return",
+																															"children":
+																															[
+																																{
+																																	"value": "return"
+																																}
+																															],
+																															"type": "expression",
+																															"children":
+																															[
+																																{
+																																	"type": "atom",
+																																	"children":
+																																	[
+																																		{
+																																			"type": "const",
+																																			"children":
+																																			[
+																																				{
+																																					"type": "Integer",
+																																					"children":
+																																					[
+																																						{
+																																							"value": "0"
+																																						}
+																																					]
+																																				}
+																																			]
+																																		}
+																																	],
+																																	"type": "infix_expression",
+																																	"children":
+																																	[
+																																		{
+																																		}
+																																	]
+																																}
+																															],
+																															"type": "Statement_end",
+																															"children":
+																															[
+																																{
+																																	"value": ";"
+																																}
+																															]
+																														}
+																													]
+																												}
+																											]
+																										}
+																									],
+																									"type": "statement_p",
+																									"children":
+																									[
+																										{
+																										}
+																									]
+																								}
+																							]
+																						}
+																					]
+																				}
+																			]
+																		}
+																	],
+																	"type": "Right_big_bracket",
+																	"children":
+																	[
+																		{
+																			"value": "}"
+																		}
+																	],
+																	"type": "statement_end_p",
+																	"children":
+																	[
+																		{
+																		}
+																	]
+																}
+															]
+														}
+													]
+												}
+											]
+										}
+									]
+								}
+							]
+						}
+					]
+				}
+			],
+			"type": "statement_p",
+			"children":
+			[
+				{
+				}
+			]
+		}
+	]
+}
