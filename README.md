@@ -6,7 +6,7 @@
 
 GNU has Bison for LR grammars, and we have Bison Hamster for LL(1) grammars!
 
-This hamster will help you analyze LL(1) grammars and parse Simple C Program into AST trees! (I want to give her a full life~)
+This hamster has more intelligence on LL(1) than GPT-4 and will help you analyze LL(1) grammars and parse Simple C Program into AST trees! (I want to give her a full life~)
 
 **Image Source**: Avatar of anime artist 
 Bison倉鼠 (Pixiv: [https://www.pixiv.net/users/333556](https://www.pixiv.net/users/333556), support her if possible~)
@@ -182,4 +182,4 @@ AST node has two types, the attributes are as follows:
    |    ω    /  
    \        |   
     |       |   
- ```txt
+```
