@@ -1,2 +1,2 @@
-# C_Bison
+# Bison_Hamster
 Simple Grammar analyzer for C
