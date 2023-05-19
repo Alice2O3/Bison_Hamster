@@ -37,7 +37,7 @@ In this format, `<Expr>` can be expressed as `<Terminal>/<Non_Terminal> ... <Ter
 
 ### Sample Format
 
-Grammar used to parse simple C program into AST trees is located in `Grammars/Easy_C.bison` (Note it's different from traditional `.bison` format):
+Grammar used to parse simple C program into AST trees is located in `Grammars/Easy_C.bison`:
 
 ```txt
 prog -> statement statement_p
