@@ -1,8 +1,8 @@
 # Bison_Hamster
 
-<center>
+<div align=center>
     <img src="img/Bison_Hamster_Avatar.jpeg" width = "400" height = "400">
-</center>
+</div>
 
 GNU has Bison for LR grammars, and we have Bison Hamster for LL(1) grammars!
 
@@ -171,3 +171,15 @@ AST node has two types, the attributes are as follows:
 
 - This parser only works on LL(1) grammar, so you have to revise your grammar into LL(1) type >ω<
 - Since she don't have time to write regex expressions into DFA, the lexer has to be written by ourselves and the symbol index is hard coded (see src/C_Flex). But the lexer is written with general DFA and once you get hang of it, you can quickly modify them. Also, you just need to consider the mapping of token_id and the corresponding terminal string in LL(1), and the hamster will do the rest for you >ω<
+
+```txt
+         ^      
+        <0>     
+     _   v  _   
+    / \  / / \  
+   / _ \--/   \ 
+   \/ >   <   / 
+   |    ω    /  
+   \        |   
+    |       |   
+ ```txt
