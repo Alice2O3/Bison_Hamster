@@ -86,7 +86,7 @@ Non_Terminals:
 
 ## LL(1) grammar support
 
-This Hamaster only recognizes LL(1) grammar, so make sure the grammar is LL(1) and if it has any left recursion or overlapped SELECT set, she will tell you and throw the error >ω<
+This hamaster only recognizes LL(1) grammar, so make sure the grammar is LL(1) and if it has any left recursion or overlapped SELECT set, she will tell you and throw the error >ω<
 
 Try to revise the grammar to meet her need >ω<
 
