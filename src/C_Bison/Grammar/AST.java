@@ -11,7 +11,7 @@ public class AST {
     private static String tab_space = "\t";
     private AST_node root;
     private List<String> Symbol_List;
-    private Map<String, Integer> Terminal_Map;
+    private Map<String, Integer> Symbol_Map;
 
     private String tab_n(Integer n){
         StringBuilder sb = new StringBuilder();
@@ -82,8 +82,8 @@ public class AST {
         root = e;
     }
 
-    public void setSymbols(Map<String, Integer> terminal_map, List<String> symbol_list) {
-        Terminal_Map = terminal_map;
+    public void setSymbols(Map<String, Integer> symbol_map, List<String> symbol_list) {
+        Symbol_Map = symbol_map;
         Symbol_List = symbol_list;
     }
 }

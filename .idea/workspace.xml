@@ -6,9 +6,14 @@
   <component name="ChangeListManager">
     <list default="true" id="65ce0729-d834-4110-97ea-b236a93b5951" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Compile_Test/C_ast_test/AST.json" beforeDir="false" afterPath="$PROJECT_DIR$/Compile_Test/C_ast_test/AST.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Grammars/Easy_C_LL1_Table.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/C_Bison.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Bison_Hamster.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Compile_Test/C_ast_test/Example_2.c" beforeDir="false" afterPath="$PROJECT_DIR$/Compile_Test/C_ast_test/Example_2.c" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/C_Bison/Grammar/AST.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/C_Bison/Grammar/AST.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/C_Bison/Grammar/LL1/LL1_Parser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/C_Bison/Grammar/LL1/LL1_Parser.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/C_Bison/Language/Easy_C/Easy_C_Tokens.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/C_Bison/Language/Easy_C/Easy_C_Tokens.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/C_Bison/Language/Easy_C/Lexing/Easy_C_Render.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/C_Bison/Language/Easy_C/Lexing/Easy_C_Render.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/C_Bison/Language/Rules/Lexing/Rules_Workflow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/C_Bison/Language/Rules/Lexing/Rules_Workflow.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Debug/C_Parser_Debug.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Debug/C_Parser_Debug.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -38,20 +43,20 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;E:/Compile_Github/C_Bison&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settings.project.statistic.project.settings&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "E:/Compile_Github/Bison_Hamster",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "settings.editor.selected.configurable": "reference.settings.project.statistic.project.settings"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="Debug" />
@@ -60,7 +65,7 @@
   <component name="RunManager" selected="Application.C_Parser_Debug">
     <configuration name="C_Parser_Debug" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Debug.C_Parser_Debug" />
-      <module name="C_Bison" />
+      <module name="Bison_Hamster" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="Debug.*" />
@@ -73,7 +78,7 @@
     </configuration>
     <configuration name="C_Token_Debug" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Debug.C_Token_Debug" />
-      <module name="C_Bison" />
+      <module name="Bison_Hamster" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="Debug.*" />
@@ -86,7 +91,7 @@
     </configuration>
     <configuration name="Debug.LL1_Scanner_Debug" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Debug.LL1_Scanner_Debug" />
-      <module name="C_Bison" />
+      <module name="Bison_Hamster" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="Debug.*" />
@@ -99,7 +104,7 @@
     </configuration>
     <configuration name="Debug.LL1_Simple_Debug" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Debug.LL1_Simple_Debug" />
-      <module name="C_Bison" />
+      <module name="Bison_Hamster" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="Debug.*" />
@@ -112,7 +117,7 @@
     </configuration>
     <configuration name="LL1_Analyze_Debug" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Debug.LL1_Analyze_Debug" />
-      <module name="C_Bison" />
+      <module name="Bison_Hamster" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="Debug.*" />
@@ -177,6 +182,9 @@
       <workItem from="1684334479902" duration="90000" />
       <workItem from="1684334932400" duration="3835000" />
       <workItem from="1684339284648" duration="69000" />
+      <workItem from="1684339702510" duration="186000" />
+      <workItem from="1684389776827" duration="4237000" />
+      <workItem from="1684478277061" duration="49000" />
     </task>
     <servers />
   </component>

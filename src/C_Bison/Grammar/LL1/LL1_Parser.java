@@ -13,10 +13,10 @@ public class LL1_Parser {
     private AST ast;
     private LL1_table LL1_Table;
     private LL1_expr_pair_list expr_pair_index;
-    private Map<String, Integer> Terminal_Map;
+    private Map<String, Integer> Symbol_Map;
     private List<String> Symbol_List;
     private Integer start_symbol;
-    private String[] Token_Map;
+    private List<String> Token_Map;
     private final Stack<AST_node_pair> Token_Stack = new Stack<>();
 
     private Boolean Push_Expr(AST_node_pair S_top, Integer mapped_token){
@@ -46,7 +46,7 @@ public class LL1_Parser {
         ast = new AST();
         AST_node root_node = AST_node_factory.Factory_Non_Finished(start_symbol);
         ast.setRoot(root_node);
-        ast.setSymbols(Terminal_Map, Symbol_List);
+        ast.setSymbols(Symbol_Map, Symbol_List);
         Token_Stack.clear();
         Token_Stack.push(new AST_node_pair(root_node, start_symbol));
 
@@ -54,7 +54,7 @@ public class LL1_Parser {
         DFA_lexing lexing_top = it.next();
         //Process
         while(true){
-            Integer mapped_token = Terminal_Map.get(Token_Map[lexing_top.token_type]);
+            Integer mapped_token = Symbol_Map.get(Token_Map.get(lexing_top.token_type));
             AST_node_pair S_top = Token_Stack.peek();
             if(S_top.second.equals(mapped_token)){ //Matched
                 S_top.first.addChild(AST_node_factory.Factory_Finished(lexing_top));
@@ -79,7 +79,7 @@ public class LL1_Parser {
         return Parser_Exception.NORMAL;
     }
 
-    public Parser_Exception Parse_Tokens(String rule_table, DFA_lexing_list token_list, String[] token_map){
+    public Parser_Exception Parse_Tokens(String rule_table, DFA_lexing_list token_list, List<String> token_map){
         if(rule_table == null || token_list == null || token_map == null){
             return Parser_Exception.READ_ERROR;
         }
@@ -101,7 +101,7 @@ public class LL1_Parser {
         else if(e2 == Resolve_Exception.NOT_LL1){
             return Parser_Exception.NOT_LL1;
         }
-        Terminal_Map = rules_workflow.getTerminalMap();
+        Symbol_Map = rules_workflow.getSymbolMap();
         Symbol_List = rules_workflow.getSymbolList();
         LL1_Table = ll1.get_LL1_table();
         expr_pair_index = ll1.get_expr_pair_index();

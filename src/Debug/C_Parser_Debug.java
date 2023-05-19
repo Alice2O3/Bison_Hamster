@@ -6,7 +6,7 @@ import C_Bison.PreProcess.PreProcess_C;
 import Filesystem.FileIO;
 
 public class C_Parser_Debug {
-    private final static String input_file = "Compile_Test/C_ast_test/Example.c";
+    private final static String input_file = "Compile_Test/C_ast_test/Example_2.c";
     private final static String preprocessed_file = "Compile_Test/C_ast_test/Example.pp.c";
     private final static String ast_file = "Compile_Test/C_ast_test/AST.json";
     public static void main(String[] args) {

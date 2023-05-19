@@ -1,5 +1,8 @@
 package C_Bison.Language.Easy_C;
 
+import java.util.Arrays;
+import java.util.List;
+
 public class Easy_C_Tokens {
     public static final int IDENTIFIER = 0;
     public static final int INTEGER = 1;
@@ -24,11 +27,11 @@ public class Easy_C_Tokens {
     public static final int FOR = 20;
     public static final int IF = 21;
     public static final int RETURN = 22;
-    public static final String[] Token_Map = {
-            "Identifier", "Integer", "Int", "Void", "Left_small_bracket", "Right_small_bracket",
-            "Left_big_bracket", "Right_big_bracket", "Comma", "Statement_end", "Plus",
-            "Minus", "Assign", "AssignAdd", "AssignMinus", "Smaller",
-            "Greater", "SmallerEqual", "GreaterEqual", "Equalto", "For",
-            "If", "Return"
-    };
+    public static final List<String> Token_Map = Arrays.asList(
+        "Identifier", "Integer", "Int", "Void", "Left_small_bracket", "Right_small_bracket",
+        "Left_big_bracket", "Right_big_bracket", "Comma", "Statement_end", "Plus",
+        "Minus", "Assign", "AssignAdd", "AssignMinus", "Smaller",
+        "Greater", "SmallerEqual", "GreaterEqual", "Equalto", "For",
+        "If", "Return"
+    );
 }

@@ -201,8 +201,8 @@ public class Rules_Workflow {
         return ret.toString();
     }
 
-    public Map<String, Integer> getTerminalMap(){
-        return Terminal_Map;
+    public Map<String, Integer> getSymbolMap(){
+        return Symbol_Map;
     }
     public Grammar_list getGrammarList(){
         return Grammar_List;
