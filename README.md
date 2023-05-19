@@ -22,7 +22,7 @@ git clone https://github.com/Alice2O3/Bison_Hamster.git
 ```
 
 2. Open the project with Intellij IDEA
-3. Run Main.java to see how the Hamster will parse the code~ >ω<
+3. Run Main.java to see how the hamster will parse the code~ >ω<
 4. If you want to go deeper, you can run the Debug tests in folder `"src/Debug"` >ω<
 
 ## Grammar Format
