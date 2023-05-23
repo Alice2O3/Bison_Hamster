@@ -283,7 +283,7 @@ public class LL1_Process {
         return Pre_Process_Exception.NORMAL;
     }
 
-    public void filter_terminal_expr(){
+    private void filter_terminal_expr(){
         Non_Terminal_Map_Filtered.val.clear();
         for(Map.Entry<Integer, Grammar_expr_list> p : Non_Terminal_Map.val.entrySet()){
             Grammar_rule rule = filter_terminal_rule(p.getKey(), p.getValue());
@@ -396,5 +396,21 @@ public class LL1_Process {
 
     public Integer get_start_symbol(){
         return Start_Symbol;
+    }
+
+    public LL1_flag_map get_reach_empty_map(){
+        return Reach_Empty_Map;
+    }
+
+    public LL1_symbol_map get_first_map(){
+        return First_Map;
+    }
+
+    public LL1_symbol_map get_follow_map(){
+        return Follow_Map;
+    }
+
+    public LL1_expr_select_list_map get_select_map(){
+        return Select_Map;
     }
 }

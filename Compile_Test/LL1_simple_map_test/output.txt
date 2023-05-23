@@ -1,0 +1,62 @@
+E -> TZ
+Z -> +TZ | -TZ | @
+T -> PY
+Y -> *PY | /PY | @
+P -> FX
+X -> ^FX | @
+F -> -F | +F | a | (E)
+
+Map_Info:
+
+Reach_Empty:
+Reach_Empty(P) = false
+Reach_Empty(T) = false
+Reach_Empty(E) = false
+Reach_Empty(F) = false
+Reach_Empty(X) = true
+Reach_Empty(Y) = true
+Reach_Empty(Z) = true
+
+First_Set:
+First(P) = { a, (, +, - }
+First(T) = { a, (, +, - }
+First(E) = { a, (, +, - }
+First(F) = { a, (, +, - }
+First(X) = { ^ }
+First(Y) = { *, / }
+First(Z) = { +, - }
+
+Follow_Set:
+Follow(P) = { $, ), *, +, -, / }
+Follow(T) = { $, ), +, - }
+Follow(E) = { $, ) }
+Follow(F) = { $, ), *, +, -, ^, / }
+Follow(X) = { $, ), *, +, -, / }
+Follow(Y) = { $, ), +, - }
+Follow(Z) = { $, ) }
+
+Select_Set:
+Select(P -> FX)  = { a, (, +, - }
+Select(T -> PY)  = { a, (, +, - }
+Select(E -> TZ)  = { a, (, +, - }
+Select(F -> -F)  = { - }
+Select(F -> +F)  = { + }
+Select(F -> a)   = { a }
+Select(F -> (E)) = { ( }
+Select(X -> ^FX) = { ^ }
+Select(X -> @)   = { $, ), *, +, -, / }
+Select(Y -> *PY) = { * }
+Select(Y -> /PY) = { / }
+Select(Y -> @)   = { $, ), +, - }
+Select(Z -> +TZ) = { + }
+Select(Z -> -TZ) = { - }
+Select(Z -> @)   = { $, ) }
+
+   LL1 Table           $               a               (               )               *               +               -               ^               /        
+       P               -            P -> FX         P -> FX            -               -            P -> FX         P -> FX            -               -        
+       T               -            T -> PY         T -> PY            -               -            T -> PY         T -> PY            -               -        
+       E               -            E -> TZ         E -> TZ            -               -            E -> TZ         E -> TZ            -               -        
+       F               -             F -> a         F -> (E)           -               -            F -> +F         F -> -F            -               -        
+       X             X -> @            -               -             X -> @          X -> @          X -> @          X -> @         X -> ^FX         X -> @     
+       Y             Y -> @            -               -             Y -> @         Y -> *PY         Y -> @          Y -> @            -            Y -> /PY    
+       Z             Z -> @            -               -             Z -> @            -            Z -> +TZ        Z -> -TZ           -               -        

@@ -2,7 +2,6 @@ package C_Bison.Grammar.LL1;
 
 import java.util.*;
 
-import C_Bison.Grammar.AST.*;
 import C_Bison.Grammar.Grammar_Types;
 import C_Bison.Grammar.Grammar_Types.*;
 
@@ -31,9 +30,9 @@ public class LL1_Types {
     }
 
     public static class LL1_expr_select{
-        public Grammar_Types.Grammar_expr first;
+        public Grammar_expr first;
         public LL1_symbol_set second;
-        public LL1_expr_select(Grammar_Types.Grammar_expr first_, LL1_symbol_set second_){
+        public LL1_expr_select(Grammar_expr first_, LL1_symbol_set second_){
             first = first_;
             second = second_;
         }
@@ -49,8 +48,8 @@ public class LL1_Types {
 
     public static class LL1_expr_pair{
         public Integer first;
-        public Grammar_Types.Grammar_expr second;
-        public LL1_expr_pair(Integer first_, Grammar_Types.Grammar_expr second_){
+        public Grammar_expr second;
+        public LL1_expr_pair(Integer first_, Grammar_expr second_){
             first = first_;
             second = second_;
         }

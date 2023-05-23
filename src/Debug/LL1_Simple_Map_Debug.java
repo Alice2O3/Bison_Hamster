@@ -1,15 +1,16 @@
 package Debug;
 
-import Filesystem.FileIO;
-import C_Bison.Grammar.LL1.LL1_Types.*;
+import C_Bison.Grammar.Grammar_Types.Grammar_list;
 import C_Bison.Grammar.LL1.LL1_Process;
 import C_Bison.Grammar.LL1.LL1_Render;
-import C_Bison.Grammar.Grammar_Types.*;
+import C_Bison.Grammar.LL1.LL1_Types.Pre_Process_Exception;
+import C_Bison.Grammar.LL1.LL1_Types.Resolve_Exception;
 import C_Bison.Language.Rules.Simple_Read.Simple_Read_Workflow;
+import Filesystem.FileIO;
 
-public class LL1_Simple_Debug {
-    private final static String input_file = "Compile_Test/LL1_simple_test/Example.txt";
-    private final static String output_file = "Compile_Test/LL1_simple_test/output.txt";
+public class LL1_Simple_Map_Debug {
+    private final static String input_file = "Compile_Test/LL1_simple_map_test/Example.txt";
+    private final static String output_file = "Compile_Test/LL1_simple_map_test/output.txt";
 
     public static void get_LL1_table_test(){
         String code = FileIO.readFile(input_file);
@@ -38,6 +39,7 @@ public class LL1_Simple_Debug {
         }
         StringBuilder sb = new StringBuilder();
         sb.append(Simple_Read_Workflow.grammar_to_str(V)).append("\n");
+        sb.append(LL1_Render.LL1_Table_Render_Map_Simple(ll1)).append("\n");
         sb.append(LL1_Render.LL1_Table_Render_Simple(ll1, 16));
         String ret = sb.toString();
         System.out.print(ret);
