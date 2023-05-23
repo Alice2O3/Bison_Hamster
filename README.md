@@ -1,12 +1,12 @@
 # Bison_Hamster
 
-<center>
+<div align=center>
     <img src="img/Bison_Hamster_Avatar.jpeg" width = "400" height = "400">
-</center>
+</div>
 
 GNU has Bison for LR grammars, and we have Bison Hamster for LL(1) grammars!
 
-This hamster will help you analyze LL(1) grammars and parse Simple C Program into AST trees! (I want to give her a full life~)
+This hamster has more intelligence on LL(1) than GPT-4 and will help you analyze LL(1) grammars and parse Simple C Program into AST trees! (I want to give her a full life~)
 
 **Image Source**: Avatar of anime artist 
 Bison倉鼠 (Pixiv: [https://www.pixiv.net/users/333556](https://www.pixiv.net/users/333556), support her if possible~)
@@ -22,7 +22,7 @@ git clone https://github.com/Alice2O3/Bison_Hamster.git
 ```
 
 2. Open the project with Intellij IDEA
-3. Run Main.java to see how the Hamster will parse the code~ >ω<
+3. Run Main.java to see how the hamster will parse the code~ >ω<
 4. If you want to go deeper, you can run the Debug tests in folder `"src/Debug"` >ω<
 
 ## Grammar Format
@@ -37,7 +37,7 @@ In this format, `<Expr>` can be expressed as `<Terminal>/<Non_Terminal> ... <Ter
 
 ### Sample Format
 
-Grammar used to parse simple C program into AST trees is located in `Grammars/Easy_C.bison` (Note it's different from traditional `.bison` format):
+Grammar used to parse simple C program into AST trees is located in `Grammars/Easy_C.bison`:
 
 ```txt
 prog -> statement statement_p
@@ -86,7 +86,7 @@ Non_Terminals:
 
 ## LL(1) grammar support
 
-This Hamaster only recognizes LL(1) grammar, so make sure the grammar is LL(1) and if it has any left recursion or overlapped SELECT set, she will tell you and throw the error >ω<
+This hamaster only recognizes LL(1) grammar, so make sure the grammar is LL(1) and if it has any left recursion or overlapped SELECT set, she will tell you and throw the error >ω<
 
 Try to revise the grammar to meet her need >ω<
 
@@ -171,3 +171,15 @@ AST node has two types, the attributes are as follows:
 
 - This parser only works on LL(1) grammar, so you have to revise your grammar into LL(1) type >ω<
 - Since she don't have time to write regex expressions into DFA, the lexer has to be written by ourselves and the symbol index is hard coded (see src/C_Flex). But the lexer is written with general DFA and once you get hang of it, you can quickly modify them. Also, you just need to consider the mapping of token_id and the corresponding terminal string in LL(1), and the hamster will do the rest for you >ω<
+
+```txt
+         ^      
+        <0>     
+     _   v  _   
+    / \  / / \  
+   / _ \--/   \ 
+   \/ >   <   / 
+   |    ω    /  
+   \        |   
+    |       |   
+```
