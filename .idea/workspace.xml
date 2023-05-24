@@ -6,16 +6,15 @@
   <component name="ChangeListManager">
     <list default="true" id="65ce0729-d834-4110-97ea-b236a93b5951" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Compile_Test/C_token_test/token_flow.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Compile_Test/C_token_test/token_flow.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Compile_Test/LL1_simple_map_test/output.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Compile_Test/LL1_simple_map_test/output.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Compile_Test/LL1_scanner_test/Easy_C.bison" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Compile_Test/LL1_scanner_test/Easy_C_Scanner.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Compile_Test/LL1_table_test/Easy_C.bison" beforeDir="false" afterPath="$PROJECT_DIR$/Compile_Test/LL1_table_test/Easy_C.bison" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Compile_Test/LL1_table_test/Easy_C_LL1_Table.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Compile_Test/LL1_table_test/Easy_C_LL1_Table.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/C_Bison/Language/Rules/Lexing/Rules_Render.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/C_Bison/Language/Rules/Lexing/Rules_Render.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/C_Bison/Language/Rules/Lexing/Rules_Workflow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/C_Bison/Language/Rules/Lexing/Rules_Workflow.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/C_Bison/Scanner/C_Scanner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/C_Bison/Scanner/C_Scanner.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/C_Bison/Scanner/Grammar_Scanner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/C_Bison/Scanner/Grammar_Scanner.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/C_Flex/DFA.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/C_Flex/DFA.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/C_Flex/DFA_Types.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/C_Flex/DFA_Types.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/C_Flex/DFA_node.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/C_Flex/DFA_node.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/C_Flex/callback/Common.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/C_Flex/callback/Common.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/C_Flex/callback/Fallback.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Debug/LL1_Simple_Map_Debug.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Debug/LL1_Simple_Map_Debug.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Debug/LL1_Scanner_Debug.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Debug/LL1_Scanner_Debug.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -104,8 +103,8 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="LL1_Read_Debug" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Debug.LL1_Read_Debug" />
+    <configuration name="LL1_Scanner_Debug" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Debug.LL1_Scanner_Debug" />
       <module name="Bison_Hamster" />
       <extension name="coverage">
         <pattern>
@@ -133,10 +132,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="Application.C_Token_Debug" />
+        <item itemvalue="Application.LL1_Analyze_Debug" />
+        <item itemvalue="Application.LL1_Scanner_Debug" />
         <item itemvalue="Application.Debug.C_Parser_Debug" />
         <item itemvalue="Application.LL1_Simple_Map_Debug" />
-        <item itemvalue="Application.LL1_Analyze_Debug" />
-        <item itemvalue="Application.LL1_Read_Debug" />
       </list>
     </recent_temporary>
   </component>
@@ -193,7 +192,7 @@
       <workItem from="1684823152728" duration="16000" />
       <workItem from="1684826594952" duration="10340000" />
       <workItem from="1684895670606" duration="4525000" />
-      <workItem from="1684912651537" duration="3938000" />
+      <workItem from="1684912651537" duration="6717000" />
     </task>
     <servers />
   </component>

@@ -177,7 +177,7 @@ public class Rules_Workflow {
             ret.append(String.format("(%d, %s)", symbol_cnt, s));
             symbol_cnt++;
         }
-        ret.append("\nTerminals:\n");
+        ret.append("\n\nTerminals:\n");
         flag = false;
         for(Map.Entry<String, Integer> p : Terminal_Map.entrySet()){
             if(flag){
@@ -187,7 +187,7 @@ public class Rules_Workflow {
             }
             ret.append(String.format("(%s, %d)", p.getKey(), p.getValue()));
         }
-        ret.append("\nNon_Terminals:\n");
+        ret.append("\n\nNon_Terminals:\n");
         flag = false;
         for(Map.Entry<String, Integer> p : Non_Terminal_Map.entrySet()){
             if(flag){

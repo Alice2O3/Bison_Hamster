@@ -15,7 +15,7 @@ public class Rules_Render {
                     flag = true;
                 }
                 if(expr.val.isEmpty()){
-                    ret.append("@");
+                    ret.append("<EMPTY>");
                 } else {
                     for(Grammar_pair p : expr.val){
                         String s;

@@ -1,6 +1,4 @@
-prog -> prog_start_p EOF
-prog_start_p -> prog_start | @
-prog_start -> statement statement_p
+prog -> statement statement_p
 statement_p -> statement statement_p | @
 expression -> atom infix_expression
 infix_expression -> operator_expression | assign_expression | @
@@ -20,7 +18,7 @@ expression_statement -> expression Statement_end
 fuction_declare -> Left_small_bracket param_list Right_small_bracket block_statement
 param_list -> param param_p
 param_p -> Comma param param_p | @
-param -> type Identifier
+param -> type Identifier | @
 if_statement -> If Left_small_bracket expression Right_small_bracket statement
 loop_statement -> For Left_small_bracket for_expression_l Statement_end for_expression_m Statement_end for_expression_r Right_small_bracket statement
 for_expression_l -> Identifier assign_expression

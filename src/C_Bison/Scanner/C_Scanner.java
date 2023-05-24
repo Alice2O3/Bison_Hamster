@@ -62,7 +62,6 @@ public class C_Scanner implements IScanner {
         private static final ICallback FORWARD = new Common.Forward();
         private static final ICallback ESCAPE = new Common.Escape();
         private static final ICallback IDENTIFIER_KEEP = new Identifier_Keep();
-        private static final ICallback DISCARD_KEEP = new Common.Discard_Keep();
         private static ICallback KEEP(Integer token_type) {
             return new Common.Accept_Keep(token_type);
         }

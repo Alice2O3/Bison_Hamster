@@ -5,8 +5,8 @@ import C_Bison.Language.Rules.Lexing.Rules_Workflow;
 import C_Bison.Language.Rules.Lexing.Rules_Render;
 
 public class LL1_Scanner_Debug {
-    static String input_path = "Compile_Test/LL1_scanner_test/Easy_C.bison";
-    static String output_path = "Compile_Test/LL1_scanner_test/Easy_C_Scanner.txt";
+    static String input_path = "Compile_Test/LL1_scanner_test/Example.bison";
+    static String output_path = "Compile_Test/LL1_scanner_test/Scanner.txt";
 
     public static void main(String[] args) {
         String code = FileIO.readFile(input_path);

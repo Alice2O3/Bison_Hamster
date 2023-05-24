@@ -12,7 +12,6 @@ public class Grammar_Scanner implements IScanner {
     private static class States {
         private static final int INITIAL = 0;
         private static final int TERMINAL = 1;
-
         private static final int NON_TERMINAL = 2;
         private static final int ARROW_L = 3;
         private static final int ARROW_R = 4;
@@ -20,16 +19,17 @@ public class Grammar_Scanner implements IScanner {
         private static final int EMPTY = 6;
         private static final int length = 7;
     }
+
     private static class Callbacks {
         private static final ICallback ACCEPT = new Common.Accept();
         private static final ICallback FORWARD = new Common.Forward();
         private static final ICallback ESCAPE_ACCEPT = new Common.Escape_Accept(Rules_Tokens.ESCAPE);
         private static final ICallback DISCARD_KEEP = new Common.Discard_Keep();
-
         private static ICallback KEEP(Integer token_type) {
             return new Common.Accept_Keep(token_type);
         }
     }
+
     public Grammar_Scanner(){
         dfa = new DFA();
         dfa.initSize(States.length);
@@ -38,6 +38,7 @@ public class Grammar_Scanner implements IScanner {
         setIdentifiers();
         setOperators();
     }
+
     @Override
     public DFA_lexing_list scan(String code) {
         dfa.processString(code);
