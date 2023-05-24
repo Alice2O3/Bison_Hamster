@@ -22,9 +22,9 @@ First(P) = { a, (, +, - }
 First(T) = { a, (, +, - }
 First(E) = { a, (, +, - }
 First(F) = { a, (, +, - }
-First(X) = { ^ }
-First(Y) = { *, / }
-First(Z) = { +, - }
+First(X) = { ^, @ }
+First(Y) = { *, /, @ }
+First(Z) = { +, -, @ }
 
 Follow_Set:
 Follow(P) = { $, ), *, +, -, / }

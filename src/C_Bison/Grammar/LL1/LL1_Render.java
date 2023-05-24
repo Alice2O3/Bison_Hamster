@@ -150,7 +150,8 @@ public class LL1_Render {
         sb.append("\nFirst_Set:\n");
         LL1_symbol_map first_map = ll1.get_first_map();
         for(Map.Entry<Integer, LL1_symbol_set> pi : first_map.val.entrySet()){
-            sb.append("First(").append(int_to_str(pi.getKey())).append(") = { ");
+            Integer left = pi.getKey();
+            sb.append("First(").append(int_to_str(left)).append(") = { ");
             LL1_symbol_set S = pi.getValue();
             boolean flag = false;
             for(Integer pj : S.val){
@@ -160,6 +161,9 @@ public class LL1_Render {
                     flag = true;
                 }
                 sb.append(render_symbol_simple(pj));
+            }
+            if(reach_empty_map.val.get(left).val){
+                sb.append(", ").append(empty_tag);
             }
             sb.append(" }\n");
         }

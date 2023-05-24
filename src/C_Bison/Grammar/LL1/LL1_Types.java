@@ -1,8 +1,6 @@
 package C_Bison.Grammar.LL1;
 
 import java.util.*;
-
-import C_Bison.Grammar.Grammar_Types;
 import C_Bison.Grammar.Grammar_Types.*;
 
 public class LL1_Types {

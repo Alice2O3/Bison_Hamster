@@ -96,11 +96,11 @@ public class LL1_Process {
             Integer s = p.second;
             if(p.first){
                 First_Map.val.get(left).val.add(s);
-                break;
+                return;
             }
             S.val.add(s);
             if(!Reach_Empty_Map.val.get(s).val){
-                break;
+                return;
             }
         }
     }
@@ -125,12 +125,12 @@ public class LL1_Process {
     }
 
     private void update_first_sub(Integer left, LL1_symbol_set S, LL1_flag iter_flag){
-        LL1_symbol_set S_ = new LL1_symbol_set();
-        S_.val.addAll(S.val);
-        for(Integer p : S_.val){
+        Iterator<Integer> it = S.val.iterator();
+        while(it.hasNext()){
+            Integer p = it.next();
             if(First_Pending.val.get(p).val.isEmpty()){
                 merge_set(First_Map.val.get(left), First_Map.val.get(p));
-                S.val.remove(p);
+                it.remove();
                 iter_flag.val = true;
             }
         }
