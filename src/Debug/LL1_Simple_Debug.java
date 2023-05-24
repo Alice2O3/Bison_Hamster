@@ -9,7 +9,7 @@ import C_Bison.Language.Rules.Simple_Read.Simple_Read_Workflow;
 
 public class LL1_Simple_Debug {
     private final static String input_file = "Compile_Test/LL1_simple_test/Example.txt";
-    private final static String output_file = "Compile_Test/LL1_simple_test/output.txt";
+    private final static String output_file = "Compile_Test/LL1_simple_test/Output.txt";
 
     public static void get_LL1_table_test(){
         String code = FileIO.readFile(input_file);

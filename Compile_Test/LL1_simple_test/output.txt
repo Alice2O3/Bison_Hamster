@@ -6,7 +6,7 @@ P -> FX
 X -> ^FX | @
 F -> -F | +F | a | (E)
 
-   LL1 Table           #               a               (               )               *               +               -               ^               /        
+   LL1 Table           $               a               (               )               *               +               -               ^               /        
        P               -            P -> FX         P -> FX            -               -            P -> FX         P -> FX            -               -        
        T               -            T -> PY         T -> PY            -               -            T -> PY         T -> PY            -               -        
        E               -            E -> TZ         E -> TZ            -               -            E -> TZ         E -> TZ            -               -        

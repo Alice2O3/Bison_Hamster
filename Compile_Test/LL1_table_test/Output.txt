@@ -1,0 +1,26 @@
+Symbols:
+(0, expression), (1, term), (2, term_z), (3, Add), (4, Minus), (5, term_p), (6, term_y), (7, Mul), (8, Divide), (9, term_f), (10, term_x), (11, Exp), (12, Atom), (13, Left_Bracket), (14, Right_Bracket)
+
+Terminals:
+(Add, 3), (Divide, 8), (Mul, 7), (Left_Bracket, 13), (Exp, 11), (Minus, 4), (Atom, 12), (Right_Bracket, 14)
+
+Non_Terminals:
+(term_y, 6), (term_z, 2), (expression, 0), (term_x, 10), (term_f, 9), (term, 1), (term_p, 5)
+
+Rule_Table:
+<0> -> <NON_TERMINAL, 1><NON_TERMINAL, 2>
+<2> -> <TERMINAL, 3><NON_TERMINAL, 1><NON_TERMINAL, 2> | <TERMINAL, 4><NON_TERMINAL, 1><NON_TERMINAL, 2> | <EMPTY>
+<1> -> <NON_TERMINAL, 5><NON_TERMINAL, 6>
+<6> -> <TERMINAL, 7><NON_TERMINAL, 5><NON_TERMINAL, 6> | <TERMINAL, 8><NON_TERMINAL, 5><NON_TERMINAL, 6> | <EMPTY>
+<5> -> <NON_TERMINAL, 9><NON_TERMINAL, 10>
+<10> -> <TERMINAL, 11><NON_TERMINAL, 9><NON_TERMINAL, 10> | <EMPTY>
+<9> -> <TERMINAL, 4><NON_TERMINAL, 9> | <TERMINAL, 3><NON_TERMINAL, 9> | <TERMINAL, 12> | <TERMINAL, 13><NON_TERMINAL, 0><TERMINAL, 14>
+
+                   LL1 Table                                           $                                              <3>                                             <4>                                             <7>                                             <8>                                             <11>                                            <12>                                            <13>                                            <14>                      
+                      <0>                                              -                                         <0> -> <1><2>                                   <0> -> <1><2>                                         -                                               -                                               -                                         <0> -> <1><2>                                   <0> -> <1><2>                                         -                        
+                      <1>                                              -                                         <1> -> <5><6>                                   <1> -> <5><6>                                         -                                               -                                               -                                         <1> -> <5><6>                                   <1> -> <5><6>                                         -                        
+                      <2>                                           <2> -> @                                    <2> -> <3><1><2>                                <2> -> <4><1><2>                                       -                                               -                                               -                                               -                                               -                                            <2> -> @                    
+                      <5>                                              -                                         <5> -> <9><10>                                  <5> -> <9><10>                                        -                                               -                                               -                                         <5> -> <9><10>                                  <5> -> <9><10>                                        -                        
+                      <6>                                           <6> -> @                                        <6> -> @                                        <6> -> @                                    <6> -> <7><5><6>                                <6> -> <8><5><6>                                       -                                               -                                               -                                            <6> -> @                    
+                      <9>                                              -                                         <9> -> <3><9>                                   <9> -> <4><9>                                         -                                               -                                               -                                          <9> -> <12>                                  <9> -> <13><0><14>                                      -                        
+                      <10>                                         <10> -> @                                       <10> -> @                                       <10> -> @                                       <10> -> @                                       <10> -> @                                  <10> -> <11><9><10>                                      -                                               -                                           <10> -> @                    

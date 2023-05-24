@@ -6,7 +6,7 @@ import Filesystem.FileIO;
 
 public class LL1_Read_Debug {
     private final static String input_file = "Compile_Test/LL1_read_test/LL1_read_test.txt";
-    private final static String output_file = "Compile_Test/LL1_read_test/output.txt";
+    private final static String output_file = "Compile_Test/LL1_read_test/Output.txt";
     public static void main(String[] args){
         String code = FileIO.readFile(input_file);
         if(code == null){

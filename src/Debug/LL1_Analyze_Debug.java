@@ -9,8 +9,8 @@ import C_Bison.Grammar.LL1.LL1_Types.*;
 import C_Bison.Grammar.Grammar_Types.*;
 
 public class LL1_Analyze_Debug {
-    private static String input_path = "Compile_Test/LL1_table_test/Easy_C.bison";
-    private static String output_path = "Compile_Test/LL1_table_test/Easy_C_LL1_Table.txt";
+    private static String input_path = "Compile_Test/LL1_table_test/Example.bison";
+    private static String output_path = "Compile_Test/LL1_table_test/Output.txt";
 
     public static void main(String[] args) {
         Rules_Workflow workflow = new Rules_Workflow();

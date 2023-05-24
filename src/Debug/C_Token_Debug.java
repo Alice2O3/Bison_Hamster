@@ -9,7 +9,7 @@ import C_Bison.Language.Easy_C.Lexing.Easy_C_Workflow;
 public class C_Token_Debug {
     private final static String input_file = "Compile_Test/C_token_test/Example.c";
     private final static String preprocessed_file = "Compile_Test/C_token_test/Example.pp.c";
-    private final static String output_file = "Compile_Test/C_token_test/token_flow.txt";
+    private final static String output_file = "Compile_Test/C_token_test/Token_Flow.txt";
     public static void main(String[] args) {
         //Preprocessing code
         String source_code = FileIO.readFile(input_file);

@@ -6,15 +6,18 @@
   <component name="ChangeListManager">
     <list default="true" id="65ce0729-d834-4110-97ea-b236a93b5951" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Compile_Test/LL1_scanner_test/Easy_C.bison" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Compile_Test/LL1_scanner_test/Easy_C_Scanner.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Compile_Test/LL1_table_test/Easy_C.bison" beforeDir="false" afterPath="$PROJECT_DIR$/Compile_Test/LL1_table_test/Easy_C.bison" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Compile_Test/LL1_table_test/Easy_C_LL1_Table.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Compile_Test/LL1_table_test/Easy_C_LL1_Table.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/C_Bison/Language/Rules/Lexing/Rules_Render.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/C_Bison/Language/Rules/Lexing/Rules_Render.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/C_Bison/Language/Rules/Lexing/Rules_Workflow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/C_Bison/Language/Rules/Lexing/Rules_Workflow.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/C_Bison/Scanner/C_Scanner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/C_Bison/Scanner/C_Scanner.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/C_Bison/Scanner/Grammar_Scanner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/C_Bison/Scanner/Grammar_Scanner.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Debug/LL1_Scanner_Debug.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Debug/LL1_Scanner_Debug.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Compile_Test/LL1_scanner_test/Scanner.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Compile_Test/LL1_scanner_test/Scanner.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Compile_Test/LL1_simple_test/output.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Compile_Test/LL1_simple_test/output.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Compile_Test/LL1_table_test/Easy_C.bison" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Compile_Test/LL1_table_test/Easy_C_LL1_Table.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Compile_Test/LL1_table_test/Example_LL1_Table.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Main/AST.json" beforeDir="false" afterPath="$PROJECT_DIR$/Main/AST.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Debug/C_Token_Debug.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Debug/C_Token_Debug.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Debug/Flag_Debug.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Debug/LL1_Analyze_Debug.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Debug/LL1_Analyze_Debug.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Debug/LL1_Read_Debug.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Debug/LL1_Read_Debug.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Debug/LL1_Simple_Debug.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Debug/LL1_Simple_Debug.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Debug/LL1_Simple_Map_Debug.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Debug/LL1_Simple_Map_Debug.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -63,33 +66,7 @@
       <recent name="Debug" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.C_Token_Debug">
-    <configuration name="C_Token_Debug" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Debug.C_Token_Debug" />
-      <module name="Bison_Hamster" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="Debug.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="Debug.C_Parser_Debug" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Debug.C_Parser_Debug" />
-      <module name="Bison_Hamster" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="Debug.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager" selected="Application.LL1_Analyze_Debug">
     <configuration name="LL1_Analyze_Debug" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Debug.LL1_Analyze_Debug" />
       <module name="Bison_Hamster" />
@@ -103,8 +80,34 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="LL1_Read_Debug" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Debug.LL1_Read_Debug" />
+      <module name="Bison_Hamster" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Debug.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="LL1_Scanner_Debug" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Debug.LL1_Scanner_Debug" />
+      <module name="Bison_Hamster" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Debug.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="LL1_Simple_Debug" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Debug.LL1_Simple_Debug" />
       <module name="Bison_Hamster" />
       <extension name="coverage">
         <pattern>
@@ -131,11 +134,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.C_Token_Debug" />
         <item itemvalue="Application.LL1_Analyze_Debug" />
-        <item itemvalue="Application.LL1_Scanner_Debug" />
-        <item itemvalue="Application.Debug.C_Parser_Debug" />
         <item itemvalue="Application.LL1_Simple_Map_Debug" />
+        <item itemvalue="Application.LL1_Simple_Debug" />
+        <item itemvalue="Application.LL1_Scanner_Debug" />
+        <item itemvalue="Application.LL1_Read_Debug" />
       </list>
     </recent_temporary>
   </component>
@@ -192,7 +195,9 @@
       <workItem from="1684823152728" duration="16000" />
       <workItem from="1684826594952" duration="10340000" />
       <workItem from="1684895670606" duration="4525000" />
-      <workItem from="1684912651537" duration="6717000" />
+      <workItem from="1684912651537" duration="7334000" />
+      <workItem from="1684922139593" duration="1302000" />
+      <workItem from="1684934688135" duration="2107000" />
     </task>
     <servers />
   </component>
