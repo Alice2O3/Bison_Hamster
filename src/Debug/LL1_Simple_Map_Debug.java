@@ -40,7 +40,7 @@ public class LL1_Simple_Map_Debug {
         StringBuilder sb = new StringBuilder();
         sb.append(Simple_Read_Workflow.grammar_to_str(V)).append("\n");
         sb.append(LL1_Render.LL1_Table_Render_Map_Simple(ll1)).append("\n");
-        sb.append(LL1_Render.LL1_Table_Render_Simple(ll1, 16));
+        sb.append(LL1_Render.LL1_Table_Render_Simple(ll1, 12));
         String ret = sb.toString();
         System.out.print(ret);
         FileIO.writeFile(ret, output_file);

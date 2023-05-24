@@ -6,44 +6,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class DFA_Types {
-    public static class DFA_edge {
-        public final Integer u;
-        public final Integer v;
-        public final Character c;
-        public final ICallback func;
-
-        public DFA_edge(int u_, int v_, char c_, ICallback func_){
-            u = u_;
-            v = v_;
-            c = c_;
-            func = func_;
-        }
-    }
-
-    public static class DFA_edgeInterval {
-        public final Integer u;
-        public final Integer v;
-        public final Character cl;
-        public final Character cr;
-        public final ICallback func;
-
-        public DFA_edgeInterval(int u_, int v_, char cl_, char cr_, ICallback func_){
-            u = u_;
-            v = v_;
-            cl = cl_;
-            cr = cr_;
-            func = func_;
-        }
-
-        public DFA_edgeInterval(int u_, int v_, int cl_, int cr_, ICallback func_){
-            u = u_;
-            v = v_;
-            cl = (char) cl_;
-            cr = (char) cr_;
-            func = func_;
-        }
-    }
-
     public static class DFA_event {
         private Character c;
         public final DFA_node current_node;

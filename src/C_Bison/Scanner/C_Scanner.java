@@ -85,63 +85,61 @@ public class C_Scanner implements IScanner {
     }
 
     private void setGeneralRules(){
-        dfa.addEdge(new DFA_edgeInterval(States.INITIAL, States.INITIAL, 0, 127, Callbacks.FORWARD));
-        dfa.addEdge(new DFA_edgeInterval(States.IDENTIFIER, States.INITIAL, 0, 127, Callbacks.IDENTIFIER_KEEP));
-        dfa.addEdge(new DFA_edgeInterval(States.INTEGER, States.INITIAL, 0, 127, Callbacks.KEEP(Easy_C_Tokens.INTEGER)));
+        dfa.addEdge(States.INITIAL, States.INITIAL, Callbacks.FORWARD);
+        dfa.addEdge(States.IDENTIFIER, States.INITIAL, Callbacks.IDENTIFIER_KEEP);
+        dfa.addEdge(States.INTEGER, States.INITIAL, Callbacks.KEEP(Easy_C_Tokens.INTEGER));
+        dfa.addEdge(States.LEFT_BIG_BRACKET, States.INITIAL, Callbacks.KEEP(Easy_C_Tokens.LEFT_BIG_BRACKET));
+        dfa.addEdge(States.RIGHT_BIG_BRACKET, States.INITIAL, Callbacks.KEEP(Easy_C_Tokens.RIGHT_BIG_BRACKET));
+        dfa.addEdge(States.LEFT_SMALL_BRACKET, States.INITIAL, Callbacks.KEEP(Easy_C_Tokens.LEFT_SMALL_BRACKET));
+        dfa.addEdge(States.RIGHT_SMALL_BRACKET, States.INITIAL, Callbacks.KEEP(Easy_C_Tokens.RIGHT_SMALL_BRACKET));
+        dfa.addEdge(States.COMMA, States.INITIAL, Callbacks.KEEP(Easy_C_Tokens.COMMA));
+        dfa.addEdge(States.STATEMENT_END, States.INITIAL, Callbacks.KEEP(Easy_C_Tokens.STATEMENT_END));
+        dfa.addEdge(States.PLUS, States.INITIAL, Callbacks.KEEP(Easy_C_Tokens.PLUS));
+        dfa.addEdge(States.MINUS, States.INITIAL, Callbacks.KEEP(Easy_C_Tokens.MINUS));
+        dfa.addEdge(States.ASSIGN, States.INITIAL, Callbacks.KEEP(Easy_C_Tokens.ASSIGN));
+        dfa.addEdge(States.ASSIGNADD, States.INITIAL, Callbacks.KEEP(Easy_C_Tokens.ASSIGNADD));
+        dfa.addEdge(States.ASSIGNMINUS, States.INITIAL, Callbacks.KEEP(Easy_C_Tokens.ASSIGNMINUS));
+        dfa.addEdge(States.SMALLER, States.INITIAL, Callbacks.KEEP(Easy_C_Tokens.SMALLER));
+        dfa.addEdge(States.GREATER, States.INITIAL, Callbacks.KEEP(Easy_C_Tokens.GREATER));
+        dfa.addEdge(States.SMALLEREQUAL, States.INITIAL, Callbacks.KEEP(Easy_C_Tokens.SMALLEREQUAL));
+        dfa.addEdge(States.GREATEREQUAL, States.INITIAL, Callbacks.KEEP(Easy_C_Tokens.GREATEREQUAL));
+        dfa.addEdge(States.EQUALTO, States.INITIAL, Callbacks.KEEP(Easy_C_Tokens.EQUALTO));
 
-        dfa.addEdge(new DFA_edgeInterval(States.LEFT_BIG_BRACKET, States.INITIAL, 0, 127, Callbacks.KEEP(Easy_C_Tokens.LEFT_BIG_BRACKET))); //{
-        dfa.addEdge(new DFA_edgeInterval(States.RIGHT_BIG_BRACKET, States.INITIAL, 0, 127, Callbacks.KEEP(Easy_C_Tokens.RIGHT_BIG_BRACKET))); //}
-        dfa.addEdge(new DFA_edgeInterval(States.LEFT_SMALL_BRACKET, States.INITIAL, 0, 127, Callbacks.KEEP(Easy_C_Tokens.LEFT_SMALL_BRACKET))); //(
-        dfa.addEdge(new DFA_edgeInterval(States.RIGHT_SMALL_BRACKET, States.INITIAL, 0, 127, Callbacks.KEEP(Easy_C_Tokens.RIGHT_SMALL_BRACKET))); //)
-        dfa.addEdge(new DFA_edgeInterval(States.COMMA, States.INITIAL, 0, 127, Callbacks.KEEP(Easy_C_Tokens.COMMA))); //,
-        dfa.addEdge(new DFA_edgeInterval(States.STATEMENT_END, States.INITIAL, 0, 127, Callbacks.KEEP(Easy_C_Tokens.STATEMENT_END))); //;
-
-        dfa.addEdge(new DFA_edgeInterval(States.PLUS, States.INITIAL, 0, 127, Callbacks.KEEP(Easy_C_Tokens.PLUS))); //+
-        dfa.addEdge(new DFA_edgeInterval(States.MINUS, States.INITIAL, 0, 127, Callbacks.KEEP(Easy_C_Tokens.MINUS))); //-
-        dfa.addEdge(new DFA_edgeInterval(States.ASSIGN, States.INITIAL, 0, 127, Callbacks.KEEP(Easy_C_Tokens.ASSIGN))); //=
-        dfa.addEdge(new DFA_edgeInterval(States.ASSIGNADD, States.INITIAL, 0, 127, Callbacks.KEEP(Easy_C_Tokens.ASSIGNADD))); //+=
-        dfa.addEdge(new DFA_edgeInterval(States.ASSIGNMINUS, States.INITIAL, 0, 127, Callbacks.KEEP(Easy_C_Tokens.ASSIGNMINUS))); //-=
-        dfa.addEdge(new DFA_edgeInterval(States.SMALLER, States.INITIAL, 0, 127, Callbacks.KEEP(Easy_C_Tokens.SMALLER))); //<
-        dfa.addEdge(new DFA_edgeInterval(States.GREATER, States.INITIAL, 0, 127, Callbacks.KEEP(Easy_C_Tokens.GREATER))); //>
-        dfa.addEdge(new DFA_edgeInterval(States.SMALLEREQUAL, States.INITIAL, 0, 127, Callbacks.KEEP(Easy_C_Tokens.SMALLEREQUAL))); //<=
-        dfa.addEdge(new DFA_edgeInterval(States.GREATEREQUAL, States.INITIAL, 0, 127, Callbacks.KEEP(Easy_C_Tokens.GREATEREQUAL))); //>=
-        dfa.addEdge(new DFA_edgeInterval(States.EQUALTO, States.INITIAL, 0, 127, Callbacks.KEEP(Easy_C_Tokens.EQUALTO))); //==
-
-        dfa.addEdge(new DFA_edge(States.INITIAL, States.INITIAL, '\n', Callbacks.ESCAPE));
+        dfa.addEdge(States.INITIAL, States.INITIAL, '\n', Callbacks.ESCAPE);
     }
 
     private void setIdentifiers(){
-        dfa.addEdge(new DFA_edge(States.INITIAL, States.IDENTIFIER, '_', Callbacks.ACCEPT));
-        dfa.addEdge(new DFA_edgeInterval(States.INITIAL, States.IDENTIFIER, 'A', 'Z', Callbacks.ACCEPT));
-        dfa.addEdge(new DFA_edgeInterval(States.INITIAL, States.IDENTIFIER, 'a', 'z', Callbacks.ACCEPT));
-        dfa.addEdge(new DFA_edge(States.IDENTIFIER, States.IDENTIFIER, '_', Callbacks.ACCEPT));
-        dfa.addEdge(new DFA_edgeInterval(States.IDENTIFIER, States.IDENTIFIER, 'A', 'Z', Callbacks.ACCEPT));
-        dfa.addEdge(new DFA_edgeInterval(States.IDENTIFIER, States.IDENTIFIER, 'a', 'z', Callbacks.ACCEPT));
+        dfa.addEdge(States.INITIAL, States.IDENTIFIER, '_', Callbacks.ACCEPT);
+        dfa.addEdge(States.INITIAL, States.IDENTIFIER, 'A', 'Z', Callbacks.ACCEPT);
+        dfa.addEdge(States.INITIAL, States.IDENTIFIER, 'a', 'z', Callbacks.ACCEPT);
+        dfa.addEdge(States.IDENTIFIER, States.IDENTIFIER, '_', Callbacks.ACCEPT);
+        dfa.addEdge(States.IDENTIFIER, States.IDENTIFIER, 'A', 'Z', Callbacks.ACCEPT);
+        dfa.addEdge(States.IDENTIFIER, States.IDENTIFIER, 'a', 'z', Callbacks.ACCEPT);
     }
 
     private void setIntegers(){
-        dfa.addEdge(new DFA_edgeInterval(States.INITIAL, States.INTEGER, '0', '9', Callbacks.ACCEPT));
-        dfa.addEdge(new DFA_edgeInterval(States.INTEGER, States.INTEGER, '0', '9', Callbacks.ACCEPT));
+        dfa.addEdge(States.INITIAL, States.INTEGER, '0', '9', Callbacks.ACCEPT);
+        dfa.addEdge(States.INTEGER, States.INTEGER, '0', '9', Callbacks.ACCEPT);
     }
 
     private void setOperators(){
-        dfa.addEdge(new DFA_edge(States.INITIAL, States.LEFT_BIG_BRACKET, '{', Callbacks.ACCEPT));
-        dfa.addEdge(new DFA_edge(States.INITIAL, States.RIGHT_BIG_BRACKET, '}', Callbacks.ACCEPT));
-        dfa.addEdge(new DFA_edge(States.INITIAL, States.LEFT_SMALL_BRACKET, '(', Callbacks.ACCEPT));
-        dfa.addEdge(new DFA_edge(States.INITIAL, States.RIGHT_SMALL_BRACKET, ')', Callbacks.ACCEPT));
-        dfa.addEdge(new DFA_edge(States.INITIAL, States.COMMA, ',', Callbacks.ACCEPT));
-        dfa.addEdge(new DFA_edge(States.INITIAL, States.STATEMENT_END, ';', Callbacks.ACCEPT));
+        dfa.addEdge(States.INITIAL, States.LEFT_BIG_BRACKET, '{', Callbacks.ACCEPT);
+        dfa.addEdge(States.INITIAL, States.RIGHT_BIG_BRACKET, '}', Callbacks.ACCEPT);
+        dfa.addEdge(States.INITIAL, States.LEFT_SMALL_BRACKET, '(', Callbacks.ACCEPT);
+        dfa.addEdge(States.INITIAL, States.RIGHT_SMALL_BRACKET, ')', Callbacks.ACCEPT);
+        dfa.addEdge(States.INITIAL, States.COMMA, ',', Callbacks.ACCEPT);
+        dfa.addEdge(States.INITIAL, States.STATEMENT_END, ';', Callbacks.ACCEPT);
 
-        dfa.addEdge(new DFA_edge(States.INITIAL, States.PLUS, '+', Callbacks.ACCEPT));
-        dfa.addEdge(new DFA_edge(States.INITIAL, States.MINUS, '-', Callbacks.ACCEPT));
-        dfa.addEdge(new DFA_edge(States.INITIAL, States.ASSIGN, '=', Callbacks.ACCEPT));
-        dfa.addEdge(new DFA_edge(States.INITIAL, States.SMALLER, '<', Callbacks.ACCEPT));
-        dfa.addEdge(new DFA_edge(States.INITIAL, States.GREATER, '>', Callbacks.ACCEPT));
+        dfa.addEdge(States.INITIAL, States.PLUS, '+', Callbacks.ACCEPT);
+        dfa.addEdge(States.INITIAL, States.MINUS, '-', Callbacks.ACCEPT);
+        dfa.addEdge(States.INITIAL, States.ASSIGN, '=', Callbacks.ACCEPT);
+        dfa.addEdge(States.INITIAL, States.SMALLER, '<', Callbacks.ACCEPT);
+        dfa.addEdge(States.INITIAL, States.GREATER, '>', Callbacks.ACCEPT);
 
-        dfa.addEdge(new DFA_edge(States.PLUS, States.ASSIGNADD, '=', Callbacks.ACCEPT));
-        dfa.addEdge(new DFA_edge(States.MINUS, States.ASSIGNMINUS, '=', Callbacks.ACCEPT));
-        dfa.addEdge(new DFA_edge(States.SMALLER, States.SMALLEREQUAL, '=', Callbacks.ACCEPT));
-        dfa.addEdge(new DFA_edge(States.GREATER, States.GREATEREQUAL, '=', Callbacks.ACCEPT));
-        dfa.addEdge(new DFA_edge(States.ASSIGN, States.EQUALTO, '=', Callbacks.ACCEPT));
+        dfa.addEdge(States.PLUS, States.ASSIGNADD, '=', Callbacks.ACCEPT);
+        dfa.addEdge(States.MINUS, States.ASSIGNMINUS, '=', Callbacks.ACCEPT);
+        dfa.addEdge(States.SMALLER, States.SMALLEREQUAL, '=', Callbacks.ACCEPT);
+        dfa.addEdge(States.GREATER, States.GREATEREQUAL, '=', Callbacks.ACCEPT);
+        dfa.addEdge(States.ASSIGN, States.EQUALTO, '=', Callbacks.ACCEPT);
     }
 }

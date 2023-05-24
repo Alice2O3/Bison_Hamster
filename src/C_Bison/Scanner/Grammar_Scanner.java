@@ -46,37 +46,37 @@ public class Grammar_Scanner implements IScanner {
 
     private void setGeneralRules(){
         //Finish Rules
-        dfa.addEdge(new DFA_edgeInterval(States.INITIAL, States.INITIAL, 0, 127, Callbacks.FORWARD));
-        dfa.addEdge(new DFA_edgeInterval(States.TERMINAL, States.INITIAL, 0, 127, Callbacks.KEEP(Rules_Tokens.TERMINAL))); //1: TERMINAL
-        dfa.addEdge(new DFA_edgeInterval(States.NON_TERMINAL, States.INITIAL, 0, 127, Callbacks.KEEP(Rules_Tokens.NON_TERMINAL))); //2: NON_TERMINAL
-        dfa.addEdge(new DFA_edgeInterval(States.ARROW_L, States.INITIAL, 0, 127, Callbacks.DISCARD_KEEP));
-        dfa.addEdge(new DFA_edgeInterval(States.ARROW_R, States.INITIAL, 0, 127, Callbacks.KEEP(Rules_Tokens.ARROW))); //3: ARROW
-        dfa.addEdge(new DFA_edgeInterval(States.OR, States.INITIAL, 0, 127, Callbacks.KEEP(Rules_Tokens.OR))); //4: OR
-        dfa.addEdge(new DFA_edgeInterval(States.EMPTY, States.INITIAL, 0, 127, Callbacks.KEEP(Rules_Tokens.EMPTY))); //5: EMPTY
+        dfa.addEdge(States.INITIAL, States.INITIAL, Callbacks.FORWARD);
+        dfa.addEdge(States.TERMINAL, States.INITIAL, Callbacks.KEEP(Rules_Tokens.TERMINAL)); //1: TERMINAL
+        dfa.addEdge(States.NON_TERMINAL, States.INITIAL, Callbacks.KEEP(Rules_Tokens.NON_TERMINAL)); //2: NON_TERMINAL
+        dfa.addEdge(States.ARROW_L, States.INITIAL, Callbacks.DISCARD_KEEP);
+        dfa.addEdge(States.ARROW_R, States.INITIAL, Callbacks.KEEP(Rules_Tokens.ARROW)); //3: ARROW
+        dfa.addEdge(States.OR, States.INITIAL, Callbacks.KEEP(Rules_Tokens.OR)); //4: OR
+        dfa.addEdge(States.EMPTY, States.INITIAL, Callbacks.KEEP(Rules_Tokens.EMPTY)); //5: EMPTY
 
         //Process Escapes
-        dfa.addEdge(new DFA_edge(States.INITIAL, States.INITIAL, '\n', Callbacks.ESCAPE_ACCEPT));
+        dfa.addEdge(States.INITIAL, States.INITIAL, '\n', Callbacks.ESCAPE_ACCEPT);
     }
 
     private void setIdentifiers(){
-        dfa.addEdge(new DFA_edgeInterval(States.INITIAL, States.TERMINAL, 'A', 'Z', Callbacks.ACCEPT));
-        dfa.addEdge(new DFA_edgeInterval(States.INITIAL, States.NON_TERMINAL, 'a', 'z', Callbacks.ACCEPT));
-        dfa.addEdge(new DFA_edge(States.INITIAL, States.NON_TERMINAL, '_', Callbacks.ACCEPT));
+        dfa.addEdge(States.INITIAL, States.TERMINAL, 'A', 'Z', Callbacks.ACCEPT);
+        dfa.addEdge(States.INITIAL, States.NON_TERMINAL, 'a', 'z', Callbacks.ACCEPT);
+        dfa.addEdge(States.INITIAL, States.NON_TERMINAL, '_', Callbacks.ACCEPT);
 
-        dfa.addEdge(new DFA_edgeInterval(States.TERMINAL, States.TERMINAL, 'a', 'z', Callbacks.ACCEPT));
-        dfa.addEdge(new DFA_edgeInterval(States.TERMINAL, States.TERMINAL, 'A', 'Z', Callbacks.ACCEPT));
-        dfa.addEdge(new DFA_edge(States.TERMINAL, States.TERMINAL, '_', Callbacks.ACCEPT));
+        dfa.addEdge(States.TERMINAL, States.TERMINAL, 'a', 'z', Callbacks.ACCEPT);
+        dfa.addEdge(States.TERMINAL, States.TERMINAL, 'A', 'Z', Callbacks.ACCEPT);
+        dfa.addEdge(States.TERMINAL, States.TERMINAL, '_', Callbacks.ACCEPT);
 
-        dfa.addEdge(new DFA_edgeInterval(States.NON_TERMINAL, States.NON_TERMINAL, 'a', 'z', Callbacks.ACCEPT));
-        dfa.addEdge(new DFA_edgeInterval(States.NON_TERMINAL, States.NON_TERMINAL, 'A', 'Z', Callbacks.ACCEPT));
-        dfa.addEdge(new DFA_edge(States.NON_TERMINAL, States.NON_TERMINAL, '_', Callbacks.ACCEPT));
+        dfa.addEdge(States.NON_TERMINAL, States.NON_TERMINAL, 'a', 'z', Callbacks.ACCEPT);
+        dfa.addEdge(States.NON_TERMINAL, States.NON_TERMINAL, 'A', 'Z', Callbacks.ACCEPT);
+        dfa.addEdge(States.NON_TERMINAL, States.NON_TERMINAL, '_', Callbacks.ACCEPT);
     }
 
     private void setOperators(){
-        dfa.addEdge(new DFA_edge(States.INITIAL, States.ARROW_L, '-', Callbacks.ACCEPT));
-        dfa.addEdge(new DFA_edge(States.ARROW_L, States.ARROW_R, '>', Callbacks.ACCEPT));
+        dfa.addEdge(States.INITIAL, States.ARROW_L, '-', Callbacks.ACCEPT);
+        dfa.addEdge(States.ARROW_L, States.ARROW_R, '>', Callbacks.ACCEPT);
 
-        dfa.addEdge(new DFA_edge(States.INITIAL, States.OR, '|', Callbacks.ACCEPT));
-        dfa.addEdge(new DFA_edge(States.INITIAL, States.EMPTY, '@', Callbacks.ACCEPT));
+        dfa.addEdge(States.INITIAL, States.OR, '|', Callbacks.ACCEPT);
+        dfa.addEdge(States.INITIAL, States.EMPTY, '@', Callbacks.ACCEPT);
     }
 }
