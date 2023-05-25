@@ -1,6 +1,6 @@
 package C_Bison.Grammar.LL1;
 
-import C_Bison.Grammar.AST.AST_Printable_Factory;
+import C_Bison.Grammar.AST.AST_Abstract_Factory;
 import C_Bison.Grammar.AST.AST_Types.*;
 import C_Bison.Grammar.AST.IAST_Node;
 import C_Bison.Grammar.Grammar_Types.*;
@@ -36,7 +36,7 @@ public class LL1_Parser {
         ListIterator<Grammar_pair> expr_it = expr.val.listIterator(expr.val.size());
         while(expr_it.hasPrevious()){
             Grammar_pair p = expr_it.previous();
-            IAST_Node new_node = AST_Printable_Factory.Factory_Non_Finished(rules_workflow.getSymbol_list().get(p.second));
+            IAST_Node new_node = AST_Abstract_Factory.Factory_Non_Finished(rules_workflow.getSymbol_list().get(p.second));
             current_node.addChild(new_node);
             token_stack.push(new AST_node_pair(new_node, p.second));
         }
@@ -46,7 +46,7 @@ public class LL1_Parser {
     public IAST_Node Parse_Tokens(DFA_lexing_list token_list){
         Integer start_symbol = ll1_process.get_start_symbol();
 
-        IAST_Node root_node = AST_Printable_Factory.Factory_Non_Finished(rules_workflow.getSymbol_list().get(start_symbol));
+        IAST_Node root_node = AST_Abstract_Factory.Factory_Non_Finished(rules_workflow.getSymbol_list().get(start_symbol));
         token_stack.clear();
         token_stack.push(new AST_node_pair(root_node, start_symbol));
         Iterator<DFA_lexing> it = token_list.val.iterator();
@@ -56,7 +56,7 @@ public class LL1_Parser {
             Integer mapped_token = rules_workflow.getSymbol_map().get(token_map.get(lexing_top.token_type));
             AST_node_pair S_top = token_stack.peek();
             if(S_top.second.equals(mapped_token)){ //Matched
-                S_top.first.addChild(AST_Printable_Factory.Factory_Finished(lexing_top));
+                S_top.first.addChild(AST_Abstract_Factory.Factory_Finished(lexing_top));
                 token_stack.pop();
                 if(!it.hasNext()){
                     break;

@@ -1,4 +1,4 @@
-import C_Bison.Grammar.AST.AST_Render;
+import C_Bison.Grammar.AST.AST_Abstract_Render;
 import C_Bison.Grammar.AST.IAST_Node;
 import C_Bison.Parser.C_Parser;
 import C_Bison.PreProcess.PreProcess_C;
@@ -45,7 +45,7 @@ public class Main {
             System.out.print("AST Parsing Error!\n");
             return;
         }
-        String node_info = AST_Render.convert_to_json(ast);
+        String node_info = AST_Abstract_Render.convert_to_json(ast);
         System.out.print(bison_hamster_show);
         System.out.print(Bison_Hamster_Finished);
         FileIO.writeFile(node_info, ast_file);

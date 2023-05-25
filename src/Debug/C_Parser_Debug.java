@@ -1,6 +1,6 @@
 package Debug;
 
-import C_Bison.Grammar.AST.AST_Render;
+import C_Bison.Grammar.AST.AST_Abstract_Render;
 import C_Bison.Grammar.AST.IAST_Node;
 import C_Bison.Grammar.LL1.LL1_Types.*;
 import C_Bison.Parser.C_Parser;
@@ -42,7 +42,7 @@ public class C_Parser_Debug {
             System.out.print("AST Parsing Error!\n");
             return;
         }
-        String node_info = AST_Render.convert_to_json(ast);
+        String node_info = AST_Abstract_Render.convert_to_json(ast);
         System.out.printf("AST:\n%s\n", node_info);
         FileIO.writeFile(node_info, ast_file);
     }

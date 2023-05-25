@@ -5,7 +5,7 @@ import C_Bison.Grammar.AST.AST_Types.*;
 import java.util.Iterator;
 import java.util.Stack;
 
-public class AST_Render {
+public class AST_Abstract_Render {
     public static String convert_to_json(IAST_Node root){
         StringBuilder sb = new StringBuilder();
         Stack<AST_stack_info> S = new Stack<>();
