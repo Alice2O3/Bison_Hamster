@@ -1,6 +1,6 @@
 package Debug;
 
-import Filesystem.FileIO;
+import Util.FileIO;
 import C_Bison.Language.Rules.Lexing.Rules_Render;
 import C_Bison.Language.Rules.Lexing.Rules_Workflow;
 import C_Bison.Grammar.LL1.LL1_Render;
@@ -39,7 +39,7 @@ public class LL1_Analyze_Debug {
             System.out.print("\nGrammar is not LL1!\n");
             return;
         }
-        sb.append(LL1_Render.LL1_Table_Render(ll1, 48));
+        sb.append(LL1_Render.LL1_Table_Render(ll1, 24));
         String ret = sb.toString();
         System.out.print(ret);
         FileIO.writeFile(ret, output_path);

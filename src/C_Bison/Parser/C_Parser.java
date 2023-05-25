@@ -1,11 +1,12 @@
 package C_Bison.Parser;
 
+import C_Bison.Grammar.AST.IAST_node;
 import C_Bison.Grammar.LL1.LL1_Parser;
 import C_Bison.Grammar.LL1.LL1_Types.*;
 import C_Bison.Language.Easy_C.Easy_C_Tokens;
 import C_Bison.Language.Easy_C.Lexing.Easy_C_Workflow;
-import Filesystem.FileIO;
-import C_Bison.Grammar.AST;
+import Util.FileIO;
+import C_Bison.Grammar.AST.AST_Render;
 
 public class C_Parser implements IParser {
     private final static String grammar_file = "Grammars/Easy_C.bison";
@@ -20,10 +21,10 @@ public class C_Parser implements IParser {
         parser_exception = ll1_parser.get_Exception();
     }
 
-    public AST Parse_Tokens(String code){
+    public IAST_node Parse_Tokens(String code){
         Easy_C_Workflow easy_c_workflow = new Easy_C_Workflow();
         easy_c_workflow.process_code(code);
-        AST ast = ll1_parser.Parse_Tokens(easy_c_workflow.getTokenList());
+        IAST_node ast = ll1_parser.Parse_Tokens(easy_c_workflow.getTokenList());
         parser_exception = ll1_parser.get_Exception();
         return ast;
     }

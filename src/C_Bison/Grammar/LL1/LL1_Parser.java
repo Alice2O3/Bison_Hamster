@@ -1,7 +1,8 @@
 package C_Bison.Grammar.LL1;
 
-import C_Bison.Grammar.AST;
-import C_Bison.Grammar.AST_Types.*;
+import C_Bison.Grammar.AST.AST_printable_factory;
+import C_Bison.Grammar.AST.AST_Types.*;
+import C_Bison.Grammar.AST.IAST_node;
 import C_Bison.Grammar.Grammar_Types.*;
 import C_Bison.Language.Rules.Lexing.Rules_Workflow;
 import C_Flex.DFA_Types.*;
@@ -10,7 +11,6 @@ import C_Bison.Grammar.LL1.LL1_Types.*;
 import java.util.*;
 
 public class LL1_Parser {
-    private AST ast;
     private LL1_table LL1_Table;
     private LL1_expr_pair_list expr_pair_index;
     private Map<String, Integer> Symbol_Map;
@@ -21,7 +21,7 @@ public class LL1_Parser {
     private Parser_Exception parser_exception;
 
     private Boolean Push_Expr(AST_node_pair S_top, Integer mapped_token){
-        AST_node current_node = S_top.first;
+        IAST_node current_node = S_top.first;
         Integer non_terminal_index = S_top.second;
         if(!LL1_Table.val.containsKey(non_terminal_index)){
             return false;
@@ -36,18 +36,15 @@ public class LL1_Parser {
         ListIterator<Grammar_pair> expr_it = expr.val.listIterator(expr.val.size());
         while(expr_it.hasPrevious()){
             Grammar_pair p = expr_it.previous();
-            AST_node new_node = AST_node_factory.Factory_Non_Finished(p.second);
+            IAST_node new_node = AST_printable_factory.Factory_Non_Finished(Symbol_List.get(p.second));
             current_node.addChild(new_node);
             Token_Stack.push(new AST_node_pair(new_node, p.second));
         }
         return true;
     }
 
-    public AST Parse_Tokens(DFA_lexing_list token_list){
-        ast = new AST();
-        AST_node root_node = AST_node_factory.Factory_Non_Finished(start_symbol);
-        ast.setRoot(root_node);
-        ast.setSymbols(Symbol_Map, Symbol_List);
+    public IAST_node Parse_Tokens(DFA_lexing_list token_list){
+        IAST_node root_node = AST_printable_factory.Factory_Non_Finished(Symbol_List.get(start_symbol));
         Token_Stack.clear();
         Token_Stack.push(new AST_node_pair(root_node, start_symbol));
 
@@ -58,7 +55,7 @@ public class LL1_Parser {
             Integer mapped_token = Symbol_Map.get(Token_Map.get(lexing_top.token_type));
             AST_node_pair S_top = Token_Stack.peek();
             if(S_top.second.equals(mapped_token)){ //Matched
-                S_top.first.addChild(AST_node_factory.Factory_Finished(lexing_top));
+                S_top.first.addChild(AST_printable_factory.Factory_Finished(lexing_top));
                 Token_Stack.pop();
                 if(!it.hasNext()){
                     break;
@@ -80,7 +77,7 @@ public class LL1_Parser {
             }
         }
         parser_exception = Parser_Exception.NORMAL;
-        return ast;
+        return root_node;
     }
 
     public void Pre_Process(String rule_table, List<String> token_map){
@@ -109,7 +106,6 @@ public class LL1_Parser {
             parser_exception = Parser_Exception.NOT_LL1;
             return;
         }
-
         Symbol_Map = rules_workflow.getSymbolMap();
         Symbol_List = rules_workflow.getSymbolList();
         LL1_Table = ll1.get_LL1_table();

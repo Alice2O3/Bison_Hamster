@@ -1,10 +1,11 @@
 package Debug;
 
-import C_Bison.Grammar.AST;
+import C_Bison.Grammar.AST.AST_Render;
+import C_Bison.Grammar.AST.IAST_node;
 import C_Bison.Grammar.LL1.LL1_Types.*;
 import C_Bison.Parser.C_Parser;
 import C_Bison.PreProcess.PreProcess_C;
-import Filesystem.FileIO;
+import Util.FileIO;
 
 public class C_Parser_Debug {
     private final static String input_file = "Compile_Test/C_ast_test/Example.c";
@@ -32,12 +33,12 @@ public class C_Parser_Debug {
             System.out.print("Grammar Read Error!\n");
             return;
         }
-        AST ast = parser.Parse_Tokens(source_code_2);
+        IAST_node ast = parser.Parse_Tokens(source_code_2);
         if(ast == null){
             System.out.print("AST Parsing Error!\n");
             return;
         }
-        String node_info = ast.convert_to_json();
+        String node_info = AST_Render.convert_to_json(ast);
         System.out.print(node_info);
         FileIO.writeFile(node_info, ast_file);
     }

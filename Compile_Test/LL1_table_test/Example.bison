@@ -1,5 +1,5 @@
-expression -> term term_z
-term_z -> Add term term_z | Minus term term_z | @
+expression -> term_z
+term_z -> term Add term_z | term Minus term_z | @
 term -> term_p term_y
 term_y -> Mul term_p term_y | Divide term_p term_y | @
 term_p -> term_f term_x

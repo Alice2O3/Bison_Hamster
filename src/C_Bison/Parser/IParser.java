@@ -1,7 +1,7 @@
 package C_Bison.Parser;
 
-import C_Bison.Grammar.AST;
+import C_Bison.Grammar.AST.IAST_node;
 
 public interface IParser {
-    AST Parse_Tokens(String code);
+    IAST_node Parse_Tokens(String code);
 }
