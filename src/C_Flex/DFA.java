@@ -6,9 +6,9 @@ import C_Flex.DFA_Types.*;
 import C_Flex.callback.ICallback;
 
 public class DFA {
-    private final List<DFA_node> node_list;
-    private DFA_node current_state; //The default state is 0
-    private DFA_node initial_state;
+    private final List<DFA_Node> node_list;
+    private DFA_Node current_state; //The default state is 0
+    private DFA_Node initial_state;
     private StringBuilder lexeme;
     public Integer l_index;
     public Integer r_index;
@@ -28,7 +28,7 @@ public class DFA {
     public void initSize(int n){ //Should be called first
         node_list.clear();
         for(int i = 0; i < n; i++){
-            DFA_node node = new DFA_node();
+            DFA_Node node = new DFA_Node();
             node_list.add(node);
         }
         initial_state = node_list.get(0);
@@ -66,20 +66,20 @@ public class DFA {
     }
 
     public void addEdge(Integer u_, Integer v_, ICallback callback){
-        DFA_node u = node_list.get(u_);
-        DFA_node v = node_list.get(v_);
+        DFA_Node u = node_list.get(u_);
+        DFA_Node v = node_list.get(v_);
         u.setDefault_Event(new DFA_event(u, v, callback));
     }
 
     public void addEdge(Integer u_, Integer v_, Character c, ICallback callback){
-        DFA_node u = node_list.get(u_);
-        DFA_node v = node_list.get(v_);
+        DFA_Node u = node_list.get(u_);
+        DFA_Node v = node_list.get(v_);
         u.addEvent(c, new DFA_event(u, v, callback));
     }
 
     public void addEdge(Integer u_, Integer v_, Character cl, Character cr, ICallback callback){
-        DFA_node u = node_list.get(u_);
-        DFA_node v = node_list.get(v_);
+        DFA_Node u = node_list.get(u_);
+        DFA_Node v = node_list.get(v_);
         DFA_event event = new DFA_event(u, v, callback);
         for(Character c = cl; c <= cr; c++){
             u.addEvent(c, event);

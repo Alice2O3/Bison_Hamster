@@ -1,8 +1,8 @@
 package C_Bison.Grammar.LL1;
 
-import C_Bison.Grammar.AST.AST_printable_factory;
+import C_Bison.Grammar.AST.AST_Printable_Factory;
 import C_Bison.Grammar.AST.AST_Types.*;
-import C_Bison.Grammar.AST.IAST_node;
+import C_Bison.Grammar.AST.IAST_Node;
 import C_Bison.Grammar.Grammar_Types.*;
 import C_Bison.Language.Rules.Lexing.Rules_Workflow;
 import C_Flex.DFA_Types.*;
@@ -21,7 +21,7 @@ public class LL1_Parser {
     private Parser_Exception parser_exception;
 
     private Boolean Push_Expr(AST_node_pair S_top, Integer mapped_token){
-        IAST_node current_node = S_top.first;
+        IAST_Node current_node = S_top.first;
         Integer non_terminal_index = S_top.second;
         if(!LL1_Table.val.containsKey(non_terminal_index)){
             return false;
@@ -36,15 +36,15 @@ public class LL1_Parser {
         ListIterator<Grammar_pair> expr_it = expr.val.listIterator(expr.val.size());
         while(expr_it.hasPrevious()){
             Grammar_pair p = expr_it.previous();
-            IAST_node new_node = AST_printable_factory.Factory_Non_Finished(Symbol_List.get(p.second));
+            IAST_Node new_node = AST_Printable_Factory.Factory_Non_Finished(Symbol_List.get(p.second));
             current_node.addChild(new_node);
             Token_Stack.push(new AST_node_pair(new_node, p.second));
         }
         return true;
     }
 
-    public IAST_node Parse_Tokens(DFA_lexing_list token_list){
-        IAST_node root_node = AST_printable_factory.Factory_Non_Finished(Symbol_List.get(start_symbol));
+    public IAST_Node Parse_Tokens(DFA_lexing_list token_list){
+        IAST_Node root_node = AST_Printable_Factory.Factory_Non_Finished(Symbol_List.get(start_symbol));
         Token_Stack.clear();
         Token_Stack.push(new AST_node_pair(root_node, start_symbol));
 
@@ -55,7 +55,7 @@ public class LL1_Parser {
             Integer mapped_token = Symbol_Map.get(Token_Map.get(lexing_top.token_type));
             AST_node_pair S_top = Token_Stack.peek();
             if(S_top.second.equals(mapped_token)){ //Matched
-                S_top.first.addChild(AST_printable_factory.Factory_Finished(lexing_top));
+                S_top.first.addChild(AST_Printable_Factory.Factory_Finished(lexing_top));
                 Token_Stack.pop();
                 if(!it.hasNext()){
                     break;

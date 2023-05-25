@@ -1,7 +1,7 @@
 package Debug;
 
 import C_Bison.Grammar.AST.AST_Render;
-import C_Bison.Grammar.AST.IAST_node;
+import C_Bison.Grammar.AST.IAST_Node;
 import C_Bison.Grammar.LL1.LL1_Types.*;
 import C_Bison.Parser.C_Parser;
 import C_Bison.PreProcess.PreProcess_C;
@@ -33,7 +33,7 @@ public class C_Parser_Debug {
             System.out.print("Grammar Read Error!\n");
             return;
         }
-        IAST_node ast = parser.Parse_Tokens(source_code_2);
+        IAST_Node ast = parser.Parse_Tokens(source_code_2);
         if(ast == null){
             System.out.print("AST Parsing Error!\n");
             return;

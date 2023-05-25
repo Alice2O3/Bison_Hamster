@@ -3,16 +3,16 @@ package C_Bison.Grammar.AST;
 import java.util.ArrayList;
 import java.util.List;
 
-public class AST_node implements IAST_node{
-    private final List<IAST_node> node_list = new ArrayList<>();
+public class AST_Node implements IAST_Node {
+    private final List<IAST_Node> node_list = new ArrayList<>();
 
     @Override
-    public void addChild(IAST_node e) {
+    public void addChild(IAST_Node e) {
         node_list.add(e);
     }
 
     @Override
-    public List<IAST_node> getNode_list() {
+    public List<IAST_Node> getNode_list() {
         return node_list;
     }
 

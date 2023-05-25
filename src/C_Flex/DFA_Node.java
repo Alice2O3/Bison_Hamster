@@ -4,11 +4,11 @@ import java.util.HashMap;
 import java.util.Map;
 import C_Flex.DFA_Types.*;
 
-public class DFA_node {
+public class DFA_Node {
     private final Map<Character, DFA_event> next_state;
     private DFA_event default_event;
 
-    public DFA_node(){
+    public DFA_Node(){
         next_state = new HashMap<>();
     }
 

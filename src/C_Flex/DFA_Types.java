@@ -8,10 +8,10 @@ import java.util.List;
 public class DFA_Types {
     public static class DFA_event {
         private Character c;
-        public final DFA_node current_node;
-        public final DFA_node next_node;
+        public final DFA_Node current_node;
+        public final DFA_Node next_node;
         public final ICallback callback;
-        public DFA_event(DFA_node current_node_, DFA_node next_node_, ICallback callback_){
+        public DFA_event(DFA_Node current_node_, DFA_Node next_node_, ICallback callback_){
             current_node = current_node_;
             next_node = next_node_;
             callback = callback_;
