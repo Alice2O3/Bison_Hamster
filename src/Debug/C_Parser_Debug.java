@@ -10,6 +10,7 @@ import Util.FileIO;
 public class C_Parser_Debug {
     private final static String input_file = "Compile_Test/C_ast_test/Example.c";
     private final static String preprocessed_file = "Compile_Test/C_ast_test/Example.pp.c";
+    private final static String symbol_file = "Compile_Test/C_ast_test/Symbols.txt";
     private final static String ast_file = "Compile_Test/C_ast_test/AST.json";
     public static void main(String[] args) {
         //Preprocessing code
@@ -29,6 +30,9 @@ public class C_Parser_Debug {
         }
         C_Parser parser = new C_Parser();
         System.out.printf("Processing:\n%s\n", parser.get_Grammar_Text());
+        String symbol_info = parser.get_Symbol_Info();
+        System.out.printf("Symbol Info:\n%s\n", symbol_info);
+        FileIO.writeFile(symbol_info, symbol_file);
         if(parser.get_Exception() != Parser_Exception.NORMAL){
             System.out.print("Grammar Read Error!\n");
             return;
@@ -39,7 +43,7 @@ public class C_Parser_Debug {
             return;
         }
         String node_info = AST_Render.convert_to_json(ast);
-        System.out.print(node_info);
+        System.out.printf("AST:\n%s\n", node_info);
         FileIO.writeFile(node_info, ast_file);
     }
 }

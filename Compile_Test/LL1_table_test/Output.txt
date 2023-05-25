@@ -1,5 +1,5 @@
 Symbols:
-(0, expression), (1, term), (2, term_z), (3, Add), (4, Minus), (5, term_p), (6, term_y), (7, Mul), (8, Divide), (9, term_f), (10, term_x), (11, Exp), (12, Atom), (13, Left_Bracket), (14, Right_Bracket)
+(expression, 0), (term, 1), (term_z, 2), (Add, 3), (Minus, 4), (term_p, 5), (term_y, 6), (Mul, 7), (Divide, 8), (term_f, 9), (term_x, 10), (Exp, 11), (Atom, 12), (Left_Bracket, 13), (Right_Bracket, 14)
 
 Terminals:
 (Add, 3), (Divide, 8), (Mul, 7), (Left_Bracket, 13), (Exp, 11), (Minus, 4), (Atom, 12), (Right_Bracket, 14)

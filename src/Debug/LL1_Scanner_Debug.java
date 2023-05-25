@@ -24,8 +24,8 @@ public class LL1_Scanner_Debug {
 
         StringBuilder sb = new StringBuilder();
         sb.append(code).append("\n");
-        sb.append(workflow.getSymbolInfo()).append("\n");
-        sb.append(Rules_Render.Grammar_List_to_str(workflow.getGrammarList()));
+        sb.append(Rules_Render.get_Symbol_Info(workflow)).append("\n");
+        sb.append(Rules_Render.Grammar_List_to_str(workflow.getGrammar_list()));
         String ret = sb.toString();
         System.out.print(ret);
         FileIO.writeFile(ret, output_path);

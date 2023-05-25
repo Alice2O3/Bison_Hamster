@@ -19,9 +19,9 @@ public class LL1_Analyze_Debug {
             System.out.print("\nInput Error!\n");
             return;
         }
-        Grammar_list V = workflow.getGrammarList();
+        Grammar_list V = workflow.getGrammar_list();
         StringBuilder sb = new StringBuilder();
-        sb.append(workflow.getSymbolInfo());
+        sb.append(Rules_Render.get_Symbol_Info(workflow));
         sb.append("\nRule_Table:\n");
         sb.append(Rules_Render.Grammar_List_to_str_full(V));
         sb.append("\n");

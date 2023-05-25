@@ -3,7 +3,7 @@ package C_Bison.Grammar.AST;
 import java.util.ArrayList;
 import java.util.List;
 
-public class AST_Node implements IAST_Node {
+public class AST_Base implements IAST_Node {
     private final List<IAST_Node> node_list = new ArrayList<>();
 
     @Override

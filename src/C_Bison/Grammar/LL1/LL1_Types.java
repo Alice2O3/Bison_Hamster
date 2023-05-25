@@ -4,65 +4,65 @@ import java.util.*;
 import C_Bison.Grammar.Grammar_Types.*;
 
 public class LL1_Types {
-    public static class LL1_symbol_set{
+    public static class LL1_Symbol_Set {
         public Set<Integer> val = new HashSet<>();
     }
 
-    public static class LL1_expr_map{
+    public static class LL1_Expr_Map {
         public Map<Integer, Grammar_expr_list> val = new HashMap<>();
     }
 
-    public static class LL1_symbol_map{
-        public Map<Integer, LL1_symbol_set> val = new HashMap<>();
+    public static class LL1_Symbol_Map {
+        public Map<Integer, LL1_Symbol_Set> val = new HashMap<>();
     }
 
-    public static class LL1_flag{
+    public static class LL1_Flag {
         public Boolean val;
-        public LL1_flag(Boolean v_){
+        public LL1_Flag(Boolean v_){
             val = v_;
         }
     }
 
-    public static class LL1_flag_map{
-        public Map<Integer, LL1_flag> val = new HashMap<>();
+    public static class LL1_Flag_Map {
+        public Map<Integer, LL1_Flag> val = new HashMap<>();
     }
 
-    public static class LL1_expr_select{
+    public static class LL1_Expr_Select {
         public Grammar_expr first;
-        public LL1_symbol_set second;
-        public LL1_expr_select(Grammar_expr first_, LL1_symbol_set second_){
+        public LL1_Symbol_Set second;
+        public LL1_Expr_Select(Grammar_expr first_, LL1_Symbol_Set second_){
             first = first_;
             second = second_;
         }
     }
 
-    public static class LL1_expr_select_list{
-        public List<LL1_expr_select> val = new ArrayList<>();
+    public static class LL1_Expr_Select_List {
+        public List<LL1_Expr_Select> val = new ArrayList<>();
     }
 
-    public static class LL1_expr_select_list_map{
-        public Map<Integer, LL1_expr_select_list> val = new HashMap<>();
+    public static class LL1_Expr_Select_List_Map {
+        public Map<Integer, LL1_Expr_Select_List> val = new HashMap<>();
     }
 
-    public static class LL1_expr_pair{
+    public static class LL1_Expr_Pair {
         public Integer first;
         public Grammar_expr second;
-        public LL1_expr_pair(Integer first_, Grammar_expr second_){
+        public LL1_Expr_Pair(Integer first_, Grammar_expr second_){
             first = first_;
             second = second_;
         }
     }
 
-    public static class LL1_expr_pair_list{
-        public List<LL1_expr_pair> val = new ArrayList<>();
+    public static class LL1_Expr_Pair_List {
+        public List<LL1_Expr_Pair> val = new ArrayList<>();
     }
 
-    public static class LL1_symbol_index{
+    public static class LL1_Symbol_Index {
         public Map<Integer, Integer> val = new HashMap<>();
     }
 
-    public static class LL1_table{
-        public Map<Integer, LL1_symbol_index> val = new HashMap<>();
+    public static class LL1_Table {
+        public Map<Integer, LL1_Symbol_Index> val = new HashMap<>();
     }
 
     public enum Pre_Process_Exception{

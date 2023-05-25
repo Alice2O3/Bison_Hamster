@@ -24,37 +24,40 @@ public class Rules_Workflow {
         ERROR
     }
     private States current_state = States.LEFT;
-    private final Map<String, Integer> Symbol_Map = new HashMap<>();
-    private final Map<String, Integer> Terminal_Map = new HashMap<>();
-    private final Map<String, Integer> Non_Terminal_Map = new HashMap<>();
-    private final List<String> Symbol_List = new ArrayList<>();
-    private Integer Symbol_cnt = 0;
-    private final Grammar_list Grammar_List = new Grammar_list();
+    private final Map<String, Integer> symbol_map = new HashMap<>();
+    private final Map<String, Integer> terminal_map = new HashMap<>();
+    private final Map<String, Integer> non_terminal_map = new HashMap<>();
+    private final List<String> symbol_list = new ArrayList<>();
+    private Integer symbol_cnt = 0;
+    private final Grammar_list grammar_list = new Grammar_list();
     private void data_clear(){
-        Symbol_cnt = 0;
-        Symbol_Map.clear();
-        Terminal_Map.clear();
-        Non_Terminal_Map.clear();
-        Symbol_List.clear();
+        symbol_cnt = 0;
+        symbol_map.clear();
+        terminal_map.clear();
+        non_terminal_map.clear();
+        symbol_list.clear();
+        grammar_list.val.clear();
     }
+
     private void record_tokens(DFA_lexing lexing){
         if(lexing.token_type == Rules_Tokens.NON_TERMINAL){
-            if(!Symbol_Map.containsKey(lexing.token)){
-                Non_Terminal_Map.put(lexing.token, Symbol_cnt);
-                Symbol_Map.put(lexing.token, Symbol_cnt);
-                Symbol_List.add(lexing.token);
-                Symbol_cnt++;
+            if(!symbol_map.containsKey(lexing.token)){
+                non_terminal_map.put(lexing.token, symbol_cnt);
+                symbol_map.put(lexing.token, symbol_cnt);
+                symbol_list.add(lexing.token);
+                symbol_cnt++;
             }
         }
         else if(lexing.token_type == Rules_Tokens.TERMINAL){
-            if(!Symbol_Map.containsKey(lexing.token)){
-                Terminal_Map.put(lexing.token, Symbol_cnt);
-                Symbol_Map.put(lexing.token, Symbol_cnt);
-                Symbol_List.add(lexing.token);
-                Symbol_cnt++;
+            if(!symbol_map.containsKey(lexing.token)){
+                terminal_map.put(lexing.token, symbol_cnt);
+                symbol_map.put(lexing.token, symbol_cnt);
+                symbol_list.add(lexing.token);
+                symbol_cnt++;
             }
         }
     }
+
     private Process_Exception process_tokens(DFA_lexing_list lexing_list){ //true: Success, false: Error
         data_clear();
         Grammar_rule rule = new Grammar_rule();
@@ -67,7 +70,7 @@ public class Rules_Workflow {
             switch(current_state){
                 case LEFT:
                     if (token_type == Rules_Tokens.NON_TERMINAL) {
-                        rule.first = Symbol_Map.get(token);
+                        rule.first = symbol_map.get(token);
                         current_state = States.ARROW;
                     } else {
                         return Process_Exception.ERROR;
@@ -82,11 +85,11 @@ public class Rules_Workflow {
                     break;
                 case RIGHT_START:
                     if (token_type == Rules_Tokens.TERMINAL) {
-                        expr.val.add(new Grammar_pair(true, Symbol_Map.get(token)));
+                        expr.val.add(new Grammar_pair(true, symbol_map.get(token)));
                         current_state = States.EXPRESSION;
                     }
                     else if (token_type == Rules_Tokens.NON_TERMINAL){
-                        expr.val.add(new Grammar_pair(false, Symbol_Map.get(token)));
+                        expr.val.add(new Grammar_pair(false, symbol_map.get(token)));
                         current_state = States.EXPRESSION;
                     }
                     else if (token_type == Rules_Tokens.EMPTY){
@@ -100,13 +103,13 @@ public class Rules_Workflow {
                     if (token_type == Rules_Tokens.TERMINAL) {
                         rule.second.val.add(expr);
                         expr = new Grammar_expr();
-                        expr.val.add(new Grammar_pair(true, Symbol_Map.get(token)));
+                        expr.val.add(new Grammar_pair(true, symbol_map.get(token)));
                         current_state = States.EXPRESSION;
                     }
                     else if (token_type == Rules_Tokens.NON_TERMINAL){
                         rule.second.val.add(expr);
                         expr = new Grammar_expr();
-                        expr.val.add(new Grammar_pair(false, Symbol_Map.get(token)));
+                        expr.val.add(new Grammar_pair(false, symbol_map.get(token)));
                         current_state = States.EXPRESSION;
                     }
                     else if (token_type == Rules_Tokens.EMPTY){
@@ -120,17 +123,17 @@ public class Rules_Workflow {
                     break;
                 case EXPRESSION:
                     if (token_type == Rules_Tokens.TERMINAL) {
-                        expr.val.add(new Grammar_pair(true, Symbol_Map.get(token)));
+                        expr.val.add(new Grammar_pair(true, symbol_map.get(token)));
                     }
                     else if (token_type == Rules_Tokens.NON_TERMINAL){
-                        expr.val.add(new Grammar_pair(false, Symbol_Map.get(token)));
+                        expr.val.add(new Grammar_pair(false, symbol_map.get(token)));
                     }
                     else if (token_type == Rules_Tokens.OR){
                         current_state = States.OR;
                     }
                     else if (token_type == Rules_Tokens.ESCAPE){
                         rule.second.val.add(expr);
-                        Grammar_List.val.add(rule);
+                        grammar_list.val.add(rule);
                         rule = new Grammar_rule();
                         expr = new Grammar_expr();
                         current_state = States.LEFT;
@@ -145,7 +148,7 @@ public class Rules_Workflow {
                     }
                     else if (token_type == Rules_Tokens.ESCAPE){
                         rule.second.val.add(expr);
-                        Grammar_List.val.add(rule);
+                        grammar_list.val.add(rule);
                         rule = new Grammar_rule();
                         expr = new Grammar_expr();
                         current_state = States.LEFT;
@@ -163,49 +166,17 @@ public class Rules_Workflow {
         return process_tokens(new Grammar_Scanner().scan(text));
     }
 
-    public String getSymbolInfo(){
-        StringBuilder ret = new StringBuilder();
-        ret.append("Symbols:\n");
-        int symbol_cnt = 0;
-        Boolean flag = false;
-        for(String s : Symbol_List){
-            if(flag){
-                ret.append(", ");
-            } else {
-                flag = true;
-            }
-            ret.append(String.format("(%d, %s)", symbol_cnt, s));
-            symbol_cnt++;
-        }
-        ret.append("\n\nTerminals:\n");
-        flag = false;
-        for(Map.Entry<String, Integer> p : Terminal_Map.entrySet()){
-            if(flag){
-                ret.append(", ");
-            } else {
-                flag = true;
-            }
-            ret.append(String.format("(%s, %d)", p.getKey(), p.getValue()));
-        }
-        ret.append("\n\nNon_Terminals:\n");
-        flag = false;
-        for(Map.Entry<String, Integer> p : Non_Terminal_Map.entrySet()){
-            if(flag){
-                ret.append(", ");
-            } else {
-                flag = true;
-            }
-            ret.append(String.format("(%s, %d)", p.getKey(), p.getValue()));
-        }
-        ret.append("\n");
-        return ret.toString();
+    public Map<String, Integer> getSymbol_map(){
+        return symbol_map;
     }
-
-    public Map<String, Integer> getSymbolMap(){
-        return Symbol_Map;
+    public Map<String, Integer> getTerminal_map(){
+        return terminal_map;
     }
-    public Grammar_list getGrammarList(){
-        return Grammar_List;
+    public Map<String, Integer> getNon_terminal_map(){
+        return non_terminal_map;
     }
-    public List<String> getSymbolList() { return Symbol_List; }
+    public Grammar_list getGrammar_list(){
+        return grammar_list;
+    }
+    public List<String> getSymbol_list() { return symbol_list; }
 }

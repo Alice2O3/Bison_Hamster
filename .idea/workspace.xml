@@ -5,23 +5,23 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="65ce0729-d834-4110-97ea-b236a93b5951" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/C_Bison/Language/Easy_C/AST/IAST_Listener.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/C_Bison/Language/Easy_C/AST/AST_C.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/C_Bison/Grammar/AST/AST_Render.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/C_Bison/Grammar/AST/AST_Render.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/C_Bison/Grammar/AST/AST_Types.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/C_Bison/Grammar/AST/AST_Types.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/C_Bison/Grammar/AST/AST_node.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/C_Bison/Grammar/AST/AST_Node.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/C_Bison/Grammar/AST/AST_printable_abstract.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/C_Bison/Grammar/AST/AST_Printable_Abstract.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/C_Bison/Grammar/AST/AST_printable_factory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/C_Bison/Grammar/AST/AST_Printable_Factory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/C_Bison/Grammar/AST/IAST_node.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/C_Bison/Grammar/AST/IAST_Node.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/C_Bison/Grammar/AST/IAST_printable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/C_Bison/Grammar/AST/IAST_Printable.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Compile_Test/LL1_table_test/Example.bison" beforeDir="false" afterPath="$PROJECT_DIR$/Compile_Test/LL1_table_test/Example.bison" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/C_Bison/Grammar/AST/AST_Node.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/C_Bison/Grammar/AST/AST_Base.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/C_Bison/Grammar/AST/AST_Printable_Abstract.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/C_Bison/Grammar/AST/AST_Printable.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/C_Bison/Grammar/AST/AST_Printable_Factory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/C_Bison/Grammar/AST/AST_Printable_Factory.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/C_Bison/Grammar/LL1/LL1_Parser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/C_Bison/Grammar/LL1/LL1_Parser.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/C_Bison/Grammar/LL1/LL1_Process.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/C_Bison/Grammar/LL1/LL1_Process.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/C_Bison/Grammar/LL1/LL1_Render.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/C_Bison/Grammar/LL1/LL1_Render.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/C_Bison/Grammar/LL1/LL1_Types.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/C_Bison/Grammar/LL1/LL1_Types.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/C_Bison/Language/Rules/Lexing/Rules_Render.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/C_Bison/Language/Rules/Lexing/Rules_Render.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/C_Bison/Language/Rules/Lexing/Rules_Workflow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/C_Bison/Language/Rules/Lexing/Rules_Workflow.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/C_Bison/Parser/C_Parser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/C_Bison/Parser/C_Parser.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/C_Bison/Parser/IParser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/C_Bison/Parser/IParser.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/C_Flex/DFA.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/C_Flex/DFA.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/C_Flex/DFA_Types.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/C_Flex/DFA_Types.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/C_Flex/DFA_node.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/C_Flex/DFA_Node.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Debug/C_Parser_Debug.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Debug/C_Parser_Debug.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Debug/LL1_Analyze_Debug.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Debug/LL1_Analyze_Debug.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Debug/LL1_Scanner_Debug.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Debug/LL1_Scanner_Debug.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -31,8 +31,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="Interface" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -71,8 +71,8 @@
     </key>
   </component>
   <component name="RunManager" selected="Application.Main">
-    <configuration name="C_Parser_Debug" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Debug.C_Parser_Debug" />
+    <configuration name="LL1_Read_Debug" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Debug.LL1_Read_Debug" />
       <module name="Bison_Hamster" />
       <extension name="coverage">
         <pattern>
@@ -84,8 +84,8 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="LL1_Analyze_Debug" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Debug.LL1_Analyze_Debug" />
+    <configuration name="LL1_Scanner_Debug" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Debug.LL1_Scanner_Debug" />
       <module name="Bison_Hamster" />
       <extension name="coverage">
         <pattern>
@@ -133,10 +133,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="Application.Main" />
-        <item itemvalue="Application.C_Parser_Debug" />
-        <item itemvalue="Application.LL1_Analyze_Debug" />
         <item itemvalue="Application.LL1_Simple_Map_Debug" />
         <item itemvalue="Application.LL1_Simple_Debug" />
+        <item itemvalue="Application.LL1_Scanner_Debug" />
+        <item itemvalue="Application.LL1_Read_Debug" />
       </list>
     </recent_temporary>
   </component>
@@ -202,6 +202,7 @@
       <workItem from="1684998746188" duration="4571000" />
       <workItem from="1685004715699" duration="601000" />
       <workItem from="1685005486403" duration="203000" />
+      <workItem from="1685005747425" duration="3759000" />
     </task>
     <servers />
   </component>

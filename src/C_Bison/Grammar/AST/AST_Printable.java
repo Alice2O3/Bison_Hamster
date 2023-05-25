@@ -3,10 +3,10 @@ package C_Bison.Grammar.AST;
 import C_Flex.DFA_Types.*;
 import Util.StringIO;
 
-public class AST_Printable_Abstract {
-    public static class AST_Node_Abstract_Finished extends AST_Node implements IAST_Printable {
+public class AST_Printable {
+    public static class AST_Node_Finished extends AST_Base implements IAST_Printable {
         private final DFA_lexing lexing; //Terminal
-        public AST_Node_Abstract_Finished(DFA_lexing lexing_){
+        public AST_Node_Finished(DFA_lexing lexing_){
             lexing = lexing_;
         }
 
@@ -29,9 +29,9 @@ public class AST_Printable_Abstract {
         }
     }
 
-    public static class AST_Node_Abstract_Non_Finished extends AST_Node implements IAST_Printable {
+    public static class AST_Node_Non_Finished extends AST_Base implements IAST_Printable {
         private final String symbol; //Non_terminal
-        public AST_Node_Abstract_Non_Finished(String symbol_){
+        public AST_Node_Non_Finished(String symbol_){
             symbol = symbol_;
         }
 

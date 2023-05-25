@@ -5,6 +5,7 @@ import C_Bison.Grammar.LL1.LL1_Parser;
 import C_Bison.Grammar.LL1.LL1_Types.*;
 import C_Bison.Language.Easy_C.Easy_C_Tokens;
 import C_Bison.Language.Easy_C.Lexing.Easy_C_Workflow;
+import C_Bison.Language.Rules.Lexing.Rules_Render;
 import Util.FileIO;
 
 public class C_Parser implements IParser {
@@ -34,5 +35,9 @@ public class C_Parser implements IParser {
 
     public String get_Grammar_Text(){
         return grammar_text;
+    }
+
+    public String get_Symbol_Info(){
+        return Rules_Render.get_Symbol_Info(ll1_parser.getRules_workflow());
     }
 }
